@@ -6,7 +6,12 @@
 
     <groupId>com.bitly</groupId>
     <artifactId>bitly-testing-framework</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>open-api-model-generator</module>
+        <module>automation-commons</module>
+    </modules>
 
-    
+
 </project>

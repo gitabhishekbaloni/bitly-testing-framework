@@ -11,3 +11,20 @@
  Used IntelliJ Plugins
  *Lombok
  *Cucumber for Java
+ 
+  *package com.fasterxml.jackson.annotation does not exist in module open-api-model-generator
+  io.swagger.annotations does not exist
+  
+  https://stackoverflow.com/questions/19030954/cant-find-nullable-inside-javax-annotation`x`
+  
+  https://editor.swagger.io/
+  
+                 <executions>
+                      <execution>
+                          <goals>
+                              <goal>generate</goal>
+                          </goals>
+                          <configuration>
+                              <skip>true</skip>
+ 
+
