@@ -1,9 +1,9 @@
 package dependencies;
 
-import com.bitly.bdd.classess.BitlyClient;
-import com.bitly.bdd.classess.BitlyClientImpl;
-import com.bitly.bdd.classess.Configuration;
-import com.bitly.bdd.classess.ScenarioContext;
+import com.bitly.bdd.classes.BitlyClient;
+import com.bitly.bdd.classes.BitlyClientImpl;
+import com.bitly.bdd.classes.Configuration;
+import com.bitly.bdd.classes.ScenarioContext;
 import com.bitly.utilities.ResponseTransformer;
 import org.springframework.context.annotation.Bean;
 

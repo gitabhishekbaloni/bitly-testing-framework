@@ -1,4 +1,4 @@
-package com.bitly.bdd.classess;
+package com.bitly.bdd.classes;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import cucumber.api.TypeRegistry;

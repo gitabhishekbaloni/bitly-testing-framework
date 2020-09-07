@@ -1,4 +1,4 @@
-package com.bitly.bdd.classess;
+package com.bitly.bdd.classes;
 
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;

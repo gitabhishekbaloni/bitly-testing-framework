@@ -1,4 +1,4 @@
-package com.bitly.bdd.classess;
+package com.bitly.bdd.classes;
 
 import com.bitly.Application;
 import com.bitly.constants.Constants;

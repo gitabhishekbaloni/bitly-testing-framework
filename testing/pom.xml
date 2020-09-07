@@ -33,23 +33,6 @@
             <version>${cucumber.version}</version>
             <scope>test</scope>
         </dependency>
-
-
-        <!--        <dependency>-->
-        <!--            <groupId> org.springframework.boot</groupId>-->
-        <!--            <artifactId>spring-boot-starter-logging</artifactId>-->
-        <!--            <version>1.3.2.RELEASE</version>-->
-        <!--                <exclusions>-->
-        <!--                    <exclusion>-->
-        <!--                    <groupId>org.slf4j</groupId>-->
-        <!--                    <artifactId>jcl-over-slf4j</artifactId>-->
-        <!--                </exclusion>-->
-        <!--                    <exclusion>-->
-        <!--                        <groupId>org.slf4j</groupId>-->
-        <!--                        <artifactId>jcl-to-slf4j</artifactId>-->
-        <!--                    </exclusion>-->
-        <!--                </exclusions>-->
-        <!--        </dependency>-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>

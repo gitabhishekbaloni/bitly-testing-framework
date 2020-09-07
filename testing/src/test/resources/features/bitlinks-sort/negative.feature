@@ -1,3 +1,4 @@
+@negative
 Feature: Bitly api services - sorting validations
 
   Background:

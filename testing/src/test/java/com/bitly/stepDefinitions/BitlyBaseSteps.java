@@ -1,7 +1,7 @@
 package com.bitly.stepDefinitions;
 
-import com.bitly.bdd.classess.JsonModelCreationInput;
-import com.bitly.bdd.classess.ScenarioContext;
+import com.bitly.bdd.classes.JsonModelCreationInput;
+import com.bitly.bdd.classes.ScenarioContext;
 import com.bitly.constants.Constants;
 import com.bitly.constants.JsonFieldType;
 import com.bitly.constants.JsonModelAction;

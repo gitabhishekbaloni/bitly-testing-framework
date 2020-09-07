@@ -1,4 +1,4 @@
-package com.bitly.bdd.classess;
+package com.bitly.bdd.classes;
 
 import com.bitly.http.ExtractedResponse;
 import lombok.Getter;

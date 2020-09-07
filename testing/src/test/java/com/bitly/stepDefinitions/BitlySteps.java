@@ -1,8 +1,8 @@
 package com.bitly.stepDefinitions;
 
-import com.bitly.bdd.classess.BitlyClient;
-import com.bitly.bdd.classess.JsonModelCreationInput;
-import com.bitly.bdd.classess.SortInput;
+import com.bitly.bdd.classes.BitlyClient;
+import com.bitly.bdd.classes.JsonModelCreationInput;
+import com.bitly.bdd.classes.SortInput;
 import com.bitly.constants.Constants;
 import com.bitly.http.ExtractedResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;

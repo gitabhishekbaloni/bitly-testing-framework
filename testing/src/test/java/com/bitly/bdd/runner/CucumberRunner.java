@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "src/test/resources/features",
         plugin = {"pretty", "html:target/cucumber"}
-        ,glue={"com.bitly.bdd.classes","com.bitly.bdd.stepDefinitions"}
+        ,glue={"com.bitly.bdd.classes","com.bitly.stepDefinitions"}
 )
 public class CucumberRunner {
 }

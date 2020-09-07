@@ -1,4 +1,4 @@
-package com.bitly.bdd.classess;
+package com.bitly.bdd.classes;
 
 import com.bitly.constants.Constants;
 import com.bitly.http.ExtractedResponse;
@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 public class BitlyClientImpl extends BasicRestConfigurationImpl implements BitlyClient {
 

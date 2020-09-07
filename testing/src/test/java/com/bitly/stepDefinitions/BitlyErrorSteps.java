@@ -1,6 +1,6 @@
 package com.bitly.stepDefinitions;
 
-import com.bitly.bdd.classess.BitlyClient;
+import com.bitly.bdd.classes.BitlyClient;
 import com.bitly.constants.Constants;
 import com.bitly.http.ExtractedResponse;
 import cucumber.api.java8.En;

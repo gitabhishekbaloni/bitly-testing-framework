@@ -1,3 +1,4 @@
+@positive
 Feature: These are end-to-end tests for bitly api service to get sorted data.
 
   Background:
