@@ -27,7 +27,7 @@ Once built, below command can be used to run any combination of tags
 
 b) Running with tags or feature file
 
-`mvn test -Dcucumber.options="--tags '@service_methods or @optional_params or @error_response'"`
+`mvn test -Dcucumber.options="--tags '@positive'"`
 Please refer https://cucumber.io/docs/cucumber/api/ to understand more on cucumber and tagging
 
 `mvn test -Dcucumber.options="<feature file relative path>"`
