@@ -25,6 +25,12 @@ This will build the project and skip the test run
 NOTE: If you want to run all the tests in a single go you can use "mvn clean install"
 Once built, below command can be used to run any combination of tags
 
+NOTE: To create new data models for new version of service you can see "open-api-model-generator/pom.xml"
+set true/false flag under configuration
+
+NOTE: As for dependency management we are using spring boot framework all properties are made available in
+~\bitly-testing-framework\testing\src\test\resources\application.properties
+
 b) Running with tags or feature file
 
 `mvn test -Dcucumber.options="--tags '@positive'"`
