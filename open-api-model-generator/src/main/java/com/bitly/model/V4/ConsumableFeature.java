@@ -15,43 +15,42 @@ package com.bitly.model.V4;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import java.io.IOException;
 
 /**
  * ConsumableFeature
  */
-@JsonPropertyOrder({
-  ConsumableFeature.JSON_PROPERTY_NAME,
-  ConsumableFeature.JSON_PROPERTY_CREATED,
-  ConsumableFeature.JSON_PROPERTY_MODIFIED,
-  ConsumableFeature.JSON_PROPERTY_LIMIT,
-  ConsumableFeature.JSON_PROPERTY_IS_TIER_DEFAULT,
-  ConsumableFeature.JSON_PROPERTY_ID
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-07T02:24:01.569+01:00[Europe/London]")
 public class ConsumableFeature {
-  public static final String JSON_PROPERTY_NAME = "name";
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
 
-  public static final String JSON_PROPERTY_CREATED = "created";
+  public static final String SERIALIZED_NAME_CREATED = "created";
+  @SerializedName(SERIALIZED_NAME_CREATED)
   private String created;
 
-  public static final String JSON_PROPERTY_MODIFIED = "modified";
+  public static final String SERIALIZED_NAME_MODIFIED = "modified";
+  @SerializedName(SERIALIZED_NAME_MODIFIED)
   private String modified;
 
-  public static final String JSON_PROPERTY_LIMIT = "limit";
+  public static final String SERIALIZED_NAME_LIMIT = "limit";
+  @SerializedName(SERIALIZED_NAME_LIMIT)
   private Integer limit;
 
-  public static final String JSON_PROPERTY_IS_TIER_DEFAULT = "is_tier_default";
+  public static final String SERIALIZED_NAME_IS_TIER_DEFAULT = "is_tier_default";
+  @SerializedName(SERIALIZED_NAME_IS_TIER_DEFAULT)
   private Boolean isTierDefault;
 
-  public static final String JSON_PROPERTY_ID = "id";
+  public static final String SERIALIZED_NAME_ID = "id";
+  @SerializedName(SERIALIZED_NAME_ID)
   private String id;
 
 
@@ -67,8 +66,6 @@ public class ConsumableFeature {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getName() {
     return name;
@@ -92,8 +89,6 @@ public class ConsumableFeature {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "ISO_TIMESTAMP")
-  @JsonProperty(JSON_PROPERTY_CREATED)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCreated() {
     return created;
@@ -117,8 +112,6 @@ public class ConsumableFeature {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "ISO_TIMESTAMP")
-  @JsonProperty(JSON_PROPERTY_MODIFIED)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getModified() {
     return modified;
@@ -142,8 +135,6 @@ public class ConsumableFeature {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_LIMIT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getLimit() {
     return limit;
@@ -167,8 +158,6 @@ public class ConsumableFeature {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_IS_TIER_DEFAULT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getIsTierDefault() {
     return isTierDefault;
@@ -192,8 +181,6 @@ public class ConsumableFeature {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getId() {
     return id;

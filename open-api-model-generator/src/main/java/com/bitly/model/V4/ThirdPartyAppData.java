@@ -15,35 +15,32 @@ package com.bitly.model.V4;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import java.io.IOException;
 
 /**
  * ThirdPartyAppData
  */
-@JsonPropertyOrder({
-  ThirdPartyAppData.JSON_PROPERTY_THIRD_PARTY_APP_ID,
-  ThirdPartyAppData.JSON_PROPERTY_INSTALL_URL,
-  ThirdPartyAppData.JSON_PROPERTY_OS,
-  ThirdPartyAppData.JSON_PROPERTY_NAME,
-  ThirdPartyAppData.JSON_PROPERTY_ICON_URL
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-06T23:21:35.150+01:00[Europe/London]")
 public class ThirdPartyAppData {
-  public static final String JSON_PROPERTY_THIRD_PARTY_APP_ID = "third_party_app_id";
+  public static final String SERIALIZED_NAME_THIRD_PARTY_APP_ID = "third_party_app_id";
+  @SerializedName(SERIALIZED_NAME_THIRD_PARTY_APP_ID)
   private String thirdPartyAppId;
 
-  public static final String JSON_PROPERTY_INSTALL_URL = "install_url";
+  public static final String SERIALIZED_NAME_INSTALL_URL = "install_url";
+  @SerializedName(SERIALIZED_NAME_INSTALL_URL)
   private String installUrl;
 
   /**
    * Gets or Sets os
    */
+  @JsonAdapter(OsEnum.Adapter.class)
   public enum OsEnum {
     IOS("ios"),
     
@@ -55,7 +52,6 @@ public class ThirdPartyAppData {
       this.value = value;
     }
 
-    @JsonValue
     public String getValue() {
       return value;
     }
@@ -65,7 +61,6 @@ public class ThirdPartyAppData {
       return String.valueOf(value);
     }
 
-    @JsonCreator
     public static OsEnum fromValue(String value) {
       for (OsEnum b : OsEnum.values()) {
         if (b.value.equals(value)) {
@@ -74,15 +69,31 @@ public class ThirdPartyAppData {
       }
       throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
+
+    public static class Adapter extends TypeAdapter<OsEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final OsEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public OsEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return OsEnum.fromValue(value);
+      }
+    }
   }
 
-  public static final String JSON_PROPERTY_OS = "os";
+  public static final String SERIALIZED_NAME_OS = "os";
+  @SerializedName(SERIALIZED_NAME_OS)
   private OsEnum os;
 
-  public static final String JSON_PROPERTY_NAME = "name";
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
 
-  public static final String JSON_PROPERTY_ICON_URL = "icon_url";
+  public static final String SERIALIZED_NAME_ICON_URL = "icon_url";
+  @SerializedName(SERIALIZED_NAME_ICON_URL)
   private String iconUrl;
 
 
@@ -98,8 +109,6 @@ public class ThirdPartyAppData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_THIRD_PARTY_APP_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getThirdPartyAppId() {
     return thirdPartyAppId;
@@ -123,8 +132,6 @@ public class ThirdPartyAppData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_INSTALL_URL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getInstallUrl() {
     return installUrl;
@@ -148,8 +155,6 @@ public class ThirdPartyAppData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_OS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public OsEnum getOs() {
     return os;
@@ -173,8 +178,6 @@ public class ThirdPartyAppData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getName() {
     return name;
@@ -198,8 +201,6 @@ public class ThirdPartyAppData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_ICON_URL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getIconUrl() {
     return iconUrl;

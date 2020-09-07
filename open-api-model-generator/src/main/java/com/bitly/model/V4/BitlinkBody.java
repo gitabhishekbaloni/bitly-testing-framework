@@ -18,71 +18,70 @@ import java.util.Arrays;
 import com.bitly.model.V4.BitlinkUpdate;
 import com.bitly.model.V4.DeeplinkRule;
 import com.bitly.model.V4.HasReferences;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * BitlinkBody
  */
-@JsonPropertyOrder({
-  BitlinkBody.JSON_PROPERTY_REFERENCES,
-  BitlinkBody.JSON_PROPERTY_ARCHIVED,
-  BitlinkBody.JSON_PROPERTY_TAGS,
-  BitlinkBody.JSON_PROPERTY_CREATED_AT,
-  BitlinkBody.JSON_PROPERTY_TITLE,
-  BitlinkBody.JSON_PROPERTY_DEEPLINKS,
-  BitlinkBody.JSON_PROPERTY_CREATED_BY,
-  BitlinkBody.JSON_PROPERTY_LONG_URL,
-  BitlinkBody.JSON_PROPERTY_CLIENT_ID,
-  BitlinkBody.JSON_PROPERTY_CUSTOM_BITLINKS,
-  BitlinkBody.JSON_PROPERTY_LINK,
-  BitlinkBody.JSON_PROPERTY_ID
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-07T02:24:01.569+01:00[Europe/London]")
 public class BitlinkBody {
-  public static final String JSON_PROPERTY_REFERENCES = "references";
+  public static final String SERIALIZED_NAME_REFERENCES = "references";
+  @SerializedName(SERIALIZED_NAME_REFERENCES)
   private Map<String, String> references = null;
 
-  public static final String JSON_PROPERTY_ARCHIVED = "archived";
+  public static final String SERIALIZED_NAME_ARCHIVED = "archived";
+  @SerializedName(SERIALIZED_NAME_ARCHIVED)
   private Boolean archived;
 
-  public static final String JSON_PROPERTY_TAGS = "tags";
+  public static final String SERIALIZED_NAME_TAGS = "tags";
+  @SerializedName(SERIALIZED_NAME_TAGS)
   private List<String> tags = null;
 
-  public static final String JSON_PROPERTY_CREATED_AT = "created_at";
+  public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
+  @SerializedName(SERIALIZED_NAME_CREATED_AT)
   private String createdAt;
 
-  public static final String JSON_PROPERTY_TITLE = "title";
+  public static final String SERIALIZED_NAME_TITLE = "title";
+  @SerializedName(SERIALIZED_NAME_TITLE)
   private String title;
 
-  public static final String JSON_PROPERTY_DEEPLINKS = "deeplinks";
+  public static final String SERIALIZED_NAME_DEEPLINKS = "deeplinks";
+  @SerializedName(SERIALIZED_NAME_DEEPLINKS)
   private List<DeeplinkRule> deeplinks = null;
 
-  public static final String JSON_PROPERTY_CREATED_BY = "created_by";
+  public static final String SERIALIZED_NAME_CREATED_BY = "created_by";
+  @SerializedName(SERIALIZED_NAME_CREATED_BY)
   private String createdBy;
 
-  public static final String JSON_PROPERTY_LONG_URL = "long_url";
+  public static final String SERIALIZED_NAME_LONG_URL = "long_url";
+  @SerializedName(SERIALIZED_NAME_LONG_URL)
   private String longUrl;
 
-  public static final String JSON_PROPERTY_CLIENT_ID = "client_id";
+  public static final String SERIALIZED_NAME_CLIENT_ID = "client_id";
+  @SerializedName(SERIALIZED_NAME_CLIENT_ID)
   private String clientId;
 
-  public static final String JSON_PROPERTY_CUSTOM_BITLINKS = "custom_bitlinks";
+  public static final String SERIALIZED_NAME_CUSTOM_BITLINKS = "custom_bitlinks";
+  @SerializedName(SERIALIZED_NAME_CUSTOM_BITLINKS)
   private List<String> customBitlinks = null;
 
-  public static final String JSON_PROPERTY_LINK = "link";
+  public static final String SERIALIZED_NAME_LINK = "link";
+  @SerializedName(SERIALIZED_NAME_LINK)
   private String link;
 
-  public static final String JSON_PROPERTY_ID = "id";
+  public static final String SERIALIZED_NAME_ID = "id";
+  @SerializedName(SERIALIZED_NAME_ID)
   private String id;
 
 
@@ -106,8 +105,6 @@ public class BitlinkBody {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_REFERENCES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Map<String, String> getReferences() {
     return references;
@@ -131,8 +128,6 @@ public class BitlinkBody {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_ARCHIVED)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getArchived() {
     return archived;
@@ -164,8 +159,6 @@ public class BitlinkBody {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_TAGS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<String> getTags() {
     return tags;
@@ -189,8 +182,6 @@ public class BitlinkBody {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_CREATED_AT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCreatedAt() {
     return createdAt;
@@ -214,8 +205,6 @@ public class BitlinkBody {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_TITLE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getTitle() {
     return title;
@@ -247,8 +236,6 @@ public class BitlinkBody {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_DEEPLINKS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<DeeplinkRule> getDeeplinks() {
     return deeplinks;
@@ -272,8 +259,6 @@ public class BitlinkBody {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_CREATED_BY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCreatedBy() {
     return createdBy;
@@ -297,8 +282,6 @@ public class BitlinkBody {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_LONG_URL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getLongUrl() {
     return longUrl;
@@ -322,8 +305,6 @@ public class BitlinkBody {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_CLIENT_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getClientId() {
     return clientId;
@@ -355,8 +336,6 @@ public class BitlinkBody {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_CUSTOM_BITLINKS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<String> getCustomBitlinks() {
     return customBitlinks;
@@ -380,8 +359,6 @@ public class BitlinkBody {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_LINK)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getLink() {
     return link;
@@ -405,8 +382,6 @@ public class BitlinkBody {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getId() {
     return id;

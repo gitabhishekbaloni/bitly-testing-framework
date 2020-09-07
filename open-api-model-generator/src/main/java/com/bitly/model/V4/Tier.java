@@ -17,70 +17,69 @@ import java.util.Objects;
 import java.util.Arrays;
 import com.bitly.model.V4.DefaultAccessFeature;
 import com.bitly.model.V4.DefaultConsumableFeature;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * a single tier
  */
 @ApiModel(description = "a single tier")
-@JsonPropertyOrder({
-  Tier.JSON_PROPERTY_DISPLAY_NAME,
-  Tier.JSON_PROPERTY_NAME,
-  Tier.JSON_PROPERTY_FAMILY,
-  Tier.JSON_PROPERTY_PRICE,
-  Tier.JSON_PROPERTY_BILLING_PERIOD_TYPE,
-  Tier.JSON_PROPERTY_CONSUMABLE_FEATURES,
-  Tier.JSON_PROPERTY_SORT_ORDER,
-  Tier.JSON_PROPERTY_IS_SELF_SERVICE,
-  Tier.JSON_PROPERTY_ACCESS_FEATURES,
-  Tier.JSON_PROPERTY_DISPLAY_ICON,
-  Tier.JSON_PROPERTY_IS_PAID,
-  Tier.JSON_PROPERTY_DESCRIPTION
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-06T23:21:35.150+01:00[Europe/London]")
 public class Tier {
-  public static final String JSON_PROPERTY_DISPLAY_NAME = "display_name";
+  public static final String SERIALIZED_NAME_DISPLAY_NAME = "display_name";
+  @SerializedName(SERIALIZED_NAME_DISPLAY_NAME)
   private String displayName;
 
-  public static final String JSON_PROPERTY_NAME = "name";
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
 
-  public static final String JSON_PROPERTY_FAMILY = "family";
+  public static final String SERIALIZED_NAME_FAMILY = "family";
+  @SerializedName(SERIALIZED_NAME_FAMILY)
   private String family;
 
-  public static final String JSON_PROPERTY_PRICE = "price";
+  public static final String SERIALIZED_NAME_PRICE = "price";
+  @SerializedName(SERIALIZED_NAME_PRICE)
   private Integer price;
 
-  public static final String JSON_PROPERTY_BILLING_PERIOD_TYPE = "billing_period_type";
+  public static final String SERIALIZED_NAME_BILLING_PERIOD_TYPE = "billing_period_type";
+  @SerializedName(SERIALIZED_NAME_BILLING_PERIOD_TYPE)
   private String billingPeriodType;
 
-  public static final String JSON_PROPERTY_CONSUMABLE_FEATURES = "consumable_features";
+  public static final String SERIALIZED_NAME_CONSUMABLE_FEATURES = "consumable_features";
+  @SerializedName(SERIALIZED_NAME_CONSUMABLE_FEATURES)
   private List<DefaultConsumableFeature> consumableFeatures = null;
 
-  public static final String JSON_PROPERTY_SORT_ORDER = "sort_order";
+  public static final String SERIALIZED_NAME_SORT_ORDER = "sort_order";
+  @SerializedName(SERIALIZED_NAME_SORT_ORDER)
   private Integer sortOrder;
 
-  public static final String JSON_PROPERTY_IS_SELF_SERVICE = "is_self_service";
+  public static final String SERIALIZED_NAME_IS_SELF_SERVICE = "is_self_service";
+  @SerializedName(SERIALIZED_NAME_IS_SELF_SERVICE)
   private Boolean isSelfService;
 
-  public static final String JSON_PROPERTY_ACCESS_FEATURES = "access_features";
+  public static final String SERIALIZED_NAME_ACCESS_FEATURES = "access_features";
+  @SerializedName(SERIALIZED_NAME_ACCESS_FEATURES)
   private List<DefaultAccessFeature> accessFeatures = null;
 
-  public static final String JSON_PROPERTY_DISPLAY_ICON = "display_icon";
+  public static final String SERIALIZED_NAME_DISPLAY_ICON = "display_icon";
+  @SerializedName(SERIALIZED_NAME_DISPLAY_ICON)
   private String displayIcon;
 
-  public static final String JSON_PROPERTY_IS_PAID = "is_paid";
+  public static final String SERIALIZED_NAME_IS_PAID = "is_paid";
+  @SerializedName(SERIALIZED_NAME_IS_PAID)
   private Boolean isPaid;
 
-  public static final String JSON_PROPERTY_DESCRIPTION = "description";
+  public static final String SERIALIZED_NAME_DESCRIPTION = "description";
+  @SerializedName(SERIALIZED_NAME_DESCRIPTION)
   private String description;
 
 
@@ -96,8 +95,6 @@ public class Tier {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_DISPLAY_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getDisplayName() {
     return displayName;
@@ -121,8 +118,6 @@ public class Tier {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getName() {
     return name;
@@ -146,8 +141,6 @@ public class Tier {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_FAMILY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getFamily() {
     return family;
@@ -171,8 +164,6 @@ public class Tier {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_PRICE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getPrice() {
     return price;
@@ -196,8 +187,6 @@ public class Tier {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_BILLING_PERIOD_TYPE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getBillingPeriodType() {
     return billingPeriodType;
@@ -229,8 +218,6 @@ public class Tier {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_CONSUMABLE_FEATURES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<DefaultConsumableFeature> getConsumableFeatures() {
     return consumableFeatures;
@@ -254,8 +241,6 @@ public class Tier {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_SORT_ORDER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getSortOrder() {
     return sortOrder;
@@ -279,8 +264,6 @@ public class Tier {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_IS_SELF_SERVICE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getIsSelfService() {
     return isSelfService;
@@ -312,8 +295,6 @@ public class Tier {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_ACCESS_FEATURES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<DefaultAccessFeature> getAccessFeatures() {
     return accessFeatures;
@@ -337,8 +318,6 @@ public class Tier {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_DISPLAY_ICON)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getDisplayIcon() {
     return displayIcon;
@@ -362,8 +341,6 @@ public class Tier {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_IS_PAID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getIsPaid() {
     return isPaid;
@@ -387,8 +364,6 @@ public class Tier {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_DESCRIPTION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getDescription() {
     return description;

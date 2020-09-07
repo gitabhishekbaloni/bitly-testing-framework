@@ -15,35 +15,32 @@ package com.bitly.model.V4;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import java.io.IOException;
 
 /**
  * CreateShare
  */
-@JsonPropertyOrder({
-  CreateShare.JSON_PROPERTY_TEXT,
-  CreateShare.JSON_PROPERTY_BITLINK,
-  CreateShare.JSON_PROPERTY_ACCOUNT_TYPE,
-  CreateShare.JSON_PROPERTY_ACCOUNT_ID,
-  CreateShare.JSON_PROPERTY_GROUP_GUID
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-07T02:24:01.569+01:00[Europe/London]")
 public class CreateShare {
-  public static final String JSON_PROPERTY_TEXT = "text";
+  public static final String SERIALIZED_NAME_TEXT = "text";
+  @SerializedName(SERIALIZED_NAME_TEXT)
   private String text;
 
-  public static final String JSON_PROPERTY_BITLINK = "bitlink";
+  public static final String SERIALIZED_NAME_BITLINK = "bitlink";
+  @SerializedName(SERIALIZED_NAME_BITLINK)
   private String bitlink;
 
   /**
    * Gets or Sets accountType
    */
+  @JsonAdapter(AccountTypeEnum.Adapter.class)
   public enum AccountTypeEnum {
     TWITTER("twitter"),
     
@@ -55,7 +52,6 @@ public class CreateShare {
       this.value = value;
     }
 
-    @JsonValue
     public String getValue() {
       return value;
     }
@@ -65,7 +61,6 @@ public class CreateShare {
       return String.valueOf(value);
     }
 
-    @JsonCreator
     public static AccountTypeEnum fromValue(String value) {
       for (AccountTypeEnum b : AccountTypeEnum.values()) {
         if (b.value.equals(value)) {
@@ -74,15 +69,31 @@ public class CreateShare {
       }
       throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
+
+    public static class Adapter extends TypeAdapter<AccountTypeEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final AccountTypeEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public AccountTypeEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return AccountTypeEnum.fromValue(value);
+      }
+    }
   }
 
-  public static final String JSON_PROPERTY_ACCOUNT_TYPE = "account_type";
+  public static final String SERIALIZED_NAME_ACCOUNT_TYPE = "account_type";
+  @SerializedName(SERIALIZED_NAME_ACCOUNT_TYPE)
   private AccountTypeEnum accountType;
 
-  public static final String JSON_PROPERTY_ACCOUNT_ID = "account_id";
+  public static final String SERIALIZED_NAME_ACCOUNT_ID = "account_id";
+  @SerializedName(SERIALIZED_NAME_ACCOUNT_ID)
   private String accountId;
 
-  public static final String JSON_PROPERTY_GROUP_GUID = "group_guid";
+  public static final String SERIALIZED_NAME_GROUP_GUID = "group_guid";
+  @SerializedName(SERIALIZED_NAME_GROUP_GUID)
   private String groupGuid;
 
 
@@ -98,8 +109,6 @@ public class CreateShare {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_TEXT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getText() {
     return text;
@@ -123,8 +132,6 @@ public class CreateShare {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_BITLINK)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getBitlink() {
     return bitlink;
@@ -148,8 +155,6 @@ public class CreateShare {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_ACCOUNT_TYPE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public AccountTypeEnum getAccountType() {
     return accountType;
@@ -173,8 +178,6 @@ public class CreateShare {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getAccountId() {
     return accountId;
@@ -198,8 +201,6 @@ public class CreateShare {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_GROUP_GUID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getGroupGuid() {
     return groupGuid;

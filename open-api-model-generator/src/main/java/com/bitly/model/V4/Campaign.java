@@ -17,54 +17,53 @@ import java.util.Objects;
 import java.util.Arrays;
 import com.bitly.model.V4.CampaignAllOf;
 import com.bitly.model.V4.HasReferences;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * Campaign
  */
-@JsonPropertyOrder({
-  Campaign.JSON_PROPERTY_REFERENCES,
-  Campaign.JSON_PROPERTY_NAME,
-  Campaign.JSON_PROPERTY_CREATED,
-  Campaign.JSON_PROPERTY_GROUP_GUID,
-  Campaign.JSON_PROPERTY_MODIFIED,
-  Campaign.JSON_PROPERTY_CREATED_BY,
-  Campaign.JSON_PROPERTY_GUID,
-  Campaign.JSON_PROPERTY_DESCRIPTION
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-07T02:24:01.569+01:00[Europe/London]")
 public class Campaign {
-  public static final String JSON_PROPERTY_REFERENCES = "references";
+  public static final String SERIALIZED_NAME_REFERENCES = "references";
+  @SerializedName(SERIALIZED_NAME_REFERENCES)
   private Map<String, String> references = null;
 
-  public static final String JSON_PROPERTY_NAME = "name";
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
 
-  public static final String JSON_PROPERTY_CREATED = "created";
+  public static final String SERIALIZED_NAME_CREATED = "created";
+  @SerializedName(SERIALIZED_NAME_CREATED)
   private String created;
 
-  public static final String JSON_PROPERTY_GROUP_GUID = "group_guid";
+  public static final String SERIALIZED_NAME_GROUP_GUID = "group_guid";
+  @SerializedName(SERIALIZED_NAME_GROUP_GUID)
   private String groupGuid;
 
-  public static final String JSON_PROPERTY_MODIFIED = "modified";
+  public static final String SERIALIZED_NAME_MODIFIED = "modified";
+  @SerializedName(SERIALIZED_NAME_MODIFIED)
   private String modified;
 
-  public static final String JSON_PROPERTY_CREATED_BY = "created_by";
+  public static final String SERIALIZED_NAME_CREATED_BY = "created_by";
+  @SerializedName(SERIALIZED_NAME_CREATED_BY)
   private String createdBy;
 
-  public static final String JSON_PROPERTY_GUID = "guid";
+  public static final String SERIALIZED_NAME_GUID = "guid";
+  @SerializedName(SERIALIZED_NAME_GUID)
   private String guid;
 
-  public static final String JSON_PROPERTY_DESCRIPTION = "description";
+  public static final String SERIALIZED_NAME_DESCRIPTION = "description";
+  @SerializedName(SERIALIZED_NAME_DESCRIPTION)
   private String description;
 
 
@@ -88,8 +87,6 @@ public class Campaign {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_REFERENCES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Map<String, String> getReferences() {
     return references;
@@ -113,8 +110,6 @@ public class Campaign {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getName() {
     return name;
@@ -138,8 +133,6 @@ public class Campaign {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "ISO timestamp")
-  @JsonProperty(JSON_PROPERTY_CREATED)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCreated() {
     return created;
@@ -163,8 +156,6 @@ public class Campaign {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_GROUP_GUID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getGroupGuid() {
     return groupGuid;
@@ -188,8 +179,6 @@ public class Campaign {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "ISO timestamp")
-  @JsonProperty(JSON_PROPERTY_MODIFIED)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getModified() {
     return modified;
@@ -213,8 +202,6 @@ public class Campaign {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_CREATED_BY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCreatedBy() {
     return createdBy;
@@ -238,8 +225,6 @@ public class Campaign {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_GUID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getGuid() {
     return guid;
@@ -263,8 +248,6 @@ public class Campaign {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_DESCRIPTION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getDescription() {
     return description;

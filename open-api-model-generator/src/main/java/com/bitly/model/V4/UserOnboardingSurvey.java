@@ -15,78 +15,77 @@ package com.bitly.model.V4;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * UserOnboardingSurvey
  */
-@JsonPropertyOrder({
-  UserOnboardingSurvey.JSON_PROPERTY_FIRST_NAME,
-  UserOnboardingSurvey.JSON_PROPERTY_LAST_NAME,
-  UserOnboardingSurvey.JSON_PROPERTY_CREATED,
-  UserOnboardingSurvey.JSON_PROPERTY_MODIFIED,
-  UserOnboardingSurvey.JSON_PROPERTY_COMPANY_SIZE,
-  UserOnboardingSurvey.JSON_PROPERTY_ORGANIZATION_NAME,
-  UserOnboardingSurvey.JSON_PROPERTY_USE_CASES,
-  UserOnboardingSurvey.JSON_PROPERTY_VERSION,
-  UserOnboardingSurvey.JSON_PROPERTY_USE_CASES_OTHER,
-  UserOnboardingSurvey.JSON_PROPERTY_DEPARTMENT,
-  UserOnboardingSurvey.JSON_PROPERTY_LOGIN,
-  UserOnboardingSurvey.JSON_PROPERTY_JOB_TITLE,
-  UserOnboardingSurvey.JSON_PROPERTY_DEPARTMENT_OTHER,
-  UserOnboardingSurvey.JSON_PROPERTY_TEAM_TYPE
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-06T23:21:35.150+01:00[Europe/London]")
 public class UserOnboardingSurvey {
-  public static final String JSON_PROPERTY_FIRST_NAME = "first_name";
+  public static final String SERIALIZED_NAME_FIRST_NAME = "first_name";
+  @SerializedName(SERIALIZED_NAME_FIRST_NAME)
   private String firstName;
 
-  public static final String JSON_PROPERTY_LAST_NAME = "last_name";
+  public static final String SERIALIZED_NAME_LAST_NAME = "last_name";
+  @SerializedName(SERIALIZED_NAME_LAST_NAME)
   private String lastName;
 
-  public static final String JSON_PROPERTY_CREATED = "created";
+  public static final String SERIALIZED_NAME_CREATED = "created";
+  @SerializedName(SERIALIZED_NAME_CREATED)
   private String created;
 
-  public static final String JSON_PROPERTY_MODIFIED = "modified";
+  public static final String SERIALIZED_NAME_MODIFIED = "modified";
+  @SerializedName(SERIALIZED_NAME_MODIFIED)
   private String modified;
 
-  public static final String JSON_PROPERTY_COMPANY_SIZE = "company_size";
+  public static final String SERIALIZED_NAME_COMPANY_SIZE = "company_size";
+  @SerializedName(SERIALIZED_NAME_COMPANY_SIZE)
   private String companySize;
 
-  public static final String JSON_PROPERTY_ORGANIZATION_NAME = "organization_name";
+  public static final String SERIALIZED_NAME_ORGANIZATION_NAME = "organization_name";
+  @SerializedName(SERIALIZED_NAME_ORGANIZATION_NAME)
   private String organizationName;
 
-  public static final String JSON_PROPERTY_USE_CASES = "use_cases";
+  public static final String SERIALIZED_NAME_USE_CASES = "use_cases";
+  @SerializedName(SERIALIZED_NAME_USE_CASES)
   private List<String> useCases = null;
 
-  public static final String JSON_PROPERTY_VERSION = "version";
+  public static final String SERIALIZED_NAME_VERSION = "version";
+  @SerializedName(SERIALIZED_NAME_VERSION)
   private BigDecimal version;
 
-  public static final String JSON_PROPERTY_USE_CASES_OTHER = "use_cases_other";
+  public static final String SERIALIZED_NAME_USE_CASES_OTHER = "use_cases_other";
+  @SerializedName(SERIALIZED_NAME_USE_CASES_OTHER)
   private List<String> useCasesOther = null;
 
-  public static final String JSON_PROPERTY_DEPARTMENT = "department";
+  public static final String SERIALIZED_NAME_DEPARTMENT = "department";
+  @SerializedName(SERIALIZED_NAME_DEPARTMENT)
   private String department;
 
-  public static final String JSON_PROPERTY_LOGIN = "login";
+  public static final String SERIALIZED_NAME_LOGIN = "login";
+  @SerializedName(SERIALIZED_NAME_LOGIN)
   private String login;
 
-  public static final String JSON_PROPERTY_JOB_TITLE = "job_title";
+  public static final String SERIALIZED_NAME_JOB_TITLE = "job_title";
+  @SerializedName(SERIALIZED_NAME_JOB_TITLE)
   private String jobTitle;
 
-  public static final String JSON_PROPERTY_DEPARTMENT_OTHER = "department_other";
+  public static final String SERIALIZED_NAME_DEPARTMENT_OTHER = "department_other";
+  @SerializedName(SERIALIZED_NAME_DEPARTMENT_OTHER)
   private String departmentOther;
 
-  public static final String JSON_PROPERTY_TEAM_TYPE = "team_type";
+  public static final String SERIALIZED_NAME_TEAM_TYPE = "team_type";
+  @SerializedName(SERIALIZED_NAME_TEAM_TYPE)
   private String teamType;
 
 
@@ -102,8 +101,6 @@ public class UserOnboardingSurvey {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_FIRST_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getFirstName() {
     return firstName;
@@ -127,8 +124,6 @@ public class UserOnboardingSurvey {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_LAST_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getLastName() {
     return lastName;
@@ -152,8 +147,6 @@ public class UserOnboardingSurvey {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_CREATED)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCreated() {
     return created;
@@ -177,8 +170,6 @@ public class UserOnboardingSurvey {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_MODIFIED)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getModified() {
     return modified;
@@ -202,8 +193,6 @@ public class UserOnboardingSurvey {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_COMPANY_SIZE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCompanySize() {
     return companySize;
@@ -227,8 +216,6 @@ public class UserOnboardingSurvey {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_ORGANIZATION_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getOrganizationName() {
     return organizationName;
@@ -260,8 +247,6 @@ public class UserOnboardingSurvey {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_USE_CASES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<String> getUseCases() {
     return useCases;
@@ -285,8 +270,6 @@ public class UserOnboardingSurvey {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_VERSION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getVersion() {
     return version;
@@ -318,8 +301,6 @@ public class UserOnboardingSurvey {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_USE_CASES_OTHER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<String> getUseCasesOther() {
     return useCasesOther;
@@ -343,8 +324,6 @@ public class UserOnboardingSurvey {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_DEPARTMENT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getDepartment() {
     return department;
@@ -368,8 +347,6 @@ public class UserOnboardingSurvey {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_LOGIN)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getLogin() {
     return login;
@@ -393,8 +370,6 @@ public class UserOnboardingSurvey {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_JOB_TITLE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getJobTitle() {
     return jobTitle;
@@ -418,8 +393,6 @@ public class UserOnboardingSurvey {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_DEPARTMENT_OTHER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getDepartmentOther() {
     return departmentOther;
@@ -443,8 +416,6 @@ public class UserOnboardingSurvey {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_TEAM_TYPE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getTeamType() {
     return teamType;

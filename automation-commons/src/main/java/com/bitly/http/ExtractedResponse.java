@@ -5,7 +5,7 @@ import com.bitly.utilities.ModelValidator;
 import lombok.Builder;
 import lombok.Getter;
 
-import java.security.PublicKey;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -41,7 +41,8 @@ public class ExtractedResponse {
     public <T> T as(Class<T> modelClass) { return  as(modelClass, true); }
 
     public <T> T as(Class<T> modelClass, boolean validateFields) {
-        T model = null;
+        T model = jsonSerializer.deserialize(body, modelClass);
+        modelValidator.validate(modelClass, model,body,false);
         return model;
     }
 

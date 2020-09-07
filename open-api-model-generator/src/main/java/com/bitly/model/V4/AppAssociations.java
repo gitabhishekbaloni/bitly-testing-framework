@@ -16,31 +16,26 @@ package com.bitly.model.V4;
 import java.util.Objects;
 import java.util.Arrays;
 import com.bitly.model.V4.AppAssociationDetail;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * AppAssociations
  */
-@JsonPropertyOrder({
-  AppAssociations.JSON_PROPERTY_ANDROID_INSTALL_PREFERENCE,
-  AppAssociations.JSON_PROPERTY_IOS_INSTALL_PREFERENCE,
-  AppAssociations.JSON_PROPERTY_ANDROID_APPS,
-  AppAssociations.JSON_PROPERTY_CUSTOM_DOMAIN,
-  AppAssociations.JSON_PROPERTY_IOS_APPS
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-07T02:24:01.569+01:00[Europe/London]")
 public class AppAssociations {
   /**
    * Gets or Sets androidInstallPreference
    */
+  @JsonAdapter(AndroidInstallPreferenceEnum.Adapter.class)
   public enum AndroidInstallPreferenceEnum {
     NO_INSTALL("no_install"),
     
@@ -54,7 +49,6 @@ public class AppAssociations {
       this.value = value;
     }
 
-    @JsonValue
     public String getValue() {
       return value;
     }
@@ -64,7 +58,6 @@ public class AppAssociations {
       return String.valueOf(value);
     }
 
-    @JsonCreator
     public static AndroidInstallPreferenceEnum fromValue(String value) {
       for (AndroidInstallPreferenceEnum b : AndroidInstallPreferenceEnum.values()) {
         if (b.value.equals(value)) {
@@ -73,14 +66,29 @@ public class AppAssociations {
       }
       throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
+
+    public static class Adapter extends TypeAdapter<AndroidInstallPreferenceEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final AndroidInstallPreferenceEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public AndroidInstallPreferenceEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return AndroidInstallPreferenceEnum.fromValue(value);
+      }
+    }
   }
 
-  public static final String JSON_PROPERTY_ANDROID_INSTALL_PREFERENCE = "android_install_preference";
+  public static final String SERIALIZED_NAME_ANDROID_INSTALL_PREFERENCE = "android_install_preference";
+  @SerializedName(SERIALIZED_NAME_ANDROID_INSTALL_PREFERENCE)
   private AndroidInstallPreferenceEnum androidInstallPreference;
 
   /**
    * Gets or Sets iosInstallPreference
    */
+  @JsonAdapter(IosInstallPreferenceEnum.Adapter.class)
   public enum IosInstallPreferenceEnum {
     NO_INSTALL("no_install"),
     
@@ -94,7 +102,6 @@ public class AppAssociations {
       this.value = value;
     }
 
-    @JsonValue
     public String getValue() {
       return value;
     }
@@ -104,7 +111,6 @@ public class AppAssociations {
       return String.valueOf(value);
     }
 
-    @JsonCreator
     public static IosInstallPreferenceEnum fromValue(String value) {
       for (IosInstallPreferenceEnum b : IosInstallPreferenceEnum.values()) {
         if (b.value.equals(value)) {
@@ -113,18 +119,35 @@ public class AppAssociations {
       }
       throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
+
+    public static class Adapter extends TypeAdapter<IosInstallPreferenceEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final IosInstallPreferenceEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public IosInstallPreferenceEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return IosInstallPreferenceEnum.fromValue(value);
+      }
+    }
   }
 
-  public static final String JSON_PROPERTY_IOS_INSTALL_PREFERENCE = "ios_install_preference";
+  public static final String SERIALIZED_NAME_IOS_INSTALL_PREFERENCE = "ios_install_preference";
+  @SerializedName(SERIALIZED_NAME_IOS_INSTALL_PREFERENCE)
   private IosInstallPreferenceEnum iosInstallPreference;
 
-  public static final String JSON_PROPERTY_ANDROID_APPS = "android_apps";
+  public static final String SERIALIZED_NAME_ANDROID_APPS = "android_apps";
+  @SerializedName(SERIALIZED_NAME_ANDROID_APPS)
   private List<AppAssociationDetail> androidApps = null;
 
-  public static final String JSON_PROPERTY_CUSTOM_DOMAIN = "custom_domain";
+  public static final String SERIALIZED_NAME_CUSTOM_DOMAIN = "custom_domain";
+  @SerializedName(SERIALIZED_NAME_CUSTOM_DOMAIN)
   private String customDomain;
 
-  public static final String JSON_PROPERTY_IOS_APPS = "ios_apps";
+  public static final String SERIALIZED_NAME_IOS_APPS = "ios_apps";
+  @SerializedName(SERIALIZED_NAME_IOS_APPS)
   private List<AppAssociationDetail> iosApps = null;
 
 
@@ -140,8 +163,6 @@ public class AppAssociations {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_ANDROID_INSTALL_PREFERENCE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public AndroidInstallPreferenceEnum getAndroidInstallPreference() {
     return androidInstallPreference;
@@ -165,8 +186,6 @@ public class AppAssociations {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_IOS_INSTALL_PREFERENCE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public IosInstallPreferenceEnum getIosInstallPreference() {
     return iosInstallPreference;
@@ -198,8 +217,6 @@ public class AppAssociations {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_ANDROID_APPS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<AppAssociationDetail> getAndroidApps() {
     return androidApps;
@@ -223,8 +240,6 @@ public class AppAssociations {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_CUSTOM_DOMAIN)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCustomDomain() {
     return customDomain;
@@ -256,8 +271,6 @@ public class AppAssociations {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_IOS_APPS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<AppAssociationDetail> getIosApps() {
     return iosApps;

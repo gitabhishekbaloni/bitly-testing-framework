@@ -6,14 +6,14 @@ import com.bitly.utilities.JsonSerializer;
 import org.springframework.context.annotation.Bean;
 
 
-public class Container {
+public class ContainerModel {
     @Bean
     public JsonModificationActions getJsonModificationAction() {
         return new JsonModificationActions();
     }
 
     @Bean
-    public ModelGeneratorActions getModelGeneratorActionsr(JsonSerializer jsonSerializer) {
+    public ModelGeneratorActions getModelGeneratorActions(JsonSerializer jsonSerializer) {
         return new ModelGeneratorActions(jsonSerializer);
     }
 

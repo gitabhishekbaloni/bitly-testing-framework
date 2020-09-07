@@ -15,43 +15,42 @@ package com.bitly.model.V4;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import java.io.IOException;
 
 /**
  * WebhookCreate
  */
-@JsonPropertyOrder({
-  WebhookCreate.JSON_PROPERTY_NAME,
-  WebhookCreate.JSON_PROPERTY_URL,
-  WebhookCreate.JSON_PROPERTY_GROUP_GUID,
-  WebhookCreate.JSON_PROPERTY_IS_ACTIVE,
-  WebhookCreate.JSON_PROPERTY_ORGANIZATION_GUID,
-  WebhookCreate.JSON_PROPERTY_EVENT
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-06T23:21:35.150+01:00[Europe/London]")
 public class WebhookCreate {
-  public static final String JSON_PROPERTY_NAME = "name";
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
 
-  public static final String JSON_PROPERTY_URL = "url";
+  public static final String SERIALIZED_NAME_URL = "url";
+  @SerializedName(SERIALIZED_NAME_URL)
   private String url;
 
-  public static final String JSON_PROPERTY_GROUP_GUID = "group_guid";
+  public static final String SERIALIZED_NAME_GROUP_GUID = "group_guid";
+  @SerializedName(SERIALIZED_NAME_GROUP_GUID)
   private String groupGuid;
 
-  public static final String JSON_PROPERTY_IS_ACTIVE = "is_active";
+  public static final String SERIALIZED_NAME_IS_ACTIVE = "is_active";
+  @SerializedName(SERIALIZED_NAME_IS_ACTIVE)
   private Boolean isActive;
 
-  public static final String JSON_PROPERTY_ORGANIZATION_GUID = "organization_guid";
+  public static final String SERIALIZED_NAME_ORGANIZATION_GUID = "organization_guid";
+  @SerializedName(SERIALIZED_NAME_ORGANIZATION_GUID)
   private String organizationGuid;
 
-  public static final String JSON_PROPERTY_EVENT = "event";
+  public static final String SERIALIZED_NAME_EVENT = "event";
+  @SerializedName(SERIALIZED_NAME_EVENT)
   private String event;
 
 
@@ -66,8 +65,6 @@ public class WebhookCreate {
    * @return name
   **/
   @ApiModelProperty(required = true, value = "")
-  @JsonProperty(JSON_PROPERTY_NAME)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getName() {
     return name;
@@ -90,8 +87,6 @@ public class WebhookCreate {
    * @return url
   **/
   @ApiModelProperty(required = true, value = "")
-  @JsonProperty(JSON_PROPERTY_URL)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getUrl() {
     return url;
@@ -115,8 +110,6 @@ public class WebhookCreate {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_GROUP_GUID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getGroupGuid() {
     return groupGuid;
@@ -140,8 +133,6 @@ public class WebhookCreate {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_IS_ACTIVE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getIsActive() {
     return isActive;
@@ -164,8 +155,6 @@ public class WebhookCreate {
    * @return organizationGuid
   **/
   @ApiModelProperty(required = true, value = "")
-  @JsonProperty(JSON_PROPERTY_ORGANIZATION_GUID)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getOrganizationGuid() {
     return organizationGuid;
@@ -188,8 +177,6 @@ public class WebhookCreate {
    * @return event
   **/
   @ApiModelProperty(required = true, value = "")
-  @JsonProperty(JSON_PROPERTY_EVENT)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getEvent() {
     return event;

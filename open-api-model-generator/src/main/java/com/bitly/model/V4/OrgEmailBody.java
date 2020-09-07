@@ -15,31 +15,30 @@ package com.bitly.model.V4;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import java.io.IOException;
 
 /**
  * OrgEmailBody
  */
-@JsonPropertyOrder({
-  OrgEmailBody.JSON_PROPERTY_LOGIN,
-  OrgEmailBody.JSON_PROPERTY_ORG_GUID,
-  OrgEmailBody.JSON_PROPERTY_EMAIL
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-07T02:24:01.569+01:00[Europe/London]")
 public class OrgEmailBody {
-  public static final String JSON_PROPERTY_LOGIN = "login";
+  public static final String SERIALIZED_NAME_LOGIN = "login";
+  @SerializedName(SERIALIZED_NAME_LOGIN)
   private String login;
 
-  public static final String JSON_PROPERTY_ORG_GUID = "org_guid";
+  public static final String SERIALIZED_NAME_ORG_GUID = "org_guid";
+  @SerializedName(SERIALIZED_NAME_ORG_GUID)
   private String orgGuid;
 
-  public static final String JSON_PROPERTY_EMAIL = "email";
+  public static final String SERIALIZED_NAME_EMAIL = "email";
+  @SerializedName(SERIALIZED_NAME_EMAIL)
   private String email;
 
 
@@ -55,8 +54,6 @@ public class OrgEmailBody {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_LOGIN)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getLogin() {
     return login;
@@ -80,8 +77,6 @@ public class OrgEmailBody {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_ORG_GUID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getOrgGuid() {
     return orgGuid;
@@ -105,8 +100,6 @@ public class OrgEmailBody {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_EMAIL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getEmail() {
     return email;

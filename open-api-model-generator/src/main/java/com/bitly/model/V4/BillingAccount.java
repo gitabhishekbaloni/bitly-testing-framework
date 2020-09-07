@@ -16,56 +16,55 @@ package com.bitly.model.V4;
 import java.util.Objects;
 import java.util.Arrays;
 import com.bitly.model.V4.BillingInfo;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
 import java.math.BigDecimal;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * BillingAccount
  */
-@JsonPropertyOrder({
-  BillingAccount.JSON_PROPERTY_LAST_FOUR_DIGITS,
-  BillingAccount.JSON_PROPERTY_SUBSCRIPTION_PRICE,
-  BillingAccount.JSON_PROPERTY_BILLING_INFO,
-  BillingAccount.JSON_PROPERTY_ACCOUNT_ID,
-  BillingAccount.JSON_PROPERTY_END_DATE,
-  BillingAccount.JSON_PROPERTY_ACCOUNT_NUM,
-  BillingAccount.JSON_PROPERTY_CARD_TYPE,
-  BillingAccount.JSON_PROPERTY_SUBSCRIPTION_STATUS,
-  BillingAccount.JSON_PROPERTY_RENEWAL_DATE
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-07T02:24:01.569+01:00[Europe/London]")
 public class BillingAccount {
-  public static final String JSON_PROPERTY_LAST_FOUR_DIGITS = "last_four_digits";
+  public static final String SERIALIZED_NAME_LAST_FOUR_DIGITS = "last_four_digits";
+  @SerializedName(SERIALIZED_NAME_LAST_FOUR_DIGITS)
   private String lastFourDigits;
 
-  public static final String JSON_PROPERTY_SUBSCRIPTION_PRICE = "subscription_price";
+  public static final String SERIALIZED_NAME_SUBSCRIPTION_PRICE = "subscription_price";
+  @SerializedName(SERIALIZED_NAME_SUBSCRIPTION_PRICE)
   private BigDecimal subscriptionPrice;
 
-  public static final String JSON_PROPERTY_BILLING_INFO = "billing_info";
+  public static final String SERIALIZED_NAME_BILLING_INFO = "billing_info";
+  @SerializedName(SERIALIZED_NAME_BILLING_INFO)
   private BillingInfo billingInfo;
 
-  public static final String JSON_PROPERTY_ACCOUNT_ID = "account_id";
+  public static final String SERIALIZED_NAME_ACCOUNT_ID = "account_id";
+  @SerializedName(SERIALIZED_NAME_ACCOUNT_ID)
   private String accountId;
 
-  public static final String JSON_PROPERTY_END_DATE = "end_date";
+  public static final String SERIALIZED_NAME_END_DATE = "end_date";
+  @SerializedName(SERIALIZED_NAME_END_DATE)
   private String endDate;
 
-  public static final String JSON_PROPERTY_ACCOUNT_NUM = "account_num";
+  public static final String SERIALIZED_NAME_ACCOUNT_NUM = "account_num";
+  @SerializedName(SERIALIZED_NAME_ACCOUNT_NUM)
   private String accountNum;
 
-  public static final String JSON_PROPERTY_CARD_TYPE = "card_type";
+  public static final String SERIALIZED_NAME_CARD_TYPE = "card_type";
+  @SerializedName(SERIALIZED_NAME_CARD_TYPE)
   private String cardType;
 
-  public static final String JSON_PROPERTY_SUBSCRIPTION_STATUS = "subscription_status";
+  public static final String SERIALIZED_NAME_SUBSCRIPTION_STATUS = "subscription_status";
+  @SerializedName(SERIALIZED_NAME_SUBSCRIPTION_STATUS)
   private String subscriptionStatus;
 
-  public static final String JSON_PROPERTY_RENEWAL_DATE = "renewal_date";
+  public static final String SERIALIZED_NAME_RENEWAL_DATE = "renewal_date";
+  @SerializedName(SERIALIZED_NAME_RENEWAL_DATE)
   private String renewalDate;
 
 
@@ -81,8 +80,6 @@ public class BillingAccount {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_LAST_FOUR_DIGITS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getLastFourDigits() {
     return lastFourDigits;
@@ -106,8 +103,6 @@ public class BillingAccount {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_SUBSCRIPTION_PRICE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getSubscriptionPrice() {
     return subscriptionPrice;
@@ -131,8 +126,6 @@ public class BillingAccount {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_BILLING_INFO)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BillingInfo getBillingInfo() {
     return billingInfo;
@@ -156,8 +149,6 @@ public class BillingAccount {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getAccountId() {
     return accountId;
@@ -181,8 +172,6 @@ public class BillingAccount {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "ISO timestamp")
-  @JsonProperty(JSON_PROPERTY_END_DATE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getEndDate() {
     return endDate;
@@ -206,8 +195,6 @@ public class BillingAccount {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_ACCOUNT_NUM)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getAccountNum() {
     return accountNum;
@@ -231,8 +218,6 @@ public class BillingAccount {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_CARD_TYPE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCardType() {
     return cardType;
@@ -256,8 +241,6 @@ public class BillingAccount {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_SUBSCRIPTION_STATUS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getSubscriptionStatus() {
     return subscriptionStatus;
@@ -281,8 +264,6 @@ public class BillingAccount {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "ISO timestamp")
-  @JsonProperty(JSON_PROPERTY_RENEWAL_DATE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getRenewalDate() {
     return renewalDate;

@@ -15,41 +15,36 @@ package com.bitly.model.V4;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import java.io.IOException;
 
 /**
  * Event
  */
-@JsonPropertyOrder({
-  Event.JSON_PROPERTY_UI_ACTION,
-  Event.JSON_PROPERTY_REFERRER,
-  Event.JSON_PROPERTY_ACTION,
-  Event.JSON_PROPERTY_INITIATED_BY,
-  Event.JSON_PROPERTY_GROUP_GUID,
-  Event.JSON_PROPERTY_UI_ACTION_DATE,
-  Event.JSON_PROPERTY_LOGIN,
-  Event.JSON_PROPERTY_ORG_GUID
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-07T02:24:01.569+01:00[Europe/London]")
 public class Event {
-  public static final String JSON_PROPERTY_UI_ACTION = "ui_action";
+  public static final String SERIALIZED_NAME_UI_ACTION = "ui_action";
+  @SerializedName(SERIALIZED_NAME_UI_ACTION)
   private String uiAction;
 
-  public static final String JSON_PROPERTY_REFERRER = "referrer";
+  public static final String SERIALIZED_NAME_REFERRER = "referrer";
+  @SerializedName(SERIALIZED_NAME_REFERRER)
   private String referrer;
 
-  public static final String JSON_PROPERTY_ACTION = "action";
+  public static final String SERIALIZED_NAME_ACTION = "action";
+  @SerializedName(SERIALIZED_NAME_ACTION)
   private String action;
 
   /**
    * Gets or Sets initiatedBy
    */
+  @JsonAdapter(InitiatedByEnum.Adapter.class)
   public enum InitiatedByEnum {
     APP("app"),
     
@@ -61,7 +56,6 @@ public class Event {
       this.value = value;
     }
 
-    @JsonValue
     public String getValue() {
       return value;
     }
@@ -71,7 +65,6 @@ public class Event {
       return String.valueOf(value);
     }
 
-    @JsonCreator
     public static InitiatedByEnum fromValue(String value) {
       for (InitiatedByEnum b : InitiatedByEnum.values()) {
         if (b.value.equals(value)) {
@@ -80,21 +73,39 @@ public class Event {
       }
       throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
+
+    public static class Adapter extends TypeAdapter<InitiatedByEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final InitiatedByEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public InitiatedByEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return InitiatedByEnum.fromValue(value);
+      }
+    }
   }
 
-  public static final String JSON_PROPERTY_INITIATED_BY = "initiated_by";
+  public static final String SERIALIZED_NAME_INITIATED_BY = "initiated_by";
+  @SerializedName(SERIALIZED_NAME_INITIATED_BY)
   private InitiatedByEnum initiatedBy;
 
-  public static final String JSON_PROPERTY_GROUP_GUID = "group_guid";
+  public static final String SERIALIZED_NAME_GROUP_GUID = "group_guid";
+  @SerializedName(SERIALIZED_NAME_GROUP_GUID)
   private String groupGuid;
 
-  public static final String JSON_PROPERTY_UI_ACTION_DATE = "ui_action_date";
+  public static final String SERIALIZED_NAME_UI_ACTION_DATE = "ui_action_date";
+  @SerializedName(SERIALIZED_NAME_UI_ACTION_DATE)
   private String uiActionDate;
 
-  public static final String JSON_PROPERTY_LOGIN = "login";
+  public static final String SERIALIZED_NAME_LOGIN = "login";
+  @SerializedName(SERIALIZED_NAME_LOGIN)
   private String login;
 
-  public static final String JSON_PROPERTY_ORG_GUID = "org_guid";
+  public static final String SERIALIZED_NAME_ORG_GUID = "org_guid";
+  @SerializedName(SERIALIZED_NAME_ORG_GUID)
   private String orgGuid;
 
 
@@ -109,8 +120,6 @@ public class Event {
    * @return uiAction
   **/
   @ApiModelProperty(required = true, value = "")
-  @JsonProperty(JSON_PROPERTY_UI_ACTION)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getUiAction() {
     return uiAction;
@@ -134,8 +143,6 @@ public class Event {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_REFERRER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getReferrer() {
     return referrer;
@@ -158,8 +165,6 @@ public class Event {
    * @return action
   **/
   @ApiModelProperty(required = true, value = "")
-  @JsonProperty(JSON_PROPERTY_ACTION)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getAction() {
     return action;
@@ -182,8 +187,6 @@ public class Event {
    * @return initiatedBy
   **/
   @ApiModelProperty(required = true, value = "")
-  @JsonProperty(JSON_PROPERTY_INITIATED_BY)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public InitiatedByEnum getInitiatedBy() {
     return initiatedBy;
@@ -207,8 +210,6 @@ public class Event {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_GROUP_GUID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getGroupGuid() {
     return groupGuid;
@@ -231,8 +232,6 @@ public class Event {
    * @return uiActionDate
   **/
   @ApiModelProperty(required = true, value = "")
-  @JsonProperty(JSON_PROPERTY_UI_ACTION_DATE)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getUiActionDate() {
     return uiActionDate;
@@ -255,8 +254,6 @@ public class Event {
    * @return login
   **/
   @ApiModelProperty(required = true, value = "")
-  @JsonProperty(JSON_PROPERTY_LOGIN)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getLogin() {
     return login;
@@ -279,8 +276,6 @@ public class Event {
    * @return orgGuid
   **/
   @ApiModelProperty(required = true, value = "")
-  @JsonProperty(JSON_PROPERTY_ORG_GUID)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getOrgGuid() {
     return orgGuid;

@@ -15,31 +15,28 @@ package com.bitly.model.V4;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import java.io.IOException;
 
 /**
  * ClicksSummary
  */
-@JsonPropertyOrder({
-  ClicksSummary.JSON_PROPERTY_UNITS,
-  ClicksSummary.JSON_PROPERTY_UNIT,
-  ClicksSummary.JSON_PROPERTY_TOTAL_CLICKS,
-  ClicksSummary.JSON_PROPERTY_UNIT_REFERENCE
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-07T02:24:01.569+01:00[Europe/London]")
 public class ClicksSummary {
-  public static final String JSON_PROPERTY_UNITS = "units";
+  public static final String SERIALIZED_NAME_UNITS = "units";
+  @SerializedName(SERIALIZED_NAME_UNITS)
   private Integer units;
 
   /**
    * Gets or Sets unit
    */
+  @JsonAdapter(UnitEnum.Adapter.class)
   public enum UnitEnum {
     MINUTE("minute"),
     
@@ -57,7 +54,6 @@ public class ClicksSummary {
       this.value = value;
     }
 
-    @JsonValue
     public String getValue() {
       return value;
     }
@@ -67,7 +63,6 @@ public class ClicksSummary {
       return String.valueOf(value);
     }
 
-    @JsonCreator
     public static UnitEnum fromValue(String value) {
       for (UnitEnum b : UnitEnum.values()) {
         if (b.value.equals(value)) {
@@ -76,15 +71,31 @@ public class ClicksSummary {
       }
       throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
+
+    public static class Adapter extends TypeAdapter<UnitEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final UnitEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public UnitEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return UnitEnum.fromValue(value);
+      }
+    }
   }
 
-  public static final String JSON_PROPERTY_UNIT = "unit";
+  public static final String SERIALIZED_NAME_UNIT = "unit";
+  @SerializedName(SERIALIZED_NAME_UNIT)
   private UnitEnum unit;
 
-  public static final String JSON_PROPERTY_TOTAL_CLICKS = "total_clicks";
+  public static final String SERIALIZED_NAME_TOTAL_CLICKS = "total_clicks";
+  @SerializedName(SERIALIZED_NAME_TOTAL_CLICKS)
   private Integer totalClicks;
 
-  public static final String JSON_PROPERTY_UNIT_REFERENCE = "unit_reference";
+  public static final String SERIALIZED_NAME_UNIT_REFERENCE = "unit_reference";
+  @SerializedName(SERIALIZED_NAME_UNIT_REFERENCE)
   private String unitReference;
 
 
@@ -100,8 +111,6 @@ public class ClicksSummary {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_UNITS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getUnits() {
     return units;
@@ -125,8 +134,6 @@ public class ClicksSummary {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_UNIT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public UnitEnum getUnit() {
     return unit;
@@ -150,8 +157,6 @@ public class ClicksSummary {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_TOTAL_CLICKS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getTotalClicks() {
     return totalClicks;
@@ -175,8 +180,6 @@ public class ClicksSummary {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_UNIT_REFERENCE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getUnitReference() {
     return unitReference;

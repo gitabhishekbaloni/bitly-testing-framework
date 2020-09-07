@@ -15,27 +15,26 @@ package com.bitly.model.V4;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import java.io.IOException;
 
 /**
  * ClickMetric
  */
-@JsonPropertyOrder({
-  ClickMetric.JSON_PROPERTY_CLICKS,
-  ClickMetric.JSON_PROPERTY_VALUE
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-07T02:24:01.569+01:00[Europe/London]")
 public class ClickMetric {
-  public static final String JSON_PROPERTY_CLICKS = "clicks";
+  public static final String SERIALIZED_NAME_CLICKS = "clicks";
+  @SerializedName(SERIALIZED_NAME_CLICKS)
   private Integer clicks;
 
-  public static final String JSON_PROPERTY_VALUE = "value";
+  public static final String SERIALIZED_NAME_VALUE = "value";
+  @SerializedName(SERIALIZED_NAME_VALUE)
   private String value;
 
 
@@ -51,8 +50,6 @@ public class ClickMetric {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_CLICKS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getClicks() {
     return clicks;
@@ -76,8 +73,6 @@ public class ClickMetric {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_VALUE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getValue() {
     return value;

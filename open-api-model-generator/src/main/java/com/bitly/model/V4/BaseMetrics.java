@@ -15,31 +15,28 @@ package com.bitly.model.V4;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import java.io.IOException;
 
 /**
  * BaseMetrics
  */
-@JsonPropertyOrder({
-  BaseMetrics.JSON_PROPERTY_UNITS,
-  BaseMetrics.JSON_PROPERTY_FACET,
-  BaseMetrics.JSON_PROPERTY_UNIT_REFERENCE,
-  BaseMetrics.JSON_PROPERTY_UNIT
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-07T02:24:01.569+01:00[Europe/London]")
 public class BaseMetrics {
-  public static final String JSON_PROPERTY_UNITS = "units";
+  public static final String SERIALIZED_NAME_UNITS = "units";
+  @SerializedName(SERIALIZED_NAME_UNITS)
   private Integer units;
 
   /**
    * Gets or Sets facet
    */
+  @JsonAdapter(FacetEnum.Adapter.class)
   public enum FacetEnum {
     COUNTRIES("countries"),
     
@@ -63,7 +60,6 @@ public class BaseMetrics {
       this.value = value;
     }
 
-    @JsonValue
     public String getValue() {
       return value;
     }
@@ -73,7 +69,6 @@ public class BaseMetrics {
       return String.valueOf(value);
     }
 
-    @JsonCreator
     public static FacetEnum fromValue(String value) {
       for (FacetEnum b : FacetEnum.values()) {
         if (b.value.equals(value)) {
@@ -82,15 +77,31 @@ public class BaseMetrics {
       }
       throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
+
+    public static class Adapter extends TypeAdapter<FacetEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final FacetEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public FacetEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return FacetEnum.fromValue(value);
+      }
+    }
   }
 
-  public static final String JSON_PROPERTY_FACET = "facet";
+  public static final String SERIALIZED_NAME_FACET = "facet";
+  @SerializedName(SERIALIZED_NAME_FACET)
   private FacetEnum facet;
 
-  public static final String JSON_PROPERTY_UNIT_REFERENCE = "unit_reference";
+  public static final String SERIALIZED_NAME_UNIT_REFERENCE = "unit_reference";
+  @SerializedName(SERIALIZED_NAME_UNIT_REFERENCE)
   private String unitReference;
 
-  public static final String JSON_PROPERTY_UNIT = "unit";
+  public static final String SERIALIZED_NAME_UNIT = "unit";
+  @SerializedName(SERIALIZED_NAME_UNIT)
   private String unit;
 
 
@@ -106,8 +117,6 @@ public class BaseMetrics {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_UNITS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getUnits() {
     return units;
@@ -131,8 +140,6 @@ public class BaseMetrics {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_FACET)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public FacetEnum getFacet() {
     return facet;
@@ -156,8 +163,6 @@ public class BaseMetrics {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_UNIT_REFERENCE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getUnitReference() {
     return unitReference;
@@ -181,8 +186,6 @@ public class BaseMetrics {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_UNIT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getUnit() {
     return unit;

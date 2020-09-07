@@ -15,35 +15,34 @@ package com.bitly.model.V4;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import java.io.IOException;
 
 /**
  * DomainAgreement
  */
-@JsonPropertyOrder({
-  DomainAgreement.JSON_PROPERTY_CONTENT,
-  DomainAgreement.JSON_PROPERTY_URL,
-  DomainAgreement.JSON_PROPERTY_AGREEMENT_KEY,
-  DomainAgreement.JSON_PROPERTY_TITLE
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-07T02:24:01.569+01:00[Europe/London]")
 public class DomainAgreement {
-  public static final String JSON_PROPERTY_CONTENT = "content";
+  public static final String SERIALIZED_NAME_CONTENT = "content";
+  @SerializedName(SERIALIZED_NAME_CONTENT)
   private String content;
 
-  public static final String JSON_PROPERTY_URL = "url";
+  public static final String SERIALIZED_NAME_URL = "url";
+  @SerializedName(SERIALIZED_NAME_URL)
   private String url;
 
-  public static final String JSON_PROPERTY_AGREEMENT_KEY = "agreement_key";
+  public static final String SERIALIZED_NAME_AGREEMENT_KEY = "agreement_key";
+  @SerializedName(SERIALIZED_NAME_AGREEMENT_KEY)
   private String agreementKey;
 
-  public static final String JSON_PROPERTY_TITLE = "title";
+  public static final String SERIALIZED_NAME_TITLE = "title";
+  @SerializedName(SERIALIZED_NAME_TITLE)
   private String title;
 
 
@@ -59,8 +58,6 @@ public class DomainAgreement {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_CONTENT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getContent() {
     return content;
@@ -84,8 +81,6 @@ public class DomainAgreement {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_URL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getUrl() {
     return url;
@@ -109,8 +104,6 @@ public class DomainAgreement {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_AGREEMENT_KEY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getAgreementKey() {
     return agreementKey;
@@ -134,8 +127,6 @@ public class DomainAgreement {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_TITLE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getTitle() {
     return title;

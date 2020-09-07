@@ -15,27 +15,26 @@ package com.bitly.model.V4;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import java.io.IOException;
 
 /**
  * CampaignClickData
  */
-@JsonPropertyOrder({
-  CampaignClickData.JSON_PROPERTY_TS,
-  CampaignClickData.JSON_PROPERTY_CLICKS
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-07T02:24:01.569+01:00[Europe/London]")
 public class CampaignClickData {
-  public static final String JSON_PROPERTY_TS = "ts";
+  public static final String SERIALIZED_NAME_TS = "ts";
+  @SerializedName(SERIALIZED_NAME_TS)
   private Integer ts;
 
-  public static final String JSON_PROPERTY_CLICKS = "clicks";
+  public static final String SERIALIZED_NAME_CLICKS = "clicks";
+  @SerializedName(SERIALIZED_NAME_CLICKS)
   private Integer clicks;
 
 
@@ -51,8 +50,6 @@ public class CampaignClickData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_TS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getTs() {
     return ts;
@@ -76,8 +73,6 @@ public class CampaignClickData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_CLICKS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getClicks() {
     return clicks;

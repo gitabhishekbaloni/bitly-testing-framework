@@ -15,39 +15,38 @@ package com.bitly.model.V4;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import java.io.IOException;
 
 /**
  * CityMetric
  */
-@JsonPropertyOrder({
-  CityMetric.JSON_PROPERTY_CITY,
-  CityMetric.JSON_PROPERTY_REGION,
-  CityMetric.JSON_PROPERTY_SUBREGION,
-  CityMetric.JSON_PROPERTY_CLICKS,
-  CityMetric.JSON_PROPERTY_COUNTRY
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-07T02:24:01.569+01:00[Europe/London]")
 public class CityMetric {
-  public static final String JSON_PROPERTY_CITY = "city";
+  public static final String SERIALIZED_NAME_CITY = "city";
+  @SerializedName(SERIALIZED_NAME_CITY)
   private String city;
 
-  public static final String JSON_PROPERTY_REGION = "region";
+  public static final String SERIALIZED_NAME_REGION = "region";
+  @SerializedName(SERIALIZED_NAME_REGION)
   private String region;
 
-  public static final String JSON_PROPERTY_SUBREGION = "subregion";
+  public static final String SERIALIZED_NAME_SUBREGION = "subregion";
+  @SerializedName(SERIALIZED_NAME_SUBREGION)
   private String subregion;
 
-  public static final String JSON_PROPERTY_CLICKS = "clicks";
+  public static final String SERIALIZED_NAME_CLICKS = "clicks";
+  @SerializedName(SERIALIZED_NAME_CLICKS)
   private Integer clicks;
 
-  public static final String JSON_PROPERTY_COUNTRY = "country";
+  public static final String SERIALIZED_NAME_COUNTRY = "country";
+  @SerializedName(SERIALIZED_NAME_COUNTRY)
   private String country;
 
 
@@ -63,8 +62,6 @@ public class CityMetric {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_CITY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCity() {
     return city;
@@ -88,8 +85,6 @@ public class CityMetric {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_REGION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getRegion() {
     return region;
@@ -113,8 +108,6 @@ public class CityMetric {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_SUBREGION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getSubregion() {
     return subregion;
@@ -138,8 +131,6 @@ public class CityMetric {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_CLICKS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getClicks() {
     return clicks;
@@ -163,8 +154,6 @@ public class CityMetric {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_COUNTRY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCountry() {
     return country;

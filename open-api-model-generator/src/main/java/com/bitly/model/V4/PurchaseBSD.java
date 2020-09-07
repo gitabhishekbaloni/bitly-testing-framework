@@ -15,37 +15,36 @@ package com.bitly.model.V4;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * PurchaseBSD
  */
-@JsonPropertyOrder({
-  PurchaseBSD.JSON_PROPERTY_DOMAIN,
-  PurchaseBSD.JSON_PROPERTY_AGREED_AT,
-  PurchaseBSD.JSON_PROPERTY_ORGANIZATION_GUID,
-  PurchaseBSD.JSON_PROPERTY_AGREEMENT_KEYS
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-06T23:21:35.150+01:00[Europe/London]")
 public class PurchaseBSD {
-  public static final String JSON_PROPERTY_DOMAIN = "domain";
+  public static final String SERIALIZED_NAME_DOMAIN = "domain";
+  @SerializedName(SERIALIZED_NAME_DOMAIN)
   private String domain;
 
-  public static final String JSON_PROPERTY_AGREED_AT = "agreed_at";
+  public static final String SERIALIZED_NAME_AGREED_AT = "agreed_at";
+  @SerializedName(SERIALIZED_NAME_AGREED_AT)
   private String agreedAt;
 
-  public static final String JSON_PROPERTY_ORGANIZATION_GUID = "organization_guid";
+  public static final String SERIALIZED_NAME_ORGANIZATION_GUID = "organization_guid";
+  @SerializedName(SERIALIZED_NAME_ORGANIZATION_GUID)
   private String organizationGuid;
 
-  public static final String JSON_PROPERTY_AGREEMENT_KEYS = "agreement_keys";
+  public static final String SERIALIZED_NAME_AGREEMENT_KEYS = "agreement_keys";
+  @SerializedName(SERIALIZED_NAME_AGREEMENT_KEYS)
   private List<String> agreementKeys = null;
 
 
@@ -61,8 +60,6 @@ public class PurchaseBSD {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_DOMAIN)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getDomain() {
     return domain;
@@ -86,8 +83,6 @@ public class PurchaseBSD {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "ISO_TIMESTAMP")
-  @JsonProperty(JSON_PROPERTY_AGREED_AT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getAgreedAt() {
     return agreedAt;
@@ -111,8 +106,6 @@ public class PurchaseBSD {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_ORGANIZATION_GUID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getOrganizationGuid() {
     return organizationGuid;
@@ -144,8 +137,6 @@ public class PurchaseBSD {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_AGREEMENT_KEYS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<String> getAgreementKeys() {
     return agreementKeys;

@@ -15,35 +15,34 @@ package com.bitly.model.V4;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import java.io.IOException;
 
 /**
  * GroupBitlinksCountRollup
  */
-@JsonPropertyOrder({
-  GroupBitlinksCountRollup.JSON_PROPERTY_UNITS,
-  GroupBitlinksCountRollup.JSON_PROPERTY_COUNT,
-  GroupBitlinksCountRollup.JSON_PROPERTY_UNIT_REFERENCE,
-  GroupBitlinksCountRollup.JSON_PROPERTY_UNIT
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-07T02:24:01.569+01:00[Europe/London]")
 public class GroupBitlinksCountRollup {
-  public static final String JSON_PROPERTY_UNITS = "units";
+  public static final String SERIALIZED_NAME_UNITS = "units";
+  @SerializedName(SERIALIZED_NAME_UNITS)
   private Integer units;
 
-  public static final String JSON_PROPERTY_COUNT = "count";
+  public static final String SERIALIZED_NAME_COUNT = "count";
+  @SerializedName(SERIALIZED_NAME_COUNT)
   private Integer count;
 
-  public static final String JSON_PROPERTY_UNIT_REFERENCE = "unit_reference";
+  public static final String SERIALIZED_NAME_UNIT_REFERENCE = "unit_reference";
+  @SerializedName(SERIALIZED_NAME_UNIT_REFERENCE)
   private Integer unitReference;
 
-  public static final String JSON_PROPERTY_UNIT = "unit";
+  public static final String SERIALIZED_NAME_UNIT = "unit";
+  @SerializedName(SERIALIZED_NAME_UNIT)
   private String unit;
 
 
@@ -59,8 +58,6 @@ public class GroupBitlinksCountRollup {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_UNITS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getUnits() {
     return units;
@@ -84,8 +81,6 @@ public class GroupBitlinksCountRollup {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_COUNT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getCount() {
     return count;
@@ -109,8 +104,6 @@ public class GroupBitlinksCountRollup {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_UNIT_REFERENCE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getUnitReference() {
     return unitReference;
@@ -134,8 +127,6 @@ public class GroupBitlinksCountRollup {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_UNIT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getUnit() {
     return unit;

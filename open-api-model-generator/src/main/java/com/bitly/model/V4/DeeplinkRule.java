@@ -15,59 +15,58 @@ package com.bitly.model.V4;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import java.io.IOException;
 
 /**
  * DeeplinkRule
  */
-@JsonPropertyOrder({
-  DeeplinkRule.JSON_PROPERTY_BITLINK,
-  DeeplinkRule.JSON_PROPERTY_INSTALL_URL,
-  DeeplinkRule.JSON_PROPERTY_CREATED,
-  DeeplinkRule.JSON_PROPERTY_APP_URI_PATH,
-  DeeplinkRule.JSON_PROPERTY_MODIFIED,
-  DeeplinkRule.JSON_PROPERTY_INSTALL_TYPE,
-  DeeplinkRule.JSON_PROPERTY_APP_GUID,
-  DeeplinkRule.JSON_PROPERTY_GUID,
-  DeeplinkRule.JSON_PROPERTY_OS,
-  DeeplinkRule.JSON_PROPERTY_BRAND_GUID
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-07T02:24:01.569+01:00[Europe/London]")
 public class DeeplinkRule {
-  public static final String JSON_PROPERTY_BITLINK = "bitlink";
+  public static final String SERIALIZED_NAME_BITLINK = "bitlink";
+  @SerializedName(SERIALIZED_NAME_BITLINK)
   private String bitlink;
 
-  public static final String JSON_PROPERTY_INSTALL_URL = "install_url";
+  public static final String SERIALIZED_NAME_INSTALL_URL = "install_url";
+  @SerializedName(SERIALIZED_NAME_INSTALL_URL)
   private String installUrl;
 
-  public static final String JSON_PROPERTY_CREATED = "created";
+  public static final String SERIALIZED_NAME_CREATED = "created";
+  @SerializedName(SERIALIZED_NAME_CREATED)
   private String created;
 
-  public static final String JSON_PROPERTY_APP_URI_PATH = "app_uri_path";
+  public static final String SERIALIZED_NAME_APP_URI_PATH = "app_uri_path";
+  @SerializedName(SERIALIZED_NAME_APP_URI_PATH)
   private String appUriPath;
 
-  public static final String JSON_PROPERTY_MODIFIED = "modified";
+  public static final String SERIALIZED_NAME_MODIFIED = "modified";
+  @SerializedName(SERIALIZED_NAME_MODIFIED)
   private String modified;
 
-  public static final String JSON_PROPERTY_INSTALL_TYPE = "install_type";
+  public static final String SERIALIZED_NAME_INSTALL_TYPE = "install_type";
+  @SerializedName(SERIALIZED_NAME_INSTALL_TYPE)
   private String installType;
 
-  public static final String JSON_PROPERTY_APP_GUID = "app_guid";
+  public static final String SERIALIZED_NAME_APP_GUID = "app_guid";
+  @SerializedName(SERIALIZED_NAME_APP_GUID)
   private String appGuid;
 
-  public static final String JSON_PROPERTY_GUID = "guid";
+  public static final String SERIALIZED_NAME_GUID = "guid";
+  @SerializedName(SERIALIZED_NAME_GUID)
   private String guid;
 
-  public static final String JSON_PROPERTY_OS = "os";
+  public static final String SERIALIZED_NAME_OS = "os";
+  @SerializedName(SERIALIZED_NAME_OS)
   private String os;
 
-  public static final String JSON_PROPERTY_BRAND_GUID = "brand_guid";
+  public static final String SERIALIZED_NAME_BRAND_GUID = "brand_guid";
+  @SerializedName(SERIALIZED_NAME_BRAND_GUID)
   private String brandGuid;
 
 
@@ -83,8 +82,6 @@ public class DeeplinkRule {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_BITLINK)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getBitlink() {
     return bitlink;
@@ -108,8 +105,6 @@ public class DeeplinkRule {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_INSTALL_URL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getInstallUrl() {
     return installUrl;
@@ -133,8 +128,6 @@ public class DeeplinkRule {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "ISO timestamp")
-  @JsonProperty(JSON_PROPERTY_CREATED)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCreated() {
     return created;
@@ -158,8 +151,6 @@ public class DeeplinkRule {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_APP_URI_PATH)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getAppUriPath() {
     return appUriPath;
@@ -183,8 +174,6 @@ public class DeeplinkRule {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "ISO timestamp")
-  @JsonProperty(JSON_PROPERTY_MODIFIED)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getModified() {
     return modified;
@@ -208,8 +197,6 @@ public class DeeplinkRule {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_INSTALL_TYPE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getInstallType() {
     return installType;
@@ -233,8 +220,6 @@ public class DeeplinkRule {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_APP_GUID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getAppGuid() {
     return appGuid;
@@ -258,8 +243,6 @@ public class DeeplinkRule {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_GUID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getGuid() {
     return guid;
@@ -283,8 +266,6 @@ public class DeeplinkRule {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_OS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getOs() {
     return os;
@@ -308,8 +289,6 @@ public class DeeplinkRule {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_BRAND_GUID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getBrandGuid() {
     return brandGuid;

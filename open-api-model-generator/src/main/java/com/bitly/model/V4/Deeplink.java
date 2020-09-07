@@ -15,35 +15,34 @@ package com.bitly.model.V4;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import java.io.IOException;
 
 /**
  * Deeplink
  */
-@JsonPropertyOrder({
-  Deeplink.JSON_PROPERTY_APP_URI_PATH,
-  Deeplink.JSON_PROPERTY_INSTALL_TYPE,
-  Deeplink.JSON_PROPERTY_INSTALL_URL,
-  Deeplink.JSON_PROPERTY_APP_ID
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-07T02:24:01.569+01:00[Europe/London]")
 public class Deeplink {
-  public static final String JSON_PROPERTY_APP_URI_PATH = "app_uri_path";
+  public static final String SERIALIZED_NAME_APP_URI_PATH = "app_uri_path";
+  @SerializedName(SERIALIZED_NAME_APP_URI_PATH)
   private String appUriPath;
 
-  public static final String JSON_PROPERTY_INSTALL_TYPE = "install_type";
+  public static final String SERIALIZED_NAME_INSTALL_TYPE = "install_type";
+  @SerializedName(SERIALIZED_NAME_INSTALL_TYPE)
   private String installType;
 
-  public static final String JSON_PROPERTY_INSTALL_URL = "install_url";
+  public static final String SERIALIZED_NAME_INSTALL_URL = "install_url";
+  @SerializedName(SERIALIZED_NAME_INSTALL_URL)
   private String installUrl;
 
-  public static final String JSON_PROPERTY_APP_ID = "app_id";
+  public static final String SERIALIZED_NAME_APP_ID = "app_id";
+  @SerializedName(SERIALIZED_NAME_APP_ID)
   private String appId;
 
 
@@ -59,8 +58,6 @@ public class Deeplink {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_APP_URI_PATH)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getAppUriPath() {
     return appUriPath;
@@ -84,8 +81,6 @@ public class Deeplink {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_INSTALL_TYPE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getInstallType() {
     return installType;
@@ -109,8 +104,6 @@ public class Deeplink {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_INSTALL_URL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getInstallUrl() {
     return installUrl;
@@ -134,8 +127,6 @@ public class Deeplink {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_APP_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getAppId() {
     return appId;

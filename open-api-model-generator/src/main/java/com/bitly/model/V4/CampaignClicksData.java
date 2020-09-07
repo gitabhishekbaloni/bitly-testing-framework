@@ -16,57 +16,56 @@ package com.bitly.model.V4;
 import java.util.Objects;
 import java.util.Arrays;
 import com.bitly.model.V4.CampaignChannelClicks;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * CampaignClicksData
  */
-@JsonPropertyOrder({
-  CampaignClicksData.JSON_PROPERTY_CREATED_TS,
-  CampaignClicksData.JSON_PROPERTY_DESCRIPTION,
-  CampaignClicksData.JSON_PROPERTY_BRAND_GUID,
-  CampaignClicksData.JSON_PROPERTY_CAMPAIGN_CHANNELS,
-  CampaignClicksData.JSON_PROPERTY_CREATED_BY,
-  CampaignClicksData.JSON_PROPERTY_MODIFIED_TS,
-  CampaignClicksData.JSON_PROPERTY_TOTAL_CLICKS,
-  CampaignClicksData.JSON_PROPERTY_GUID,
-  CampaignClicksData.JSON_PROPERTY_NAME
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-07T02:24:01.569+01:00[Europe/London]")
 public class CampaignClicksData {
-  public static final String JSON_PROPERTY_CREATED_TS = "created_ts";
+  public static final String SERIALIZED_NAME_CREATED_TS = "created_ts";
+  @SerializedName(SERIALIZED_NAME_CREATED_TS)
   private Integer createdTs;
 
-  public static final String JSON_PROPERTY_DESCRIPTION = "description";
+  public static final String SERIALIZED_NAME_DESCRIPTION = "description";
+  @SerializedName(SERIALIZED_NAME_DESCRIPTION)
   private String description;
 
-  public static final String JSON_PROPERTY_BRAND_GUID = "brand_guid";
+  public static final String SERIALIZED_NAME_BRAND_GUID = "brand_guid";
+  @SerializedName(SERIALIZED_NAME_BRAND_GUID)
   private String brandGuid;
 
-  public static final String JSON_PROPERTY_CAMPAIGN_CHANNELS = "campaign_channels";
+  public static final String SERIALIZED_NAME_CAMPAIGN_CHANNELS = "campaign_channels";
+  @SerializedName(SERIALIZED_NAME_CAMPAIGN_CHANNELS)
   private List<CampaignChannelClicks> campaignChannels = null;
 
-  public static final String JSON_PROPERTY_CREATED_BY = "created_by";
+  public static final String SERIALIZED_NAME_CREATED_BY = "created_by";
+  @SerializedName(SERIALIZED_NAME_CREATED_BY)
   private String createdBy;
 
-  public static final String JSON_PROPERTY_MODIFIED_TS = "modified_ts";
+  public static final String SERIALIZED_NAME_MODIFIED_TS = "modified_ts";
+  @SerializedName(SERIALIZED_NAME_MODIFIED_TS)
   private Integer modifiedTs;
 
-  public static final String JSON_PROPERTY_TOTAL_CLICKS = "total_clicks";
+  public static final String SERIALIZED_NAME_TOTAL_CLICKS = "total_clicks";
+  @SerializedName(SERIALIZED_NAME_TOTAL_CLICKS)
   private Integer totalClicks;
 
-  public static final String JSON_PROPERTY_GUID = "guid";
+  public static final String SERIALIZED_NAME_GUID = "guid";
+  @SerializedName(SERIALIZED_NAME_GUID)
   private String guid;
 
-  public static final String JSON_PROPERTY_NAME = "name";
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
 
 
@@ -82,8 +81,6 @@ public class CampaignClicksData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_CREATED_TS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getCreatedTs() {
     return createdTs;
@@ -107,8 +104,6 @@ public class CampaignClicksData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_DESCRIPTION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getDescription() {
     return description;
@@ -132,8 +127,6 @@ public class CampaignClicksData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_BRAND_GUID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getBrandGuid() {
     return brandGuid;
@@ -165,8 +158,6 @@ public class CampaignClicksData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_CAMPAIGN_CHANNELS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<CampaignChannelClicks> getCampaignChannels() {
     return campaignChannels;
@@ -190,8 +181,6 @@ public class CampaignClicksData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_CREATED_BY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCreatedBy() {
     return createdBy;
@@ -215,8 +204,6 @@ public class CampaignClicksData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_MODIFIED_TS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getModifiedTs() {
     return modifiedTs;
@@ -240,8 +227,6 @@ public class CampaignClicksData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_TOTAL_CLICKS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getTotalClicks() {
     return totalClicks;
@@ -265,8 +250,6 @@ public class CampaignClicksData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_GUID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getGuid() {
     return guid;
@@ -290,8 +273,6 @@ public class CampaignClicksData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getName() {
     return name;

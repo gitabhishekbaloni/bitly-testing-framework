@@ -15,63 +15,62 @@ package com.bitly.model.V4;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import java.io.IOException;
 
 /**
  * CustomBitlinkHistory
  */
-@JsonPropertyOrder({
-  CustomBitlinkHistory.JSON_PROPERTY_HASH,
-  CustomBitlinkHistory.JSON_PROPERTY_UUID,
-  CustomBitlinkHistory.JSON_PROPERTY_KEYWORD,
-  CustomBitlinkHistory.JSON_PROPERTY_CREATED,
-  CustomBitlinkHistory.JSON_PROPERTY_GROUP_GUID,
-  CustomBitlinkHistory.JSON_PROPERTY_FIRST_CREATED,
-  CustomBitlinkHistory.JSON_PROPERTY_IS_ACTIVE,
-  CustomBitlinkHistory.JSON_PROPERTY_LONG_URL,
-  CustomBitlinkHistory.JSON_PROPERTY_DEACTIVATED,
-  CustomBitlinkHistory.JSON_PROPERTY_BSD,
-  CustomBitlinkHistory.JSON_PROPERTY_LOGIN
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-07T02:24:01.569+01:00[Europe/London]")
 public class CustomBitlinkHistory {
-  public static final String JSON_PROPERTY_HASH = "hash";
+  public static final String SERIALIZED_NAME_HASH = "hash";
+  @SerializedName(SERIALIZED_NAME_HASH)
   private String hash;
 
-  public static final String JSON_PROPERTY_UUID = "uuid";
+  public static final String SERIALIZED_NAME_UUID = "uuid";
+  @SerializedName(SERIALIZED_NAME_UUID)
   private String uuid;
 
-  public static final String JSON_PROPERTY_KEYWORD = "keyword";
+  public static final String SERIALIZED_NAME_KEYWORD = "keyword";
+  @SerializedName(SERIALIZED_NAME_KEYWORD)
   private String keyword;
 
-  public static final String JSON_PROPERTY_CREATED = "created";
+  public static final String SERIALIZED_NAME_CREATED = "created";
+  @SerializedName(SERIALIZED_NAME_CREATED)
   private String created;
 
-  public static final String JSON_PROPERTY_GROUP_GUID = "group_guid";
+  public static final String SERIALIZED_NAME_GROUP_GUID = "group_guid";
+  @SerializedName(SERIALIZED_NAME_GROUP_GUID)
   private String groupGuid;
 
-  public static final String JSON_PROPERTY_FIRST_CREATED = "first_created";
+  public static final String SERIALIZED_NAME_FIRST_CREATED = "first_created";
+  @SerializedName(SERIALIZED_NAME_FIRST_CREATED)
   private String firstCreated;
 
-  public static final String JSON_PROPERTY_IS_ACTIVE = "is_active";
+  public static final String SERIALIZED_NAME_IS_ACTIVE = "is_active";
+  @SerializedName(SERIALIZED_NAME_IS_ACTIVE)
   private Boolean isActive;
 
-  public static final String JSON_PROPERTY_LONG_URL = "long_url";
+  public static final String SERIALIZED_NAME_LONG_URL = "long_url";
+  @SerializedName(SERIALIZED_NAME_LONG_URL)
   private String longUrl;
 
-  public static final String JSON_PROPERTY_DEACTIVATED = "deactivated";
+  public static final String SERIALIZED_NAME_DEACTIVATED = "deactivated";
+  @SerializedName(SERIALIZED_NAME_DEACTIVATED)
   private String deactivated;
 
-  public static final String JSON_PROPERTY_BSD = "bsd";
+  public static final String SERIALIZED_NAME_BSD = "bsd";
+  @SerializedName(SERIALIZED_NAME_BSD)
   private String bsd;
 
-  public static final String JSON_PROPERTY_LOGIN = "login";
+  public static final String SERIALIZED_NAME_LOGIN = "login";
+  @SerializedName(SERIALIZED_NAME_LOGIN)
   private String login;
 
 
@@ -87,8 +86,6 @@ public class CustomBitlinkHistory {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_HASH)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getHash() {
     return hash;
@@ -112,8 +109,6 @@ public class CustomBitlinkHistory {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_UUID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getUuid() {
     return uuid;
@@ -137,8 +132,6 @@ public class CustomBitlinkHistory {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_KEYWORD)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getKeyword() {
     return keyword;
@@ -162,8 +155,6 @@ public class CustomBitlinkHistory {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_CREATED)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCreated() {
     return created;
@@ -187,8 +178,6 @@ public class CustomBitlinkHistory {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_GROUP_GUID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getGroupGuid() {
     return groupGuid;
@@ -212,8 +201,6 @@ public class CustomBitlinkHistory {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_FIRST_CREATED)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getFirstCreated() {
     return firstCreated;
@@ -237,8 +224,6 @@ public class CustomBitlinkHistory {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_IS_ACTIVE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getIsActive() {
     return isActive;
@@ -262,8 +247,6 @@ public class CustomBitlinkHistory {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_LONG_URL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getLongUrl() {
     return longUrl;
@@ -287,8 +270,6 @@ public class CustomBitlinkHistory {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_DEACTIVATED)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getDeactivated() {
     return deactivated;
@@ -312,8 +293,6 @@ public class CustomBitlinkHistory {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_BSD)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getBsd() {
     return bsd;
@@ -337,8 +316,6 @@ public class CustomBitlinkHistory {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_LOGIN)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getLogin() {
     return login;

@@ -5,7 +5,7 @@ import com.bitly.utilities.ModelValidator;
 import com.bitly.utilities.ResponseTransformer;
 import org.springframework.context.annotation.Bean;
 
-public class Container {
+public class ContainerUtilities {
     @Bean
     public JsonSerializer getJsonSerializer() {
         return new JsonSerializer();

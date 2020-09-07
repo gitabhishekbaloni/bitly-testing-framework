@@ -16,45 +16,44 @@ package com.bitly.model.V4;
 import java.util.Objects;
 import java.util.Arrays;
 import com.bitly.model.V4.Deeplink;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * FullShorten
  */
-@JsonPropertyOrder({
-  FullShorten.JSON_PROPERTY_DOMAIN,
-  FullShorten.JSON_PROPERTY_TITLE,
-  FullShorten.JSON_PROPERTY_GROUP_GUID,
-  FullShorten.JSON_PROPERTY_TAGS,
-  FullShorten.JSON_PROPERTY_DEEPLINKS,
-  FullShorten.JSON_PROPERTY_LONG_URL
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-07T02:24:01.569+01:00[Europe/London]")
 public class FullShorten {
-  public static final String JSON_PROPERTY_DOMAIN = "domain";
+  public static final String SERIALIZED_NAME_DOMAIN = "domain";
+  @SerializedName(SERIALIZED_NAME_DOMAIN)
   private String domain = "bit.ly";
 
-  public static final String JSON_PROPERTY_TITLE = "title";
+  public static final String SERIALIZED_NAME_TITLE = "title";
+  @SerializedName(SERIALIZED_NAME_TITLE)
   private String title;
 
-  public static final String JSON_PROPERTY_GROUP_GUID = "group_guid";
+  public static final String SERIALIZED_NAME_GROUP_GUID = "group_guid";
+  @SerializedName(SERIALIZED_NAME_GROUP_GUID)
   private String groupGuid;
 
-  public static final String JSON_PROPERTY_TAGS = "tags";
+  public static final String SERIALIZED_NAME_TAGS = "tags";
+  @SerializedName(SERIALIZED_NAME_TAGS)
   private List<String> tags = null;
 
-  public static final String JSON_PROPERTY_DEEPLINKS = "deeplinks";
+  public static final String SERIALIZED_NAME_DEEPLINKS = "deeplinks";
+  @SerializedName(SERIALIZED_NAME_DEEPLINKS)
   private List<Deeplink> deeplinks = null;
 
-  public static final String JSON_PROPERTY_LONG_URL = "long_url";
+  public static final String SERIALIZED_NAME_LONG_URL = "long_url";
+  @SerializedName(SERIALIZED_NAME_LONG_URL)
   private String longUrl;
 
 
@@ -70,8 +69,6 @@ public class FullShorten {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_DOMAIN)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getDomain() {
     return domain;
@@ -95,8 +92,6 @@ public class FullShorten {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_TITLE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getTitle() {
     return title;
@@ -120,8 +115,6 @@ public class FullShorten {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Always include a specific group and custom domain in your shorten calls.")
-  @JsonProperty(JSON_PROPERTY_GROUP_GUID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getGroupGuid() {
     return groupGuid;
@@ -153,8 +146,6 @@ public class FullShorten {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_TAGS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<String> getTags() {
     return tags;
@@ -186,8 +177,6 @@ public class FullShorten {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_DEEPLINKS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<Deeplink> getDeeplinks() {
     return deeplinks;
@@ -210,8 +199,6 @@ public class FullShorten {
    * @return longUrl
   **/
   @ApiModelProperty(required = true, value = "")
-  @JsonProperty(JSON_PROPERTY_LONG_URL)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getLongUrl() {
     return longUrl;

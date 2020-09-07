@@ -16,33 +16,32 @@ package com.bitly.model.V4;
 import java.util.Objects;
 import java.util.Arrays;
 import com.bitly.model.V4.FacetCountItem;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * FacetCountData
  */
-@JsonPropertyOrder({
-  FacetCountData.JSON_PROPERTY_TOTAL_COUNT,
-  FacetCountData.JSON_PROPERTY_TS,
-  FacetCountData.JSON_PROPERTY_ITEMS
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-07T02:24:01.569+01:00[Europe/London]")
 public class FacetCountData {
-  public static final String JSON_PROPERTY_TOTAL_COUNT = "total_count";
+  public static final String SERIALIZED_NAME_TOTAL_COUNT = "total_count";
+  @SerializedName(SERIALIZED_NAME_TOTAL_COUNT)
   private Integer totalCount;
 
-  public static final String JSON_PROPERTY_TS = "ts";
+  public static final String SERIALIZED_NAME_TS = "ts";
+  @SerializedName(SERIALIZED_NAME_TS)
   private Integer ts;
 
-  public static final String JSON_PROPERTY_ITEMS = "items";
+  public static final String SERIALIZED_NAME_ITEMS = "items";
+  @SerializedName(SERIALIZED_NAME_ITEMS)
   private List<FacetCountItem> items = null;
 
 
@@ -58,8 +57,6 @@ public class FacetCountData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_TOTAL_COUNT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getTotalCount() {
     return totalCount;
@@ -83,8 +80,6 @@ public class FacetCountData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_TS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getTs() {
     return ts;
@@ -116,8 +111,6 @@ public class FacetCountData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_ITEMS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<FacetCountItem> getItems() {
     return items;

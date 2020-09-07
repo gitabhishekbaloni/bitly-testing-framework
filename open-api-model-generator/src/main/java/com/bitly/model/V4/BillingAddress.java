@@ -15,43 +15,42 @@ package com.bitly.model.V4;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import java.io.IOException;
 
 /**
  * BillingAddress
  */
-@JsonPropertyOrder({
-  BillingAddress.JSON_PROPERTY_CITY,
-  BillingAddress.JSON_PROPERTY_COUNTRY,
-  BillingAddress.JSON_PROPERTY_STATE,
-  BillingAddress.JSON_PROPERTY_ADDRESS1,
-  BillingAddress.JSON_PROPERTY_ADDRESS2,
-  BillingAddress.JSON_PROPERTY_ZIP_CODE
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-07T02:24:01.569+01:00[Europe/London]")
 public class BillingAddress {
-  public static final String JSON_PROPERTY_CITY = "city";
+  public static final String SERIALIZED_NAME_CITY = "city";
+  @SerializedName(SERIALIZED_NAME_CITY)
   private String city;
 
-  public static final String JSON_PROPERTY_COUNTRY = "country";
+  public static final String SERIALIZED_NAME_COUNTRY = "country";
+  @SerializedName(SERIALIZED_NAME_COUNTRY)
   private String country;
 
-  public static final String JSON_PROPERTY_STATE = "state";
+  public static final String SERIALIZED_NAME_STATE = "state";
+  @SerializedName(SERIALIZED_NAME_STATE)
   private String state;
 
-  public static final String JSON_PROPERTY_ADDRESS1 = "address_1";
+  public static final String SERIALIZED_NAME_ADDRESS1 = "address_1";
+  @SerializedName(SERIALIZED_NAME_ADDRESS1)
   private String address1;
 
-  public static final String JSON_PROPERTY_ADDRESS2 = "address_2";
+  public static final String SERIALIZED_NAME_ADDRESS2 = "address_2";
+  @SerializedName(SERIALIZED_NAME_ADDRESS2)
   private String address2;
 
-  public static final String JSON_PROPERTY_ZIP_CODE = "zip_code";
+  public static final String SERIALIZED_NAME_ZIP_CODE = "zip_code";
+  @SerializedName(SERIALIZED_NAME_ZIP_CODE)
   private String zipCode;
 
 
@@ -67,8 +66,6 @@ public class BillingAddress {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_CITY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCity() {
     return city;
@@ -92,8 +89,6 @@ public class BillingAddress {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_COUNTRY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCountry() {
     return country;
@@ -117,8 +112,6 @@ public class BillingAddress {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_STATE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getState() {
     return state;
@@ -142,8 +135,6 @@ public class BillingAddress {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_ADDRESS1)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getAddress1() {
     return address1;
@@ -167,8 +158,6 @@ public class BillingAddress {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_ADDRESS2)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getAddress2() {
     return address2;
@@ -192,8 +181,6 @@ public class BillingAddress {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_ZIP_CODE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getZipCode() {
     return zipCode;

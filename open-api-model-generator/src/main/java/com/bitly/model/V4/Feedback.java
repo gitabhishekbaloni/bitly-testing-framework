@@ -15,27 +15,26 @@ package com.bitly.model.V4;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import java.io.IOException;
 
 /**
  * Feedback
  */
-@JsonPropertyOrder({
-  Feedback.JSON_PROPERTY_SELECTION,
-  Feedback.JSON_PROPERTY_OPTIONAL_TEXT
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-07T02:24:01.569+01:00[Europe/London]")
 public class Feedback {
-  public static final String JSON_PROPERTY_SELECTION = "selection";
+  public static final String SERIALIZED_NAME_SELECTION = "selection";
+  @SerializedName(SERIALIZED_NAME_SELECTION)
   private String selection;
 
-  public static final String JSON_PROPERTY_OPTIONAL_TEXT = "optional_text";
+  public static final String SERIALIZED_NAME_OPTIONAL_TEXT = "optional_text";
+  @SerializedName(SERIALIZED_NAME_OPTIONAL_TEXT)
   private String optionalText;
 
 
@@ -51,8 +50,6 @@ public class Feedback {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_SELECTION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getSelection() {
     return selection;
@@ -76,8 +73,6 @@ public class Feedback {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_OPTIONAL_TEXT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getOptionalText() {
     return optionalText;

@@ -15,32 +15,31 @@ package com.bitly.model.V4;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import java.io.IOException;
 
 /**
  * SSL Certification
  */
 @ApiModel(description = "SSL Certification")
-@JsonPropertyOrder({
-  PublicSSLCert.JSON_PROPERTY_CUSTOM_CERT,
-  PublicSSLCert.JSON_PROPERTY_VALID_END,
-  PublicSSLCert.JSON_PROPERTY_ISSUER
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-06T23:21:35.150+01:00[Europe/London]")
 public class PublicSSLCert {
-  public static final String JSON_PROPERTY_CUSTOM_CERT = "custom_cert";
+  public static final String SERIALIZED_NAME_CUSTOM_CERT = "custom_cert";
+  @SerializedName(SERIALIZED_NAME_CUSTOM_CERT)
   private Boolean customCert;
 
-  public static final String JSON_PROPERTY_VALID_END = "valid_end";
+  public static final String SERIALIZED_NAME_VALID_END = "valid_end";
+  @SerializedName(SERIALIZED_NAME_VALID_END)
   private Integer validEnd;
 
-  public static final String JSON_PROPERTY_ISSUER = "issuer";
+  public static final String SERIALIZED_NAME_ISSUER = "issuer";
+  @SerializedName(SERIALIZED_NAME_ISSUER)
   private String issuer;
 
 
@@ -56,8 +55,6 @@ public class PublicSSLCert {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_CUSTOM_CERT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getCustomCert() {
     return customCert;
@@ -81,8 +78,6 @@ public class PublicSSLCert {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_VALID_END)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getValidEnd() {
     return validEnd;
@@ -106,8 +101,6 @@ public class PublicSSLCert {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_ISSUER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getIssuer() {
     return issuer;

@@ -16,29 +16,28 @@ package com.bitly.model.V4;
 import java.util.Objects;
 import java.util.Arrays;
 import com.bitly.model.V4.MethodLimit;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * PlatformLimit
  */
-@JsonPropertyOrder({
-  PlatformLimit.JSON_PROPERTY_ENDPOINT,
-  PlatformLimit.JSON_PROPERTY_METHODS
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-06T23:21:35.150+01:00[Europe/London]")
 public class PlatformLimit {
-  public static final String JSON_PROPERTY_ENDPOINT = "endpoint";
+  public static final String SERIALIZED_NAME_ENDPOINT = "endpoint";
+  @SerializedName(SERIALIZED_NAME_ENDPOINT)
   private String endpoint;
 
-  public static final String JSON_PROPERTY_METHODS = "methods";
+  public static final String SERIALIZED_NAME_METHODS = "methods";
+  @SerializedName(SERIALIZED_NAME_METHODS)
   private List<MethodLimit> methods = null;
 
 
@@ -54,8 +53,6 @@ public class PlatformLimit {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_ENDPOINT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getEndpoint() {
     return endpoint;
@@ -87,8 +84,6 @@ public class PlatformLimit {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_METHODS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<MethodLimit> getMethods() {
     return methods;

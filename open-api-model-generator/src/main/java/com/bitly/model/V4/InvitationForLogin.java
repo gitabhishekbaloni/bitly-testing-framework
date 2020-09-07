@@ -15,39 +15,38 @@ package com.bitly.model.V4;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import java.io.IOException;
 
 /**
  * InvitationForLogin
  */
-@JsonPropertyOrder({
-  InvitationForLogin.JSON_PROPERTY_INVITED_ORG_NAME,
-  InvitationForLogin.JSON_PROPERTY_INVITED_ORG_GUID,
-  InvitationForLogin.JSON_PROPERTY_TOKEN,
-  InvitationForLogin.JSON_PROPERTY_INVITED_BY_EMAIL,
-  InvitationForLogin.JSON_PROPERTY_INVITED_BY
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-07T02:24:01.569+01:00[Europe/London]")
 public class InvitationForLogin {
-  public static final String JSON_PROPERTY_INVITED_ORG_NAME = "invited_org_name";
+  public static final String SERIALIZED_NAME_INVITED_ORG_NAME = "invited_org_name";
+  @SerializedName(SERIALIZED_NAME_INVITED_ORG_NAME)
   private String invitedOrgName;
 
-  public static final String JSON_PROPERTY_INVITED_ORG_GUID = "invited_org_guid";
+  public static final String SERIALIZED_NAME_INVITED_ORG_GUID = "invited_org_guid";
+  @SerializedName(SERIALIZED_NAME_INVITED_ORG_GUID)
   private String invitedOrgGuid;
 
-  public static final String JSON_PROPERTY_TOKEN = "token";
+  public static final String SERIALIZED_NAME_TOKEN = "token";
+  @SerializedName(SERIALIZED_NAME_TOKEN)
   private String token;
 
-  public static final String JSON_PROPERTY_INVITED_BY_EMAIL = "invited_by_email";
+  public static final String SERIALIZED_NAME_INVITED_BY_EMAIL = "invited_by_email";
+  @SerializedName(SERIALIZED_NAME_INVITED_BY_EMAIL)
   private String invitedByEmail;
 
-  public static final String JSON_PROPERTY_INVITED_BY = "invited_by";
+  public static final String SERIALIZED_NAME_INVITED_BY = "invited_by";
+  @SerializedName(SERIALIZED_NAME_INVITED_BY)
   private String invitedBy;
 
 
@@ -62,8 +61,6 @@ public class InvitationForLogin {
    * @return invitedOrgName
   **/
   @ApiModelProperty(required = true, value = "")
-  @JsonProperty(JSON_PROPERTY_INVITED_ORG_NAME)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getInvitedOrgName() {
     return invitedOrgName;
@@ -86,8 +83,6 @@ public class InvitationForLogin {
    * @return invitedOrgGuid
   **/
   @ApiModelProperty(required = true, value = "")
-  @JsonProperty(JSON_PROPERTY_INVITED_ORG_GUID)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getInvitedOrgGuid() {
     return invitedOrgGuid;
@@ -110,8 +105,6 @@ public class InvitationForLogin {
    * @return token
   **/
   @ApiModelProperty(required = true, value = "")
-  @JsonProperty(JSON_PROPERTY_TOKEN)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getToken() {
     return token;
@@ -134,8 +127,6 @@ public class InvitationForLogin {
    * @return invitedByEmail
   **/
   @ApiModelProperty(required = true, value = "")
-  @JsonProperty(JSON_PROPERTY_INVITED_BY_EMAIL)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getInvitedByEmail() {
     return invitedByEmail;
@@ -158,8 +149,6 @@ public class InvitationForLogin {
    * @return invitedBy
   **/
   @ApiModelProperty(required = true, value = "")
-  @JsonProperty(JSON_PROPERTY_INVITED_BY)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getInvitedBy() {
     return invitedBy;

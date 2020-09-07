@@ -15,39 +15,38 @@ package com.bitly.model.V4;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import java.io.IOException;
 
 /**
  * DeeplinkMetric
  */
-@JsonPropertyOrder({
-  DeeplinkMetric.JSON_PROPERTY_APP_INSTALLS,
-  DeeplinkMetric.JSON_PROPERTY_STORE_VISITS,
-  DeeplinkMetric.JSON_PROPERTY_INTERSTITAL_VIEWS,
-  DeeplinkMetric.JSON_PROPERTY_APP_OPENS,
-  DeeplinkMetric.JSON_PROPERTY_WEB_OPENS
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-07T02:24:01.569+01:00[Europe/London]")
 public class DeeplinkMetric {
-  public static final String JSON_PROPERTY_APP_INSTALLS = "app_installs";
+  public static final String SERIALIZED_NAME_APP_INSTALLS = "app_installs";
+  @SerializedName(SERIALIZED_NAME_APP_INSTALLS)
   private Integer appInstalls;
 
-  public static final String JSON_PROPERTY_STORE_VISITS = "store_visits";
+  public static final String SERIALIZED_NAME_STORE_VISITS = "store_visits";
+  @SerializedName(SERIALIZED_NAME_STORE_VISITS)
   private Integer storeVisits;
 
-  public static final String JSON_PROPERTY_INTERSTITAL_VIEWS = "interstital_views";
+  public static final String SERIALIZED_NAME_INTERSTITAL_VIEWS = "interstital_views";
+  @SerializedName(SERIALIZED_NAME_INTERSTITAL_VIEWS)
   private Integer interstitalViews;
 
-  public static final String JSON_PROPERTY_APP_OPENS = "app_opens";
+  public static final String SERIALIZED_NAME_APP_OPENS = "app_opens";
+  @SerializedName(SERIALIZED_NAME_APP_OPENS)
   private Integer appOpens;
 
-  public static final String JSON_PROPERTY_WEB_OPENS = "web_opens";
+  public static final String SERIALIZED_NAME_WEB_OPENS = "web_opens";
+  @SerializedName(SERIALIZED_NAME_WEB_OPENS)
   private Integer webOpens;
 
 
@@ -63,8 +62,6 @@ public class DeeplinkMetric {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_APP_INSTALLS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getAppInstalls() {
     return appInstalls;
@@ -88,8 +85,6 @@ public class DeeplinkMetric {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_STORE_VISITS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getStoreVisits() {
     return storeVisits;
@@ -113,8 +108,6 @@ public class DeeplinkMetric {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_INTERSTITAL_VIEWS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getInterstitalViews() {
     return interstitalViews;
@@ -138,8 +131,6 @@ public class DeeplinkMetric {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_APP_OPENS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getAppOpens() {
     return appOpens;
@@ -163,8 +154,6 @@ public class DeeplinkMetric {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_WEB_OPENS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getWebOpens() {
     return webOpens;

@@ -15,35 +15,34 @@ package com.bitly.model.V4;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import java.io.IOException;
 
 /**
  * PurchaseBSDResponse
  */
-@JsonPropertyOrder({
-  PurchaseBSDResponse.JSON_PROPERTY_ORDER_ID,
-  PurchaseBSDResponse.JSON_PROPERTY_DOMAIN,
-  PurchaseBSDResponse.JSON_PROPERTY_TOTAL,
-  PurchaseBSDResponse.JSON_PROPERTY_ORGANIZATION_GUID
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-06T23:21:35.150+01:00[Europe/London]")
 public class PurchaseBSDResponse {
-  public static final String JSON_PROPERTY_ORDER_ID = "order_id";
+  public static final String SERIALIZED_NAME_ORDER_ID = "order_id";
+  @SerializedName(SERIALIZED_NAME_ORDER_ID)
   private Integer orderId;
 
-  public static final String JSON_PROPERTY_DOMAIN = "domain";
+  public static final String SERIALIZED_NAME_DOMAIN = "domain";
+  @SerializedName(SERIALIZED_NAME_DOMAIN)
   private String domain;
 
-  public static final String JSON_PROPERTY_TOTAL = "total";
+  public static final String SERIALIZED_NAME_TOTAL = "total";
+  @SerializedName(SERIALIZED_NAME_TOTAL)
   private String total;
 
-  public static final String JSON_PROPERTY_ORGANIZATION_GUID = "organization_guid";
+  public static final String SERIALIZED_NAME_ORGANIZATION_GUID = "organization_guid";
+  @SerializedName(SERIALIZED_NAME_ORGANIZATION_GUID)
   private String organizationGuid;
 
 
@@ -59,8 +58,6 @@ public class PurchaseBSDResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_ORDER_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getOrderId() {
     return orderId;
@@ -84,8 +81,6 @@ public class PurchaseBSDResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_DOMAIN)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getDomain() {
     return domain;
@@ -109,8 +104,6 @@ public class PurchaseBSDResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_TOTAL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getTotal() {
     return total;
@@ -134,8 +127,6 @@ public class PurchaseBSDResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_ORGANIZATION_GUID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getOrganizationGuid() {
     return organizationGuid;

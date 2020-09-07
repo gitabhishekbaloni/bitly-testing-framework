@@ -15,28 +15,27 @@ package com.bitly.model.V4;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import java.io.IOException;
 
 /**
  * Deep Linking object
  */
 @ApiModel(description = "Deep Linking object")
-@JsonPropertyOrder({
-  MinimalDeeplinkApp.JSON_PROPERTY_GUID,
-  MinimalDeeplinkApp.JSON_PROPERTY_OS
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-07T02:24:01.569+01:00[Europe/London]")
 public class MinimalDeeplinkApp {
-  public static final String JSON_PROPERTY_GUID = "guid";
+  public static final String SERIALIZED_NAME_GUID = "guid";
+  @SerializedName(SERIALIZED_NAME_GUID)
   private String guid;
 
-  public static final String JSON_PROPERTY_OS = "os";
+  public static final String SERIALIZED_NAME_OS = "os";
+  @SerializedName(SERIALIZED_NAME_OS)
   private String os;
 
 
@@ -52,8 +51,6 @@ public class MinimalDeeplinkApp {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_GUID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getGuid() {
     return guid;
@@ -77,8 +74,6 @@ public class MinimalDeeplinkApp {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_OS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getOs() {
     return os;

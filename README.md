@@ -28,3 +28,6 @@
                               <skip>true</skip>
  
 
+https://stackoverflow.com/questions/58578197/why-bit-ly-v4-api-returns-invalid-content-type-header
+
+https://openapi-generator.tech/docs/templating/

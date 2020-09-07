@@ -16,57 +16,56 @@ package com.bitly.model.V4;
 import java.util.Objects;
 import java.util.Arrays;
 import com.bitly.model.V4.Email;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * User
  */
-@JsonPropertyOrder({
-  User.JSON_PROPERTY_DEFAULT_GROUP_GUID,
-  User.JSON_PROPERTY_NAME,
-  User.JSON_PROPERTY_CREATED,
-  User.JSON_PROPERTY_IS_ACTIVE,
-  User.JSON_PROPERTY_MODIFIED,
-  User.JSON_PROPERTY_IS_SSO_USER,
-  User.JSON_PROPERTY_IS2FA_ENABLED,
-  User.JSON_PROPERTY_LOGIN,
-  User.JSON_PROPERTY_EMAILS
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-06T23:21:35.150+01:00[Europe/London]")
 public class User {
-  public static final String JSON_PROPERTY_DEFAULT_GROUP_GUID = "default_group_guid";
+  public static final String SERIALIZED_NAME_DEFAULT_GROUP_GUID = "default_group_guid";
+  @SerializedName(SERIALIZED_NAME_DEFAULT_GROUP_GUID)
   private String defaultGroupGuid;
 
-  public static final String JSON_PROPERTY_NAME = "name";
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
 
-  public static final String JSON_PROPERTY_CREATED = "created";
+  public static final String SERIALIZED_NAME_CREATED = "created";
+  @SerializedName(SERIALIZED_NAME_CREATED)
   private String created;
 
-  public static final String JSON_PROPERTY_IS_ACTIVE = "is_active";
+  public static final String SERIALIZED_NAME_IS_ACTIVE = "is_active";
+  @SerializedName(SERIALIZED_NAME_IS_ACTIVE)
   private Boolean isActive;
 
-  public static final String JSON_PROPERTY_MODIFIED = "modified";
+  public static final String SERIALIZED_NAME_MODIFIED = "modified";
+  @SerializedName(SERIALIZED_NAME_MODIFIED)
   private String modified;
 
-  public static final String JSON_PROPERTY_IS_SSO_USER = "is_sso_user";
+  public static final String SERIALIZED_NAME_IS_SSO_USER = "is_sso_user";
+  @SerializedName(SERIALIZED_NAME_IS_SSO_USER)
   private Boolean isSsoUser;
 
-  public static final String JSON_PROPERTY_IS2FA_ENABLED = "is_2fa_enabled";
+  public static final String SERIALIZED_NAME_IS2FA_ENABLED = "is_2fa_enabled";
+  @SerializedName(SERIALIZED_NAME_IS2FA_ENABLED)
   private Boolean is2faEnabled;
 
-  public static final String JSON_PROPERTY_LOGIN = "login";
+  public static final String SERIALIZED_NAME_LOGIN = "login";
+  @SerializedName(SERIALIZED_NAME_LOGIN)
   private String login;
 
-  public static final String JSON_PROPERTY_EMAILS = "emails";
+  public static final String SERIALIZED_NAME_EMAILS = "emails";
+  @SerializedName(SERIALIZED_NAME_EMAILS)
   private List<Email> emails = null;
 
 
@@ -82,8 +81,6 @@ public class User {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_DEFAULT_GROUP_GUID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getDefaultGroupGuid() {
     return defaultGroupGuid;
@@ -107,8 +104,6 @@ public class User {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getName() {
     return name;
@@ -132,8 +127,6 @@ public class User {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_CREATED)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCreated() {
     return created;
@@ -157,8 +150,6 @@ public class User {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_IS_ACTIVE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getIsActive() {
     return isActive;
@@ -182,8 +173,6 @@ public class User {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_MODIFIED)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getModified() {
     return modified;
@@ -207,8 +196,6 @@ public class User {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_IS_SSO_USER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getIsSsoUser() {
     return isSsoUser;
@@ -232,8 +219,6 @@ public class User {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_IS2FA_ENABLED)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getIs2faEnabled() {
     return is2faEnabled;
@@ -257,8 +242,6 @@ public class User {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_LOGIN)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getLogin() {
     return login;
@@ -290,8 +273,6 @@ public class User {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_EMAILS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<Email> getEmails() {
     return emails;

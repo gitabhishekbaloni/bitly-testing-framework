@@ -17,43 +17,42 @@ import java.util.Objects;
 import java.util.Arrays;
 import com.bitly.model.V4.DeeplinkMetric;
 import com.bitly.model.V4.TimeUnit;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import java.io.IOException;
 
 /**
  * DeeplinkMetricsRollup
  */
-@JsonPropertyOrder({
-  DeeplinkMetricsRollup.JSON_PROPERTY_UNIT_REFERENCE,
-  DeeplinkMetricsRollup.JSON_PROPERTY_IOS,
-  DeeplinkMetricsRollup.JSON_PROPERTY_OTHER,
-  DeeplinkMetricsRollup.JSON_PROPERTY_UNITS,
-  DeeplinkMetricsRollup.JSON_PROPERTY_ANDROID,
-  DeeplinkMetricsRollup.JSON_PROPERTY_UNIT
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-07T02:24:01.569+01:00[Europe/London]")
 public class DeeplinkMetricsRollup {
-  public static final String JSON_PROPERTY_UNIT_REFERENCE = "unit_reference";
+  public static final String SERIALIZED_NAME_UNIT_REFERENCE = "unit_reference";
+  @SerializedName(SERIALIZED_NAME_UNIT_REFERENCE)
   private String unitReference;
 
-  public static final String JSON_PROPERTY_IOS = "ios";
+  public static final String SERIALIZED_NAME_IOS = "ios";
+  @SerializedName(SERIALIZED_NAME_IOS)
   private DeeplinkMetric ios;
 
-  public static final String JSON_PROPERTY_OTHER = "other";
+  public static final String SERIALIZED_NAME_OTHER = "other";
+  @SerializedName(SERIALIZED_NAME_OTHER)
   private DeeplinkMetric other;
 
-  public static final String JSON_PROPERTY_UNITS = "units";
+  public static final String SERIALIZED_NAME_UNITS = "units";
+  @SerializedName(SERIALIZED_NAME_UNITS)
   private Integer units = -1;
 
-  public static final String JSON_PROPERTY_ANDROID = "android";
+  public static final String SERIALIZED_NAME_ANDROID = "android";
+  @SerializedName(SERIALIZED_NAME_ANDROID)
   private DeeplinkMetric android;
 
-  public static final String JSON_PROPERTY_UNIT = "unit";
+  public static final String SERIALIZED_NAME_UNIT = "unit";
+  @SerializedName(SERIALIZED_NAME_UNIT)
   private TimeUnit unit = TimeUnit.DAY;
 
 
@@ -69,8 +68,6 @@ public class DeeplinkMetricsRollup {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "data returned up to this reference timestamp")
-  @JsonProperty(JSON_PROPERTY_UNIT_REFERENCE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getUnitReference() {
     return unitReference;
@@ -94,8 +91,6 @@ public class DeeplinkMetricsRollup {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_IOS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public DeeplinkMetric getIos() {
     return ios;
@@ -119,8 +114,6 @@ public class DeeplinkMetricsRollup {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_OTHER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public DeeplinkMetric getOther() {
     return other;
@@ -144,8 +137,6 @@ public class DeeplinkMetricsRollup {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "the number of units queried for")
-  @JsonProperty(JSON_PROPERTY_UNITS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getUnits() {
     return units;
@@ -169,8 +160,6 @@ public class DeeplinkMetricsRollup {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_ANDROID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public DeeplinkMetric getAndroid() {
     return android;
@@ -194,8 +183,6 @@ public class DeeplinkMetricsRollup {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_UNIT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public TimeUnit getUnit() {
     return unit;

@@ -16,29 +16,28 @@ package com.bitly.model.V4;
 import java.util.Objects;
 import java.util.Arrays;
 import com.bitly.model.V4.ChannelBitlink;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * ChannelBitlinks
  */
-@JsonPropertyOrder({
-  ChannelBitlinks.JSON_PROPERTY_TOTAL,
-  ChannelBitlinks.JSON_PROPERTY_BITLINKS
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-07T02:24:01.569+01:00[Europe/London]")
 public class ChannelBitlinks {
-  public static final String JSON_PROPERTY_TOTAL = "total";
+  public static final String SERIALIZED_NAME_TOTAL = "total";
+  @SerializedName(SERIALIZED_NAME_TOTAL)
   private Integer total;
 
-  public static final String JSON_PROPERTY_BITLINKS = "bitlinks";
+  public static final String SERIALIZED_NAME_BITLINKS = "bitlinks";
+  @SerializedName(SERIALIZED_NAME_BITLINKS)
   private List<ChannelBitlink> bitlinks = null;
 
 
@@ -54,8 +53,6 @@ public class ChannelBitlinks {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_TOTAL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getTotal() {
     return total;
@@ -87,8 +84,6 @@ public class ChannelBitlinks {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_BITLINKS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<ChannelBitlink> getBitlinks() {
     return bitlinks;

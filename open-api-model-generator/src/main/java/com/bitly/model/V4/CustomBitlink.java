@@ -17,33 +17,32 @@ import java.util.Objects;
 import java.util.Arrays;
 import com.bitly.model.V4.BitlinkBody;
 import com.bitly.model.V4.CustomBitlinkHistory;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * CustomBitlink
  */
-@JsonPropertyOrder({
-  CustomBitlink.JSON_PROPERTY_BITLINK,
-  CustomBitlink.JSON_PROPERTY_BITLINK_HISTORY,
-  CustomBitlink.JSON_PROPERTY_CUSTOM_BITLINK
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-07T02:24:01.569+01:00[Europe/London]")
 public class CustomBitlink {
-  public static final String JSON_PROPERTY_BITLINK = "bitlink";
+  public static final String SERIALIZED_NAME_BITLINK = "bitlink";
+  @SerializedName(SERIALIZED_NAME_BITLINK)
   private BitlinkBody bitlink;
 
-  public static final String JSON_PROPERTY_BITLINK_HISTORY = "bitlink_history";
+  public static final String SERIALIZED_NAME_BITLINK_HISTORY = "bitlink_history";
+  @SerializedName(SERIALIZED_NAME_BITLINK_HISTORY)
   private List<CustomBitlinkHistory> bitlinkHistory = null;
 
-  public static final String JSON_PROPERTY_CUSTOM_BITLINK = "custom_bitlink";
+  public static final String SERIALIZED_NAME_CUSTOM_BITLINK = "custom_bitlink";
+  @SerializedName(SERIALIZED_NAME_CUSTOM_BITLINK)
   private String customBitlink;
 
 
@@ -59,8 +58,6 @@ public class CustomBitlink {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_BITLINK)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BitlinkBody getBitlink() {
     return bitlink;
@@ -92,8 +89,6 @@ public class CustomBitlink {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_BITLINK_HISTORY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<CustomBitlinkHistory> getBitlinkHistory() {
     return bitlinkHistory;
@@ -117,8 +112,6 @@ public class CustomBitlink {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_CUSTOM_BITLINK)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCustomBitlink() {
     return customBitlink;

@@ -16,29 +16,28 @@ package com.bitly.model.V4;
 import java.util.Objects;
 import java.util.Arrays;
 import com.bitly.model.V4.CustomDomainBody;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * CustomDomains
  */
-@JsonPropertyOrder({
-  CustomDomains.JSON_PROPERTY_UPGRADE_REQUIRED,
-  CustomDomains.JSON_PROPERTY_CUSTOM_DOMAINS
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-07T02:24:01.569+01:00[Europe/London]")
 public class CustomDomains {
-  public static final String JSON_PROPERTY_UPGRADE_REQUIRED = "upgrade_required";
+  public static final String SERIALIZED_NAME_UPGRADE_REQUIRED = "upgrade_required";
+  @SerializedName(SERIALIZED_NAME_UPGRADE_REQUIRED)
   private Boolean upgradeRequired;
 
-  public static final String JSON_PROPERTY_CUSTOM_DOMAINS = "custom_domains";
+  public static final String SERIALIZED_NAME_CUSTOM_DOMAINS = "custom_domains";
+  @SerializedName(SERIALIZED_NAME_CUSTOM_DOMAINS)
   private List<CustomDomainBody> customDomains = null;
 
 
@@ -54,8 +53,6 @@ public class CustomDomains {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_UPGRADE_REQUIRED)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getUpgradeRequired() {
     return upgradeRequired;
@@ -87,8 +84,6 @@ public class CustomDomains {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_CUSTOM_DOMAINS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<CustomDomainBody> getCustomDomains() {
     return customDomains;

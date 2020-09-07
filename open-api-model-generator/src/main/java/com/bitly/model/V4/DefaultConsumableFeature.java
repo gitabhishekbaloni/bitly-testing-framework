@@ -15,28 +15,27 @@ package com.bitly.model.V4;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import java.io.IOException;
 
 /**
  * the tier default values for a single consumable feature
  */
 @ApiModel(description = "the tier default values for a single consumable feature")
-@JsonPropertyOrder({
-  DefaultConsumableFeature.JSON_PROPERTY_LIMIT,
-  DefaultConsumableFeature.JSON_PROPERTY_NAME
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-07T02:24:01.569+01:00[Europe/London]")
 public class DefaultConsumableFeature {
-  public static final String JSON_PROPERTY_LIMIT = "limit";
+  public static final String SERIALIZED_NAME_LIMIT = "limit";
+  @SerializedName(SERIALIZED_NAME_LIMIT)
   private Integer limit;
 
-  public static final String JSON_PROPERTY_NAME = "name";
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
 
 
@@ -52,8 +51,6 @@ public class DefaultConsumableFeature {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_LIMIT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getLimit() {
     return limit;
@@ -77,8 +74,6 @@ public class DefaultConsumableFeature {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getName() {
     return name;

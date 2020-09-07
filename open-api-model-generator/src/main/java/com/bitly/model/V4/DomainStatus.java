@@ -15,28 +15,24 @@ package com.bitly.model.V4;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import java.io.IOException;
 
 /**
  * DomainStatus
  */
-@JsonPropertyOrder({
-  DomainStatus.JSON_PROPERTY_STATUS,
-  DomainStatus.JSON_PROPERTY_DOMAIN,
-  DomainStatus.JSON_PROPERTY_PRICE,
-  DomainStatus.JSON_PROPERTY_ZONE
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-07T02:24:01.569+01:00[Europe/London]")
 public class DomainStatus {
   /**
    * Gets or Sets status
    */
+  @JsonAdapter(StatusEnum.Adapter.class)
   public enum StatusEnum {
     UNAVAILABLE("unavailable"),
     
@@ -50,7 +46,6 @@ public class DomainStatus {
       this.value = value;
     }
 
-    @JsonValue
     public String getValue() {
       return value;
     }
@@ -60,7 +55,6 @@ public class DomainStatus {
       return String.valueOf(value);
     }
 
-    @JsonCreator
     public static StatusEnum fromValue(String value) {
       for (StatusEnum b : StatusEnum.values()) {
         if (b.value.equals(value)) {
@@ -69,18 +63,35 @@ public class DomainStatus {
       }
       throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
+
+    public static class Adapter extends TypeAdapter<StatusEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final StatusEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public StatusEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return StatusEnum.fromValue(value);
+      }
+    }
   }
 
-  public static final String JSON_PROPERTY_STATUS = "status";
+  public static final String SERIALIZED_NAME_STATUS = "status";
+  @SerializedName(SERIALIZED_NAME_STATUS)
   private StatusEnum status;
 
-  public static final String JSON_PROPERTY_DOMAIN = "domain";
+  public static final String SERIALIZED_NAME_DOMAIN = "domain";
+  @SerializedName(SERIALIZED_NAME_DOMAIN)
   private String domain;
 
-  public static final String JSON_PROPERTY_PRICE = "price";
+  public static final String SERIALIZED_NAME_PRICE = "price";
+  @SerializedName(SERIALIZED_NAME_PRICE)
   private String price;
 
-  public static final String JSON_PROPERTY_ZONE = "zone";
+  public static final String SERIALIZED_NAME_ZONE = "zone";
+  @SerializedName(SERIALIZED_NAME_ZONE)
   private String zone;
 
 
@@ -96,8 +107,6 @@ public class DomainStatus {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_STATUS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public StatusEnum getStatus() {
     return status;
@@ -121,8 +130,6 @@ public class DomainStatus {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_DOMAIN)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getDomain() {
     return domain;
@@ -146,8 +153,6 @@ public class DomainStatus {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_PRICE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getPrice() {
     return price;
@@ -171,8 +176,6 @@ public class DomainStatus {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_ZONE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getZone() {
     return zone;

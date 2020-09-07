@@ -15,39 +15,38 @@ package com.bitly.model.V4;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import java.io.IOException;
 
 /**
  * BitlinkOverridesAllOf
  */
-@JsonPropertyOrder({
-  BitlinkOverridesAllOf.JSON_PROPERTY_RULES,
-  BitlinkOverridesAllOf.JSON_PROPERTY_VERSION,
-  BitlinkOverridesAllOf.JSON_PROPERTY_ID,
-  BitlinkOverridesAllOf.JSON_PROPERTY_MODIFIED,
-  BitlinkOverridesAllOf.JSON_PROPERTY_CREATED
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-07T02:24:01.569+01:00[Europe/London]")
 public class BitlinkOverridesAllOf {
-  public static final String JSON_PROPERTY_RULES = "rules";
+  public static final String SERIALIZED_NAME_RULES = "rules";
+  @SerializedName(SERIALIZED_NAME_RULES)
   private String rules;
 
-  public static final String JSON_PROPERTY_VERSION = "version";
+  public static final String SERIALIZED_NAME_VERSION = "version";
+  @SerializedName(SERIALIZED_NAME_VERSION)
   private Integer version;
 
-  public static final String JSON_PROPERTY_ID = "id";
+  public static final String SERIALIZED_NAME_ID = "id";
+  @SerializedName(SERIALIZED_NAME_ID)
   private String id;
 
-  public static final String JSON_PROPERTY_MODIFIED = "modified";
+  public static final String SERIALIZED_NAME_MODIFIED = "modified";
+  @SerializedName(SERIALIZED_NAME_MODIFIED)
   private String modified;
 
-  public static final String JSON_PROPERTY_CREATED = "created";
+  public static final String SERIALIZED_NAME_CREATED = "created";
+  @SerializedName(SERIALIZED_NAME_CREATED)
   private String created;
 
 
@@ -63,8 +62,6 @@ public class BitlinkOverridesAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_RULES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getRules() {
     return rules;
@@ -88,8 +85,6 @@ public class BitlinkOverridesAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_VERSION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getVersion() {
     return version;
@@ -113,8 +108,6 @@ public class BitlinkOverridesAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getId() {
     return id;
@@ -138,8 +131,6 @@ public class BitlinkOverridesAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_MODIFIED)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getModified() {
     return modified;
@@ -163,8 +154,6 @@ public class BitlinkOverridesAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_CREATED)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCreated() {
     return created;

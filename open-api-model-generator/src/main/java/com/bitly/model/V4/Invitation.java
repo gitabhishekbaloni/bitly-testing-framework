@@ -16,37 +16,36 @@ package com.bitly.model.V4;
 import java.util.Objects;
 import java.util.Arrays;
 import com.bitly.model.V4.InvitationGroup;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * Invitation
  */
-@JsonPropertyOrder({
-  Invitation.JSON_PROPERTY_ROLE_NAME,
-  Invitation.JSON_PROPERTY_EMAIL,
-  Invitation.JSON_PROPERTY_GROUPS,
-  Invitation.JSON_PROPERTY_CREATED
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-07T02:24:01.569+01:00[Europe/London]")
 public class Invitation {
-  public static final String JSON_PROPERTY_ROLE_NAME = "role_name";
+  public static final String SERIALIZED_NAME_ROLE_NAME = "role_name";
+  @SerializedName(SERIALIZED_NAME_ROLE_NAME)
   private String roleName;
 
-  public static final String JSON_PROPERTY_EMAIL = "email";
+  public static final String SERIALIZED_NAME_EMAIL = "email";
+  @SerializedName(SERIALIZED_NAME_EMAIL)
   private String email;
 
-  public static final String JSON_PROPERTY_GROUPS = "groups";
+  public static final String SERIALIZED_NAME_GROUPS = "groups";
+  @SerializedName(SERIALIZED_NAME_GROUPS)
   private List<InvitationGroup> groups = null;
 
-  public static final String JSON_PROPERTY_CREATED = "created";
+  public static final String SERIALIZED_NAME_CREATED = "created";
+  @SerializedName(SERIALIZED_NAME_CREATED)
   private String created;
 
 
@@ -61,8 +60,6 @@ public class Invitation {
    * @return roleName
   **/
   @ApiModelProperty(required = true, value = "")
-  @JsonProperty(JSON_PROPERTY_ROLE_NAME)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getRoleName() {
     return roleName;
@@ -85,8 +82,6 @@ public class Invitation {
    * @return email
   **/
   @ApiModelProperty(required = true, value = "")
-  @JsonProperty(JSON_PROPERTY_EMAIL)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getEmail() {
     return email;
@@ -118,8 +113,6 @@ public class Invitation {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_GROUPS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<InvitationGroup> getGroups() {
     return groups;
@@ -143,8 +136,6 @@ public class Invitation {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_CREATED)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCreated() {
     return created;

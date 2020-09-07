@@ -15,29 +15,24 @@ package com.bitly.model.V4;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import java.io.IOException;
 
 /**
  * BSDSearchResult
  */
-@JsonPropertyOrder({
-  BSDSearchResult.JSON_PROPERTY_TYPE,
-  BSDSearchResult.JSON_PROPERTY_DOMAIN,
-  BSDSearchResult.JSON_PROPERTY_SUBDOMAIN,
-  BSDSearchResult.JSON_PROPERTY_LINK,
-  BSDSearchResult.JSON_PROPERTY_ZONE
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-07T02:24:01.569+01:00[Europe/London]")
 public class BSDSearchResult {
   /**
    * Gets or Sets type
    */
+  @JsonAdapter(TypeEnum.Adapter.class)
   public enum TypeEnum {
     AFFILIATE("affiliate"),
     
@@ -49,7 +44,6 @@ public class BSDSearchResult {
       this.value = value;
     }
 
-    @JsonValue
     public String getValue() {
       return value;
     }
@@ -59,7 +53,6 @@ public class BSDSearchResult {
       return String.valueOf(value);
     }
 
-    @JsonCreator
     public static TypeEnum fromValue(String value) {
       for (TypeEnum b : TypeEnum.values()) {
         if (b.value.equals(value)) {
@@ -68,21 +61,39 @@ public class BSDSearchResult {
       }
       throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
+
+    public static class Adapter extends TypeAdapter<TypeEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final TypeEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public TypeEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return TypeEnum.fromValue(value);
+      }
+    }
   }
 
-  public static final String JSON_PROPERTY_TYPE = "type";
+  public static final String SERIALIZED_NAME_TYPE = "type";
+  @SerializedName(SERIALIZED_NAME_TYPE)
   private TypeEnum type;
 
-  public static final String JSON_PROPERTY_DOMAIN = "domain";
+  public static final String SERIALIZED_NAME_DOMAIN = "domain";
+  @SerializedName(SERIALIZED_NAME_DOMAIN)
   private String domain;
 
-  public static final String JSON_PROPERTY_SUBDOMAIN = "subdomain";
+  public static final String SERIALIZED_NAME_SUBDOMAIN = "subdomain";
+  @SerializedName(SERIALIZED_NAME_SUBDOMAIN)
   private String subdomain;
 
-  public static final String JSON_PROPERTY_LINK = "link";
+  public static final String SERIALIZED_NAME_LINK = "link";
+  @SerializedName(SERIALIZED_NAME_LINK)
   private String link;
 
-  public static final String JSON_PROPERTY_ZONE = "zone";
+  public static final String SERIALIZED_NAME_ZONE = "zone";
+  @SerializedName(SERIALIZED_NAME_ZONE)
   private String zone;
 
 
@@ -98,8 +109,6 @@ public class BSDSearchResult {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_TYPE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public TypeEnum getType() {
     return type;
@@ -123,8 +132,6 @@ public class BSDSearchResult {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_DOMAIN)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getDomain() {
     return domain;
@@ -148,8 +155,6 @@ public class BSDSearchResult {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_SUBDOMAIN)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getSubdomain() {
     return subdomain;
@@ -173,8 +178,6 @@ public class BSDSearchResult {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_LINK)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getLink() {
     return link;
@@ -198,8 +201,6 @@ public class BSDSearchResult {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_ZONE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getZone() {
     return zone;

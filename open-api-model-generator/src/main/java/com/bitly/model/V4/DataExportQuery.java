@@ -15,81 +15,80 @@ package com.bitly.model.V4;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * DataExportQuery
  */
-@JsonPropertyOrder({
-  DataExportQuery.JSON_PROPERTY_ARCHIVED,
-  DataExportQuery.JSON_PROPERTY_UNIT_REFERENCE,
-  DataExportQuery.JSON_PROPERTY_LINK_DEEPLINKS,
-  DataExportQuery.JSON_PROPERTY_TAGS,
-  DataExportQuery.JSON_PROPERTY_CAMPAIGN_IDS,
-  DataExportQuery.JSON_PROPERTY_MODIFIED_AFTER,
-  DataExportQuery.JSON_PROPERTY_KEYWORD,
-  DataExportQuery.JSON_PROPERTY_CREATED_AFTER,
-  DataExportQuery.JSON_PROPERTY_CUSTOM_BITLINK,
-  DataExportQuery.JSON_PROPERTY_UNITS,
-  DataExportQuery.JSON_PROPERTY_QUERY,
-  DataExportQuery.JSON_PROPERTY_REPORT_TYPE,
-  DataExportQuery.JSON_PROPERTY_CREATED_BEFORE,
-  DataExportQuery.JSON_PROPERTY_EMAILS,
-  DataExportQuery.JSON_PROPERTY_UNIT
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-07T02:24:01.569+01:00[Europe/London]")
 public class DataExportQuery {
-  public static final String JSON_PROPERTY_ARCHIVED = "archived";
+  public static final String SERIALIZED_NAME_ARCHIVED = "archived";
+  @SerializedName(SERIALIZED_NAME_ARCHIVED)
   private String archived;
 
-  public static final String JSON_PROPERTY_UNIT_REFERENCE = "unit_reference";
+  public static final String SERIALIZED_NAME_UNIT_REFERENCE = "unit_reference";
+  @SerializedName(SERIALIZED_NAME_UNIT_REFERENCE)
   private Integer unitReference;
 
-  public static final String JSON_PROPERTY_LINK_DEEPLINKS = "link_deeplinks";
+  public static final String SERIALIZED_NAME_LINK_DEEPLINKS = "link_deeplinks";
+  @SerializedName(SERIALIZED_NAME_LINK_DEEPLINKS)
   private String linkDeeplinks;
 
-  public static final String JSON_PROPERTY_TAGS = "tags";
+  public static final String SERIALIZED_NAME_TAGS = "tags";
+  @SerializedName(SERIALIZED_NAME_TAGS)
   private List<String> tags = null;
 
-  public static final String JSON_PROPERTY_CAMPAIGN_IDS = "campaign_ids";
+  public static final String SERIALIZED_NAME_CAMPAIGN_IDS = "campaign_ids";
+  @SerializedName(SERIALIZED_NAME_CAMPAIGN_IDS)
   private List<String> campaignIds = null;
 
-  public static final String JSON_PROPERTY_MODIFIED_AFTER = "modified_after";
+  public static final String SERIALIZED_NAME_MODIFIED_AFTER = "modified_after";
+  @SerializedName(SERIALIZED_NAME_MODIFIED_AFTER)
   private Integer modifiedAfter;
 
-  public static final String JSON_PROPERTY_KEYWORD = "keyword";
+  public static final String SERIALIZED_NAME_KEYWORD = "keyword";
+  @SerializedName(SERIALIZED_NAME_KEYWORD)
   private String keyword;
 
-  public static final String JSON_PROPERTY_CREATED_AFTER = "created_after";
+  public static final String SERIALIZED_NAME_CREATED_AFTER = "created_after";
+  @SerializedName(SERIALIZED_NAME_CREATED_AFTER)
   private Integer createdAfter;
 
-  public static final String JSON_PROPERTY_CUSTOM_BITLINK = "custom_bitlink";
+  public static final String SERIALIZED_NAME_CUSTOM_BITLINK = "custom_bitlink";
+  @SerializedName(SERIALIZED_NAME_CUSTOM_BITLINK)
   private String customBitlink;
 
-  public static final String JSON_PROPERTY_UNITS = "units";
+  public static final String SERIALIZED_NAME_UNITS = "units";
+  @SerializedName(SERIALIZED_NAME_UNITS)
   private Integer units;
 
-  public static final String JSON_PROPERTY_QUERY = "query";
+  public static final String SERIALIZED_NAME_QUERY = "query";
+  @SerializedName(SERIALIZED_NAME_QUERY)
   private String query;
 
-  public static final String JSON_PROPERTY_REPORT_TYPE = "report_type";
+  public static final String SERIALIZED_NAME_REPORT_TYPE = "report_type";
+  @SerializedName(SERIALIZED_NAME_REPORT_TYPE)
   private String reportType;
 
-  public static final String JSON_PROPERTY_CREATED_BEFORE = "created_before";
+  public static final String SERIALIZED_NAME_CREATED_BEFORE = "created_before";
+  @SerializedName(SERIALIZED_NAME_CREATED_BEFORE)
   private Integer createdBefore;
 
-  public static final String JSON_PROPERTY_EMAILS = "emails";
+  public static final String SERIALIZED_NAME_EMAILS = "emails";
+  @SerializedName(SERIALIZED_NAME_EMAILS)
   private List<String> emails = null;
 
-  public static final String JSON_PROPERTY_UNIT = "unit";
+  public static final String SERIALIZED_NAME_UNIT = "unit";
+  @SerializedName(SERIALIZED_NAME_UNIT)
   private String unit;
 
 
@@ -105,8 +104,6 @@ public class DataExportQuery {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_ARCHIVED)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getArchived() {
     return archived;
@@ -130,8 +127,6 @@ public class DataExportQuery {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_UNIT_REFERENCE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getUnitReference() {
     return unitReference;
@@ -155,8 +150,6 @@ public class DataExportQuery {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_LINK_DEEPLINKS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getLinkDeeplinks() {
     return linkDeeplinks;
@@ -188,8 +181,6 @@ public class DataExportQuery {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_TAGS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<String> getTags() {
     return tags;
@@ -221,8 +212,6 @@ public class DataExportQuery {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_CAMPAIGN_IDS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<String> getCampaignIds() {
     return campaignIds;
@@ -246,8 +235,6 @@ public class DataExportQuery {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_MODIFIED_AFTER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getModifiedAfter() {
     return modifiedAfter;
@@ -271,8 +258,6 @@ public class DataExportQuery {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_KEYWORD)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getKeyword() {
     return keyword;
@@ -296,8 +281,6 @@ public class DataExportQuery {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_CREATED_AFTER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getCreatedAfter() {
     return createdAfter;
@@ -321,8 +304,6 @@ public class DataExportQuery {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_CUSTOM_BITLINK)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCustomBitlink() {
     return customBitlink;
@@ -346,8 +327,6 @@ public class DataExportQuery {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_UNITS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getUnits() {
     return units;
@@ -371,8 +350,6 @@ public class DataExportQuery {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_QUERY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getQuery() {
     return query;
@@ -396,8 +373,6 @@ public class DataExportQuery {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_REPORT_TYPE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getReportType() {
     return reportType;
@@ -421,8 +396,6 @@ public class DataExportQuery {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_CREATED_BEFORE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getCreatedBefore() {
     return createdBefore;
@@ -454,8 +427,6 @@ public class DataExportQuery {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_EMAILS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<String> getEmails() {
     return emails;
@@ -479,8 +450,6 @@ public class DataExportQuery {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_UNIT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getUnit() {
     return unit;

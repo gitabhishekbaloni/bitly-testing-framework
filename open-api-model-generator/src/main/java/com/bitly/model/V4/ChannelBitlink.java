@@ -16,73 +16,72 @@ package com.bitly.model.V4;
 import java.util.Objects;
 import java.util.Arrays;
 import com.bitly.model.V4.CampaignClickData;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * ChannelBitlink
  */
-@JsonPropertyOrder({
-  ChannelBitlink.JSON_PROPERTY_KEYWORD_LINK,
-  ChannelBitlink.JSON_PROPERTY_CREATED_TS,
-  ChannelBitlink.JSON_PROPERTY_BITLINK_ID,
-  ChannelBitlink.JSON_PROPERTY_CHANNEL_GUID,
-  ChannelBitlink.JSON_PROPERTY_TITLE,
-  ChannelBitlink.JSON_PROPERTY_CAMPAIGN_IDS,
-  ChannelBitlink.JSON_PROPERTY_TOTAL_CLICKS,
-  ChannelBitlink.JSON_PROPERTY_AGGREGATE_LINK,
-  ChannelBitlink.JSON_PROPERTY_CAMPAIGN_GUID,
-  ChannelBitlink.JSON_PROPERTY_LINK,
-  ChannelBitlink.JSON_PROPERTY_CLIENT_ID,
-  ChannelBitlink.JSON_PROPERTY_LONG_URL,
-  ChannelBitlink.JSON_PROPERTY_CLICKS
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-07T02:24:01.569+01:00[Europe/London]")
 public class ChannelBitlink {
-  public static final String JSON_PROPERTY_KEYWORD_LINK = "keyword_link";
+  public static final String SERIALIZED_NAME_KEYWORD_LINK = "keyword_link";
+  @SerializedName(SERIALIZED_NAME_KEYWORD_LINK)
   private String keywordLink;
 
-  public static final String JSON_PROPERTY_CREATED_TS = "created_ts";
+  public static final String SERIALIZED_NAME_CREATED_TS = "created_ts";
+  @SerializedName(SERIALIZED_NAME_CREATED_TS)
   private Integer createdTs;
 
-  public static final String JSON_PROPERTY_BITLINK_ID = "bitlink_id";
+  public static final String SERIALIZED_NAME_BITLINK_ID = "bitlink_id";
+  @SerializedName(SERIALIZED_NAME_BITLINK_ID)
   private String bitlinkId;
 
-  public static final String JSON_PROPERTY_CHANNEL_GUID = "channel_guid";
+  public static final String SERIALIZED_NAME_CHANNEL_GUID = "channel_guid";
+  @SerializedName(SERIALIZED_NAME_CHANNEL_GUID)
   private String channelGuid;
 
-  public static final String JSON_PROPERTY_TITLE = "title";
+  public static final String SERIALIZED_NAME_TITLE = "title";
+  @SerializedName(SERIALIZED_NAME_TITLE)
   private String title;
 
-  public static final String JSON_PROPERTY_CAMPAIGN_IDS = "campaign_ids";
+  public static final String SERIALIZED_NAME_CAMPAIGN_IDS = "campaign_ids";
+  @SerializedName(SERIALIZED_NAME_CAMPAIGN_IDS)
   private List<String> campaignIds = null;
 
-  public static final String JSON_PROPERTY_TOTAL_CLICKS = "total_clicks";
+  public static final String SERIALIZED_NAME_TOTAL_CLICKS = "total_clicks";
+  @SerializedName(SERIALIZED_NAME_TOTAL_CLICKS)
   private Integer totalClicks;
 
-  public static final String JSON_PROPERTY_AGGREGATE_LINK = "aggregate_link";
+  public static final String SERIALIZED_NAME_AGGREGATE_LINK = "aggregate_link";
+  @SerializedName(SERIALIZED_NAME_AGGREGATE_LINK)
   private String aggregateLink;
 
-  public static final String JSON_PROPERTY_CAMPAIGN_GUID = "campaign_guid";
+  public static final String SERIALIZED_NAME_CAMPAIGN_GUID = "campaign_guid";
+  @SerializedName(SERIALIZED_NAME_CAMPAIGN_GUID)
   private String campaignGuid;
 
-  public static final String JSON_PROPERTY_LINK = "link";
+  public static final String SERIALIZED_NAME_LINK = "link";
+  @SerializedName(SERIALIZED_NAME_LINK)
   private String link;
 
-  public static final String JSON_PROPERTY_CLIENT_ID = "client_id";
+  public static final String SERIALIZED_NAME_CLIENT_ID = "client_id";
+  @SerializedName(SERIALIZED_NAME_CLIENT_ID)
   private String clientId;
 
-  public static final String JSON_PROPERTY_LONG_URL = "long_url";
+  public static final String SERIALIZED_NAME_LONG_URL = "long_url";
+  @SerializedName(SERIALIZED_NAME_LONG_URL)
   private String longUrl;
 
-  public static final String JSON_PROPERTY_CLICKS = "clicks";
+  public static final String SERIALIZED_NAME_CLICKS = "clicks";
+  @SerializedName(SERIALIZED_NAME_CLICKS)
   private List<CampaignClickData> clicks = null;
 
 
@@ -98,8 +97,6 @@ public class ChannelBitlink {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_KEYWORD_LINK)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getKeywordLink() {
     return keywordLink;
@@ -122,8 +119,6 @@ public class ChannelBitlink {
    * @return createdTs
   **/
   @ApiModelProperty(required = true, value = "")
-  @JsonProperty(JSON_PROPERTY_CREATED_TS)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Integer getCreatedTs() {
     return createdTs;
@@ -146,8 +141,6 @@ public class ChannelBitlink {
    * @return bitlinkId
   **/
   @ApiModelProperty(required = true, value = "")
-  @JsonProperty(JSON_PROPERTY_BITLINK_ID)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getBitlinkId() {
     return bitlinkId;
@@ -170,8 +163,6 @@ public class ChannelBitlink {
    * @return channelGuid
   **/
   @ApiModelProperty(required = true, value = "")
-  @JsonProperty(JSON_PROPERTY_CHANNEL_GUID)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getChannelGuid() {
     return channelGuid;
@@ -195,8 +186,6 @@ public class ChannelBitlink {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_TITLE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getTitle() {
     return title;
@@ -228,8 +217,6 @@ public class ChannelBitlink {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_CAMPAIGN_IDS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<String> getCampaignIds() {
     return campaignIds;
@@ -253,8 +240,6 @@ public class ChannelBitlink {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_TOTAL_CLICKS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getTotalClicks() {
     return totalClicks;
@@ -278,8 +263,6 @@ public class ChannelBitlink {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_AGGREGATE_LINK)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getAggregateLink() {
     return aggregateLink;
@@ -302,8 +285,6 @@ public class ChannelBitlink {
    * @return campaignGuid
   **/
   @ApiModelProperty(required = true, value = "")
-  @JsonProperty(JSON_PROPERTY_CAMPAIGN_GUID)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getCampaignGuid() {
     return campaignGuid;
@@ -327,8 +308,6 @@ public class ChannelBitlink {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_LINK)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getLink() {
     return link;
@@ -352,8 +331,6 @@ public class ChannelBitlink {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_CLIENT_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getClientId() {
     return clientId;
@@ -377,8 +354,6 @@ public class ChannelBitlink {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_LONG_URL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getLongUrl() {
     return longUrl;
@@ -410,8 +385,6 @@ public class ChannelBitlink {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_CLICKS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<CampaignClickData> getClicks() {
     return clicks;

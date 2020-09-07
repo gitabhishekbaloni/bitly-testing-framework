@@ -15,35 +15,34 @@ package com.bitly.model.V4;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import java.io.IOException;
 
 /**
  * UserPreferenceBody
  */
-@JsonPropertyOrder({
-  UserPreferenceBody.JSON_PROPERTY_LOGIN,
-  UserPreferenceBody.JSON_PROPERTY_IS_ACTIVE,
-  UserPreferenceBody.JSON_PROPERTY_PREFERENCE,
-  UserPreferenceBody.JSON_PROPERTY_VALUE
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-06T23:21:35.150+01:00[Europe/London]")
 public class UserPreferenceBody {
-  public static final String JSON_PROPERTY_LOGIN = "login";
+  public static final String SERIALIZED_NAME_LOGIN = "login";
+  @SerializedName(SERIALIZED_NAME_LOGIN)
   private String login;
 
-  public static final String JSON_PROPERTY_IS_ACTIVE = "is_active";
+  public static final String SERIALIZED_NAME_IS_ACTIVE = "is_active";
+  @SerializedName(SERIALIZED_NAME_IS_ACTIVE)
   private Boolean isActive;
 
-  public static final String JSON_PROPERTY_PREFERENCE = "preference";
+  public static final String SERIALIZED_NAME_PREFERENCE = "preference";
+  @SerializedName(SERIALIZED_NAME_PREFERENCE)
   private String preference;
 
-  public static final String JSON_PROPERTY_VALUE = "value";
+  public static final String SERIALIZED_NAME_VALUE = "value";
+  @SerializedName(SERIALIZED_NAME_VALUE)
   private String value;
 
 
@@ -59,8 +58,6 @@ public class UserPreferenceBody {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_LOGIN)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getLogin() {
     return login;
@@ -84,8 +81,6 @@ public class UserPreferenceBody {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_IS_ACTIVE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getIsActive() {
     return isActive;
@@ -109,8 +104,6 @@ public class UserPreferenceBody {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_PREFERENCE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getPreference() {
     return preference;
@@ -134,8 +127,6 @@ public class UserPreferenceBody {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_VALUE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getValue() {
     return value;

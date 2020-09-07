@@ -1,0 +1,37 @@
+swagger: '2.0'
+
+info:
+  title: "sscce"
+  version: '1.0'
+  description: sscce
+
+definitions:
+  Pet:
+    type: object
+    properties:
+      no_legs:
+        type: int
+
+      name:
+        type: string
+
+  Cat:
+    allOf:
+      - $ref: "#/definitions/Pet"
+      - type: object
+        properties:
+          likes_water:
+            type: boolean
+
+
+paths:
+  /foo:
+    post:
+      parameters:
+        - name: cat
+          in: body
+          schema: {$ref: "#/definitions/Cat"}
+      responses:
+        "200":
+          description: foo
+          type: string

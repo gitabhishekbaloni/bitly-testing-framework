@@ -15,67 +15,66 @@ package com.bitly.model.V4;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import java.io.IOException;
 
 /**
  * WebhookAllOf
  */
-@JsonPropertyOrder({
-  WebhookAllOf.JSON_PROPERTY_STATUS,
-  WebhookAllOf.JSON_PROPERTY_MODIFIED_BY,
-  WebhookAllOf.JSON_PROPERTY_NAME,
-  WebhookAllOf.JSON_PROPERTY_CREATED,
-  WebhookAllOf.JSON_PROPERTY_URL,
-  WebhookAllOf.JSON_PROPERTY_DEACTIVATED,
-  WebhookAllOf.JSON_PROPERTY_IS_ACTIVE,
-  WebhookAllOf.JSON_PROPERTY_MODIFIED,
-  WebhookAllOf.JSON_PROPERTY_ORGANIZATION_GUID,
-  WebhookAllOf.JSON_PROPERTY_GROUP_GUID,
-  WebhookAllOf.JSON_PROPERTY_GUID,
-  WebhookAllOf.JSON_PROPERTY_EVENT
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-06T23:21:35.150+01:00[Europe/London]")
 public class WebhookAllOf {
-  public static final String JSON_PROPERTY_STATUS = "status";
+  public static final String SERIALIZED_NAME_STATUS = "status";
+  @SerializedName(SERIALIZED_NAME_STATUS)
   private String status;
 
-  public static final String JSON_PROPERTY_MODIFIED_BY = "modified_by";
+  public static final String SERIALIZED_NAME_MODIFIED_BY = "modified_by";
+  @SerializedName(SERIALIZED_NAME_MODIFIED_BY)
   private String modifiedBy;
 
-  public static final String JSON_PROPERTY_NAME = "name";
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
 
-  public static final String JSON_PROPERTY_CREATED = "created";
+  public static final String SERIALIZED_NAME_CREATED = "created";
+  @SerializedName(SERIALIZED_NAME_CREATED)
   private String created;
 
-  public static final String JSON_PROPERTY_URL = "url";
+  public static final String SERIALIZED_NAME_URL = "url";
+  @SerializedName(SERIALIZED_NAME_URL)
   private String url;
 
-  public static final String JSON_PROPERTY_DEACTIVATED = "deactivated";
+  public static final String SERIALIZED_NAME_DEACTIVATED = "deactivated";
+  @SerializedName(SERIALIZED_NAME_DEACTIVATED)
   private String deactivated;
 
-  public static final String JSON_PROPERTY_IS_ACTIVE = "is_active";
+  public static final String SERIALIZED_NAME_IS_ACTIVE = "is_active";
+  @SerializedName(SERIALIZED_NAME_IS_ACTIVE)
   private Boolean isActive;
 
-  public static final String JSON_PROPERTY_MODIFIED = "modified";
+  public static final String SERIALIZED_NAME_MODIFIED = "modified";
+  @SerializedName(SERIALIZED_NAME_MODIFIED)
   private String modified;
 
-  public static final String JSON_PROPERTY_ORGANIZATION_GUID = "organization_guid";
+  public static final String SERIALIZED_NAME_ORGANIZATION_GUID = "organization_guid";
+  @SerializedName(SERIALIZED_NAME_ORGANIZATION_GUID)
   private String organizationGuid;
 
-  public static final String JSON_PROPERTY_GROUP_GUID = "group_guid";
+  public static final String SERIALIZED_NAME_GROUP_GUID = "group_guid";
+  @SerializedName(SERIALIZED_NAME_GROUP_GUID)
   private String groupGuid;
 
-  public static final String JSON_PROPERTY_GUID = "guid";
+  public static final String SERIALIZED_NAME_GUID = "guid";
+  @SerializedName(SERIALIZED_NAME_GUID)
   private String guid;
 
-  public static final String JSON_PROPERTY_EVENT = "event";
+  public static final String SERIALIZED_NAME_EVENT = "event";
+  @SerializedName(SERIALIZED_NAME_EVENT)
   private String event;
 
 
@@ -91,8 +90,6 @@ public class WebhookAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_STATUS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getStatus() {
     return status;
@@ -116,8 +113,6 @@ public class WebhookAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_MODIFIED_BY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getModifiedBy() {
     return modifiedBy;
@@ -141,8 +136,6 @@ public class WebhookAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getName() {
     return name;
@@ -166,8 +159,6 @@ public class WebhookAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_CREATED)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCreated() {
     return created;
@@ -191,8 +182,6 @@ public class WebhookAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_URL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getUrl() {
     return url;
@@ -216,8 +205,6 @@ public class WebhookAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_DEACTIVATED)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getDeactivated() {
     return deactivated;
@@ -241,8 +228,6 @@ public class WebhookAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_IS_ACTIVE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getIsActive() {
     return isActive;
@@ -266,8 +251,6 @@ public class WebhookAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_MODIFIED)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getModified() {
     return modified;
@@ -291,8 +274,6 @@ public class WebhookAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_ORGANIZATION_GUID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getOrganizationGuid() {
     return organizationGuid;
@@ -316,8 +297,6 @@ public class WebhookAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_GROUP_GUID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getGroupGuid() {
     return groupGuid;
@@ -341,8 +320,6 @@ public class WebhookAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_GUID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getGuid() {
     return guid;
@@ -366,8 +343,6 @@ public class WebhookAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_EVENT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getEvent() {
     return event;

@@ -16,57 +16,56 @@ package com.bitly.model.V4;
 import java.util.Objects;
 import java.util.Arrays;
 import com.bitly.model.V4.FormPage;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * FormCapturePayload
  */
-@JsonPropertyOrder({
-  FormCapturePayload.JSON_PROPERTY_SUBMIT_TEXT,
-  FormCapturePayload.JSON_PROPERTY_NAME,
-  FormCapturePayload.JSON_PROPERTY_RESPONSE_STATUS,
-  FormCapturePayload.JSON_PROPERTY_PAGES,
-  FormCapturePayload.JSON_PROPERTY_VERSION,
-  FormCapturePayload.JSON_PROPERTY_GROUP_GUID,
-  FormCapturePayload.JSON_PROPERTY_LOGIN,
-  FormCapturePayload.JSON_PROPERTY_SKIP_TEXT,
-  FormCapturePayload.JSON_PROPERTY_ORG_GUID
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-07T02:24:01.569+01:00[Europe/London]")
 public class FormCapturePayload {
-  public static final String JSON_PROPERTY_SUBMIT_TEXT = "submit_text";
+  public static final String SERIALIZED_NAME_SUBMIT_TEXT = "submit_text";
+  @SerializedName(SERIALIZED_NAME_SUBMIT_TEXT)
   private String submitText;
 
-  public static final String JSON_PROPERTY_NAME = "name";
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
 
-  public static final String JSON_PROPERTY_RESPONSE_STATUS = "response_status";
+  public static final String SERIALIZED_NAME_RESPONSE_STATUS = "response_status";
+  @SerializedName(SERIALIZED_NAME_RESPONSE_STATUS)
   private String responseStatus;
 
-  public static final String JSON_PROPERTY_PAGES = "pages";
+  public static final String SERIALIZED_NAME_PAGES = "pages";
+  @SerializedName(SERIALIZED_NAME_PAGES)
   private List<FormPage> pages = null;
 
-  public static final String JSON_PROPERTY_VERSION = "version";
+  public static final String SERIALIZED_NAME_VERSION = "version";
+  @SerializedName(SERIALIZED_NAME_VERSION)
   private String version;
 
-  public static final String JSON_PROPERTY_GROUP_GUID = "group_guid";
+  public static final String SERIALIZED_NAME_GROUP_GUID = "group_guid";
+  @SerializedName(SERIALIZED_NAME_GROUP_GUID)
   private String groupGuid;
 
-  public static final String JSON_PROPERTY_LOGIN = "login";
+  public static final String SERIALIZED_NAME_LOGIN = "login";
+  @SerializedName(SERIALIZED_NAME_LOGIN)
   private String login;
 
-  public static final String JSON_PROPERTY_SKIP_TEXT = "skip_text";
+  public static final String SERIALIZED_NAME_SKIP_TEXT = "skip_text";
+  @SerializedName(SERIALIZED_NAME_SKIP_TEXT)
   private String skipText;
 
-  public static final String JSON_PROPERTY_ORG_GUID = "org_guid";
+  public static final String SERIALIZED_NAME_ORG_GUID = "org_guid";
+  @SerializedName(SERIALIZED_NAME_ORG_GUID)
   private String orgGuid;
 
 
@@ -82,8 +81,6 @@ public class FormCapturePayload {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_SUBMIT_TEXT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getSubmitText() {
     return submitText;
@@ -107,8 +104,6 @@ public class FormCapturePayload {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getName() {
     return name;
@@ -132,8 +127,6 @@ public class FormCapturePayload {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_RESPONSE_STATUS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getResponseStatus() {
     return responseStatus;
@@ -165,8 +158,6 @@ public class FormCapturePayload {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_PAGES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<FormPage> getPages() {
     return pages;
@@ -190,8 +181,6 @@ public class FormCapturePayload {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_VERSION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getVersion() {
     return version;
@@ -215,8 +204,6 @@ public class FormCapturePayload {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_GROUP_GUID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getGroupGuid() {
     return groupGuid;
@@ -240,8 +227,6 @@ public class FormCapturePayload {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_LOGIN)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getLogin() {
     return login;
@@ -265,8 +250,6 @@ public class FormCapturePayload {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_SKIP_TEXT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getSkipText() {
     return skipText;
@@ -290,8 +273,6 @@ public class FormCapturePayload {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_ORG_GUID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getOrgGuid() {
     return orgGuid;

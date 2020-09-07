@@ -15,39 +15,32 @@ package com.bitly.model.V4;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import java.io.IOException;
 
 /**
  * ShareAccount
  */
-@JsonPropertyOrder({
-  ShareAccount.JSON_PROPERTY_NUMERIC_ID,
-  ShareAccount.JSON_PROPERTY_ACCOUNT_LOGIN,
-  ShareAccount.JSON_PROPERTY_ACCOUNT_TYPE,
-  ShareAccount.JSON_PROPERTY_ACCOUNT_ID,
-  ShareAccount.JSON_PROPERTY_OAUTH_ERROR,
-  ShareAccount.JSON_PROPERTY_PRIMARY,
-  ShareAccount.JSON_PROPERTY_VISIBLE,
-  ShareAccount.JSON_PROPERTY_CONNECTED,
-  ShareAccount.JSON_PROPERTY_ACCOUNT_NAME
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-06T23:21:35.150+01:00[Europe/London]")
 public class ShareAccount {
-  public static final String JSON_PROPERTY_NUMERIC_ID = "numeric_id";
+  public static final String SERIALIZED_NAME_NUMERIC_ID = "numeric_id";
+  @SerializedName(SERIALIZED_NAME_NUMERIC_ID)
   private Integer numericId;
 
-  public static final String JSON_PROPERTY_ACCOUNT_LOGIN = "account_login";
+  public static final String SERIALIZED_NAME_ACCOUNT_LOGIN = "account_login";
+  @SerializedName(SERIALIZED_NAME_ACCOUNT_LOGIN)
   private String accountLogin;
 
   /**
    * Gets or Sets accountType
    */
+  @JsonAdapter(AccountTypeEnum.Adapter.class)
   public enum AccountTypeEnum {
     TWITTER("twitter"),
     
@@ -59,7 +52,6 @@ public class ShareAccount {
       this.value = value;
     }
 
-    @JsonValue
     public String getValue() {
       return value;
     }
@@ -69,7 +61,6 @@ public class ShareAccount {
       return String.valueOf(value);
     }
 
-    @JsonCreator
     public static AccountTypeEnum fromValue(String value) {
       for (AccountTypeEnum b : AccountTypeEnum.values()) {
         if (b.value.equals(value)) {
@@ -78,27 +69,47 @@ public class ShareAccount {
       }
       throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
+
+    public static class Adapter extends TypeAdapter<AccountTypeEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final AccountTypeEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public AccountTypeEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return AccountTypeEnum.fromValue(value);
+      }
+    }
   }
 
-  public static final String JSON_PROPERTY_ACCOUNT_TYPE = "account_type";
+  public static final String SERIALIZED_NAME_ACCOUNT_TYPE = "account_type";
+  @SerializedName(SERIALIZED_NAME_ACCOUNT_TYPE)
   private AccountTypeEnum accountType;
 
-  public static final String JSON_PROPERTY_ACCOUNT_ID = "account_id";
+  public static final String SERIALIZED_NAME_ACCOUNT_ID = "account_id";
+  @SerializedName(SERIALIZED_NAME_ACCOUNT_ID)
   private String accountId;
 
-  public static final String JSON_PROPERTY_OAUTH_ERROR = "oauth_error";
+  public static final String SERIALIZED_NAME_OAUTH_ERROR = "oauth_error";
+  @SerializedName(SERIALIZED_NAME_OAUTH_ERROR)
   private String oauthError;
 
-  public static final String JSON_PROPERTY_PRIMARY = "primary";
+  public static final String SERIALIZED_NAME_PRIMARY = "primary";
+  @SerializedName(SERIALIZED_NAME_PRIMARY)
   private Boolean primary;
 
-  public static final String JSON_PROPERTY_VISIBLE = "visible";
+  public static final String SERIALIZED_NAME_VISIBLE = "visible";
+  @SerializedName(SERIALIZED_NAME_VISIBLE)
   private Boolean visible;
 
-  public static final String JSON_PROPERTY_CONNECTED = "connected";
+  public static final String SERIALIZED_NAME_CONNECTED = "connected";
+  @SerializedName(SERIALIZED_NAME_CONNECTED)
   private String connected;
 
-  public static final String JSON_PROPERTY_ACCOUNT_NAME = "account_name";
+  public static final String SERIALIZED_NAME_ACCOUNT_NAME = "account_name";
+  @SerializedName(SERIALIZED_NAME_ACCOUNT_NAME)
   private String accountName;
 
 
@@ -114,8 +125,6 @@ public class ShareAccount {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_NUMERIC_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getNumericId() {
     return numericId;
@@ -139,8 +148,6 @@ public class ShareAccount {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_ACCOUNT_LOGIN)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getAccountLogin() {
     return accountLogin;
@@ -164,8 +171,6 @@ public class ShareAccount {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_ACCOUNT_TYPE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public AccountTypeEnum getAccountType() {
     return accountType;
@@ -189,8 +194,6 @@ public class ShareAccount {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_ACCOUNT_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getAccountId() {
     return accountId;
@@ -214,8 +217,6 @@ public class ShareAccount {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_OAUTH_ERROR)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getOauthError() {
     return oauthError;
@@ -239,8 +240,6 @@ public class ShareAccount {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_PRIMARY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getPrimary() {
     return primary;
@@ -264,8 +263,6 @@ public class ShareAccount {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_VISIBLE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getVisible() {
     return visible;
@@ -289,8 +286,6 @@ public class ShareAccount {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "ISO timestamp")
-  @JsonProperty(JSON_PROPERTY_CONNECTED)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getConnected() {
     return connected;
@@ -314,8 +309,6 @@ public class ShareAccount {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_ACCOUNT_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getAccountName() {
     return accountName;

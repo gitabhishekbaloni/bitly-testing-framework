@@ -17,60 +17,59 @@ import java.util.Objects;
 import java.util.Arrays;
 import com.bitly.model.V4.Charges;
 import com.bitly.model.V4.Payments;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
 import java.math.BigDecimal;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * PaymentInvoice
  */
-@JsonPropertyOrder({
-  PaymentInvoice.JSON_PROPERTY_TOTAL_TAX,
-  PaymentInvoice.JSON_PROPERTY_DESCRIPTION,
-  PaymentInvoice.JSON_PROPERTY_CHARGES,
-  PaymentInvoice.JSON_PROPERTY_INVOICE_ID,
-  PaymentInvoice.JSON_PROPERTY_INVOICE_DATE,
-  PaymentInvoice.JSON_PROPERTY_PAYMENTS,
-  PaymentInvoice.JSON_PROPERTY_INVOICE_NUMBER,
-  PaymentInvoice.JSON_PROPERTY_TOTAL,
-  PaymentInvoice.JSON_PROPERTY_SUBTOTAL,
-  PaymentInvoice.JSON_PROPERTY_INVOICE_DUE_DATE
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-07T02:24:01.569+01:00[Europe/London]")
 public class PaymentInvoice {
-  public static final String JSON_PROPERTY_TOTAL_TAX = "total_tax";
+  public static final String SERIALIZED_NAME_TOTAL_TAX = "total_tax";
+  @SerializedName(SERIALIZED_NAME_TOTAL_TAX)
   private BigDecimal totalTax;
 
-  public static final String JSON_PROPERTY_DESCRIPTION = "description";
+  public static final String SERIALIZED_NAME_DESCRIPTION = "description";
+  @SerializedName(SERIALIZED_NAME_DESCRIPTION)
   private String description;
 
-  public static final String JSON_PROPERTY_CHARGES = "charges";
+  public static final String SERIALIZED_NAME_CHARGES = "charges";
+  @SerializedName(SERIALIZED_NAME_CHARGES)
   private Charges charges;
 
-  public static final String JSON_PROPERTY_INVOICE_ID = "invoice_id";
+  public static final String SERIALIZED_NAME_INVOICE_ID = "invoice_id";
+  @SerializedName(SERIALIZED_NAME_INVOICE_ID)
   private String invoiceId;
 
-  public static final String JSON_PROPERTY_INVOICE_DATE = "invoice_date";
+  public static final String SERIALIZED_NAME_INVOICE_DATE = "invoice_date";
+  @SerializedName(SERIALIZED_NAME_INVOICE_DATE)
   private String invoiceDate;
 
-  public static final String JSON_PROPERTY_PAYMENTS = "payments";
+  public static final String SERIALIZED_NAME_PAYMENTS = "payments";
+  @SerializedName(SERIALIZED_NAME_PAYMENTS)
   private Payments payments;
 
-  public static final String JSON_PROPERTY_INVOICE_NUMBER = "invoice_number";
+  public static final String SERIALIZED_NAME_INVOICE_NUMBER = "invoice_number";
+  @SerializedName(SERIALIZED_NAME_INVOICE_NUMBER)
   private String invoiceNumber;
 
-  public static final String JSON_PROPERTY_TOTAL = "total";
+  public static final String SERIALIZED_NAME_TOTAL = "total";
+  @SerializedName(SERIALIZED_NAME_TOTAL)
   private BigDecimal total;
 
-  public static final String JSON_PROPERTY_SUBTOTAL = "subtotal";
+  public static final String SERIALIZED_NAME_SUBTOTAL = "subtotal";
+  @SerializedName(SERIALIZED_NAME_SUBTOTAL)
   private BigDecimal subtotal;
 
-  public static final String JSON_PROPERTY_INVOICE_DUE_DATE = "invoice_due_date";
+  public static final String SERIALIZED_NAME_INVOICE_DUE_DATE = "invoice_due_date";
+  @SerializedName(SERIALIZED_NAME_INVOICE_DUE_DATE)
   private String invoiceDueDate;
 
 
@@ -86,8 +85,6 @@ public class PaymentInvoice {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_TOTAL_TAX)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getTotalTax() {
     return totalTax;
@@ -111,8 +108,6 @@ public class PaymentInvoice {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_DESCRIPTION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getDescription() {
     return description;
@@ -136,8 +131,6 @@ public class PaymentInvoice {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_CHARGES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Charges getCharges() {
     return charges;
@@ -161,8 +154,6 @@ public class PaymentInvoice {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_INVOICE_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getInvoiceId() {
     return invoiceId;
@@ -186,8 +177,6 @@ public class PaymentInvoice {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_INVOICE_DATE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getInvoiceDate() {
     return invoiceDate;
@@ -211,8 +200,6 @@ public class PaymentInvoice {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_PAYMENTS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Payments getPayments() {
     return payments;
@@ -236,8 +223,6 @@ public class PaymentInvoice {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_INVOICE_NUMBER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getInvoiceNumber() {
     return invoiceNumber;
@@ -261,8 +246,6 @@ public class PaymentInvoice {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_TOTAL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getTotal() {
     return total;
@@ -286,8 +269,6 @@ public class PaymentInvoice {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_SUBTOTAL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getSubtotal() {
     return subtotal;
@@ -311,8 +292,6 @@ public class PaymentInvoice {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_INVOICE_DUE_DATE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getInvoiceDueDate() {
     return invoiceDueDate;

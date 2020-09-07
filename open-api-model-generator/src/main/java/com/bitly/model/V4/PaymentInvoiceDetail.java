@@ -17,27 +17,26 @@ import java.util.Objects;
 import java.util.Arrays;
 import com.bitly.model.V4.BillingAccount;
 import com.bitly.model.V4.PaymentInvoice;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import java.io.IOException;
 
 /**
  * PaymentInvoiceDetail
  */
-@JsonPropertyOrder({
-  PaymentInvoiceDetail.JSON_PROPERTY_INVOICE_SUMMARY,
-  PaymentInvoiceDetail.JSON_PROPERTY_BILLING_ACCOUNT
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-07T02:24:01.569+01:00[Europe/London]")
 public class PaymentInvoiceDetail {
-  public static final String JSON_PROPERTY_INVOICE_SUMMARY = "invoice_summary";
+  public static final String SERIALIZED_NAME_INVOICE_SUMMARY = "invoice_summary";
+  @SerializedName(SERIALIZED_NAME_INVOICE_SUMMARY)
   private PaymentInvoice invoiceSummary;
 
-  public static final String JSON_PROPERTY_BILLING_ACCOUNT = "billing_account";
+  public static final String SERIALIZED_NAME_BILLING_ACCOUNT = "billing_account";
+  @SerializedName(SERIALIZED_NAME_BILLING_ACCOUNT)
   private BillingAccount billingAccount;
 
 
@@ -53,8 +52,6 @@ public class PaymentInvoiceDetail {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_INVOICE_SUMMARY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public PaymentInvoice getInvoiceSummary() {
     return invoiceSummary;
@@ -78,8 +75,6 @@ public class PaymentInvoiceDetail {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_BILLING_ACCOUNT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BillingAccount getBillingAccount() {
     return billingAccount;

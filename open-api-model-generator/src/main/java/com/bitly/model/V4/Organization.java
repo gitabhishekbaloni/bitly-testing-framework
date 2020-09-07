@@ -17,67 +17,66 @@ import java.util.Objects;
 import java.util.Arrays;
 import com.bitly.model.V4.HasReferences;
 import com.bitly.model.V4.OrganizationAllOf;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * Organization
  */
-@JsonPropertyOrder({
-  Organization.JSON_PROPERTY_REFERENCES,
-  Organization.JSON_PROPERTY_NAME,
-  Organization.JSON_PROPERTY_BSDS,
-  Organization.JSON_PROPERTY_CREATED,
-  Organization.JSON_PROPERTY_IS_ACTIVE,
-  Organization.JSON_PROPERTY_MODIFIED,
-  Organization.JSON_PROPERTY_TIER_DISPLAY_NAME,
-  Organization.JSON_PROPERTY_TIER_FAMILY,
-  Organization.JSON_PROPERTY_TIER,
-  Organization.JSON_PROPERTY_ROLE,
-  Organization.JSON_PROPERTY_GUID
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-07T02:24:01.569+01:00[Europe/London]")
 public class Organization {
-  public static final String JSON_PROPERTY_REFERENCES = "references";
+  public static final String SERIALIZED_NAME_REFERENCES = "references";
+  @SerializedName(SERIALIZED_NAME_REFERENCES)
   private Map<String, String> references = null;
 
-  public static final String JSON_PROPERTY_NAME = "name";
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
 
-  public static final String JSON_PROPERTY_BSDS = "bsds";
+  public static final String SERIALIZED_NAME_BSDS = "bsds";
+  @SerializedName(SERIALIZED_NAME_BSDS)
   private List<String> bsds = null;
 
-  public static final String JSON_PROPERTY_CREATED = "created";
+  public static final String SERIALIZED_NAME_CREATED = "created";
+  @SerializedName(SERIALIZED_NAME_CREATED)
   private String created;
 
-  public static final String JSON_PROPERTY_IS_ACTIVE = "is_active";
+  public static final String SERIALIZED_NAME_IS_ACTIVE = "is_active";
+  @SerializedName(SERIALIZED_NAME_IS_ACTIVE)
   private Boolean isActive;
 
-  public static final String JSON_PROPERTY_MODIFIED = "modified";
+  public static final String SERIALIZED_NAME_MODIFIED = "modified";
+  @SerializedName(SERIALIZED_NAME_MODIFIED)
   private String modified;
 
-  public static final String JSON_PROPERTY_TIER_DISPLAY_NAME = "tier_display_name";
+  public static final String SERIALIZED_NAME_TIER_DISPLAY_NAME = "tier_display_name";
+  @SerializedName(SERIALIZED_NAME_TIER_DISPLAY_NAME)
   private String tierDisplayName;
 
-  public static final String JSON_PROPERTY_TIER_FAMILY = "tier_family";
+  public static final String SERIALIZED_NAME_TIER_FAMILY = "tier_family";
+  @SerializedName(SERIALIZED_NAME_TIER_FAMILY)
   private String tierFamily;
 
-  public static final String JSON_PROPERTY_TIER = "tier";
+  public static final String SERIALIZED_NAME_TIER = "tier";
+  @SerializedName(SERIALIZED_NAME_TIER)
   private String tier;
 
-  public static final String JSON_PROPERTY_ROLE = "role";
+  public static final String SERIALIZED_NAME_ROLE = "role";
+  @SerializedName(SERIALIZED_NAME_ROLE)
   private String role;
 
-  public static final String JSON_PROPERTY_GUID = "guid";
+  public static final String SERIALIZED_NAME_GUID = "guid";
+  @SerializedName(SERIALIZED_NAME_GUID)
   private String guid;
 
 
@@ -101,8 +100,6 @@ public class Organization {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_REFERENCES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Map<String, String> getReferences() {
     return references;
@@ -126,8 +123,6 @@ public class Organization {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getName() {
     return name;
@@ -159,8 +154,6 @@ public class Organization {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_BSDS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<String> getBsds() {
     return bsds;
@@ -184,8 +177,6 @@ public class Organization {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_CREATED)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCreated() {
     return created;
@@ -209,8 +200,6 @@ public class Organization {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_IS_ACTIVE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getIsActive() {
     return isActive;
@@ -234,8 +223,6 @@ public class Organization {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_MODIFIED)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getModified() {
     return modified;
@@ -259,8 +246,6 @@ public class Organization {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_TIER_DISPLAY_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getTierDisplayName() {
     return tierDisplayName;
@@ -284,8 +269,6 @@ public class Organization {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_TIER_FAMILY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getTierFamily() {
     return tierFamily;
@@ -309,8 +292,6 @@ public class Organization {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_TIER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getTier() {
     return tier;
@@ -334,8 +315,6 @@ public class Organization {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_ROLE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getRole() {
     return role;
@@ -359,8 +338,6 @@ public class Organization {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_GUID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getGuid() {
     return guid;

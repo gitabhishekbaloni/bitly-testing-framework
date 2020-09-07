@@ -15,39 +15,38 @@ package com.bitly.model.V4;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import java.io.IOException;
 
 /**
  * BillingContact
  */
-@JsonPropertyOrder({
-  BillingContact.JSON_PROPERTY_PHONE,
-  BillingContact.JSON_PROPERTY_BILLING_CONTACT_ID,
-  BillingContact.JSON_PROPERTY_LAST_NAME,
-  BillingContact.JSON_PROPERTY_FIRST_NAME,
-  BillingContact.JSON_PROPERTY_EMAIL
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-07T02:24:01.569+01:00[Europe/London]")
 public class BillingContact {
-  public static final String JSON_PROPERTY_PHONE = "phone";
+  public static final String SERIALIZED_NAME_PHONE = "phone";
+  @SerializedName(SERIALIZED_NAME_PHONE)
   private String phone;
 
-  public static final String JSON_PROPERTY_BILLING_CONTACT_ID = "billing_contact_id";
+  public static final String SERIALIZED_NAME_BILLING_CONTACT_ID = "billing_contact_id";
+  @SerializedName(SERIALIZED_NAME_BILLING_CONTACT_ID)
   private String billingContactId;
 
-  public static final String JSON_PROPERTY_LAST_NAME = "last_name";
+  public static final String SERIALIZED_NAME_LAST_NAME = "last_name";
+  @SerializedName(SERIALIZED_NAME_LAST_NAME)
   private String lastName;
 
-  public static final String JSON_PROPERTY_FIRST_NAME = "first_name";
+  public static final String SERIALIZED_NAME_FIRST_NAME = "first_name";
+  @SerializedName(SERIALIZED_NAME_FIRST_NAME)
   private String firstName;
 
-  public static final String JSON_PROPERTY_EMAIL = "email";
+  public static final String SERIALIZED_NAME_EMAIL = "email";
+  @SerializedName(SERIALIZED_NAME_EMAIL)
   private String email;
 
 
@@ -63,8 +62,6 @@ public class BillingContact {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_PHONE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getPhone() {
     return phone;
@@ -88,8 +85,6 @@ public class BillingContact {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_BILLING_CONTACT_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getBillingContactId() {
     return billingContactId;
@@ -113,8 +108,6 @@ public class BillingContact {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_LAST_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getLastName() {
     return lastName;
@@ -138,8 +131,6 @@ public class BillingContact {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_FIRST_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getFirstName() {
     return firstName;
@@ -163,8 +154,6 @@ public class BillingContact {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_EMAIL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getEmail() {
     return email;

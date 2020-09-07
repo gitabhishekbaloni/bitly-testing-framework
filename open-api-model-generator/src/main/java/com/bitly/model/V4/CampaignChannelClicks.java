@@ -17,49 +17,48 @@ import java.util.Objects;
 import java.util.Arrays;
 import com.bitly.model.V4.CampaignClickData;
 import com.bitly.model.V4.ChannelBitlinks;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * CampaignChannelClicks
  */
-@JsonPropertyOrder({
-  CampaignChannelClicks.JSON_PROPERTY_CREATED_TS,
-  CampaignChannelClicks.JSON_PROPERTY_CHANNEL_GUID,
-  CampaignChannelClicks.JSON_PROPERTY_TOTAL_CLICKS,
-  CampaignChannelClicks.JSON_PROPERTY_CHANNEL_NAME,
-  CampaignChannelClicks.JSON_PROPERTY_CAMPAIGN_GUID,
-  CampaignChannelClicks.JSON_PROPERTY_CHANNEL_BITLINKS,
-  CampaignChannelClicks.JSON_PROPERTY_CLICKS
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-07T02:24:01.569+01:00[Europe/London]")
 public class CampaignChannelClicks {
-  public static final String JSON_PROPERTY_CREATED_TS = "created_ts";
+  public static final String SERIALIZED_NAME_CREATED_TS = "created_ts";
+  @SerializedName(SERIALIZED_NAME_CREATED_TS)
   private Integer createdTs;
 
-  public static final String JSON_PROPERTY_CHANNEL_GUID = "channel_guid";
+  public static final String SERIALIZED_NAME_CHANNEL_GUID = "channel_guid";
+  @SerializedName(SERIALIZED_NAME_CHANNEL_GUID)
   private String channelGuid;
 
-  public static final String JSON_PROPERTY_TOTAL_CLICKS = "total_clicks";
+  public static final String SERIALIZED_NAME_TOTAL_CLICKS = "total_clicks";
+  @SerializedName(SERIALIZED_NAME_TOTAL_CLICKS)
   private Integer totalClicks;
 
-  public static final String JSON_PROPERTY_CHANNEL_NAME = "channel_name";
+  public static final String SERIALIZED_NAME_CHANNEL_NAME = "channel_name";
+  @SerializedName(SERIALIZED_NAME_CHANNEL_NAME)
   private String channelName;
 
-  public static final String JSON_PROPERTY_CAMPAIGN_GUID = "campaign_guid";
+  public static final String SERIALIZED_NAME_CAMPAIGN_GUID = "campaign_guid";
+  @SerializedName(SERIALIZED_NAME_CAMPAIGN_GUID)
   private String campaignGuid;
 
-  public static final String JSON_PROPERTY_CHANNEL_BITLINKS = "channel_bitlinks";
+  public static final String SERIALIZED_NAME_CHANNEL_BITLINKS = "channel_bitlinks";
+  @SerializedName(SERIALIZED_NAME_CHANNEL_BITLINKS)
   private ChannelBitlinks channelBitlinks;
 
-  public static final String JSON_PROPERTY_CLICKS = "clicks";
+  public static final String SERIALIZED_NAME_CLICKS = "clicks";
+  @SerializedName(SERIALIZED_NAME_CLICKS)
   private List<CampaignClickData> clicks = null;
 
 
@@ -75,8 +74,6 @@ public class CampaignChannelClicks {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_CREATED_TS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getCreatedTs() {
     return createdTs;
@@ -100,8 +97,6 @@ public class CampaignChannelClicks {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_CHANNEL_GUID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getChannelGuid() {
     return channelGuid;
@@ -125,8 +120,6 @@ public class CampaignChannelClicks {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_TOTAL_CLICKS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getTotalClicks() {
     return totalClicks;
@@ -150,8 +143,6 @@ public class CampaignChannelClicks {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_CHANNEL_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getChannelName() {
     return channelName;
@@ -175,8 +166,6 @@ public class CampaignChannelClicks {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_CAMPAIGN_GUID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCampaignGuid() {
     return campaignGuid;
@@ -200,8 +189,6 @@ public class CampaignChannelClicks {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_CHANNEL_BITLINKS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public ChannelBitlinks getChannelBitlinks() {
     return channelBitlinks;
@@ -233,8 +220,6 @@ public class CampaignChannelClicks {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_CLICKS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<CampaignClickData> getClicks() {
     return clicks;

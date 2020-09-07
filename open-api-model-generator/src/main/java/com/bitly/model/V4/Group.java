@@ -17,59 +17,58 @@ import java.util.Objects;
 import java.util.Arrays;
 import com.bitly.model.V4.GroupAllOf;
 import com.bitly.model.V4.HasReferences;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * Group
  */
-@JsonPropertyOrder({
-  Group.JSON_PROPERTY_REFERENCES,
-  Group.JSON_PROPERTY_NAME,
-  Group.JSON_PROPERTY_BSDS,
-  Group.JSON_PROPERTY_CREATED,
-  Group.JSON_PROPERTY_IS_ACTIVE,
-  Group.JSON_PROPERTY_MODIFIED,
-  Group.JSON_PROPERTY_ORGANIZATION_GUID,
-  Group.JSON_PROPERTY_ROLE,
-  Group.JSON_PROPERTY_GUID
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-07T02:24:01.569+01:00[Europe/London]")
 public class Group {
-  public static final String JSON_PROPERTY_REFERENCES = "references";
+  public static final String SERIALIZED_NAME_REFERENCES = "references";
+  @SerializedName(SERIALIZED_NAME_REFERENCES)
   private Map<String, String> references = null;
 
-  public static final String JSON_PROPERTY_NAME = "name";
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
 
-  public static final String JSON_PROPERTY_BSDS = "bsds";
+  public static final String SERIALIZED_NAME_BSDS = "bsds";
+  @SerializedName(SERIALIZED_NAME_BSDS)
   private List<String> bsds = null;
 
-  public static final String JSON_PROPERTY_CREATED = "created";
+  public static final String SERIALIZED_NAME_CREATED = "created";
+  @SerializedName(SERIALIZED_NAME_CREATED)
   private String created;
 
-  public static final String JSON_PROPERTY_IS_ACTIVE = "is_active";
+  public static final String SERIALIZED_NAME_IS_ACTIVE = "is_active";
+  @SerializedName(SERIALIZED_NAME_IS_ACTIVE)
   private Boolean isActive;
 
-  public static final String JSON_PROPERTY_MODIFIED = "modified";
+  public static final String SERIALIZED_NAME_MODIFIED = "modified";
+  @SerializedName(SERIALIZED_NAME_MODIFIED)
   private String modified;
 
-  public static final String JSON_PROPERTY_ORGANIZATION_GUID = "organization_guid";
+  public static final String SERIALIZED_NAME_ORGANIZATION_GUID = "organization_guid";
+  @SerializedName(SERIALIZED_NAME_ORGANIZATION_GUID)
   private String organizationGuid;
 
-  public static final String JSON_PROPERTY_ROLE = "role";
+  public static final String SERIALIZED_NAME_ROLE = "role";
+  @SerializedName(SERIALIZED_NAME_ROLE)
   private String role;
 
-  public static final String JSON_PROPERTY_GUID = "guid";
+  public static final String SERIALIZED_NAME_GUID = "guid";
+  @SerializedName(SERIALIZED_NAME_GUID)
   private String guid;
 
 
@@ -93,8 +92,6 @@ public class Group {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_REFERENCES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Map<String, String> getReferences() {
     return references;
@@ -118,8 +115,6 @@ public class Group {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getName() {
     return name;
@@ -151,8 +146,6 @@ public class Group {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_BSDS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<String> getBsds() {
     return bsds;
@@ -176,8 +169,6 @@ public class Group {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_CREATED)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCreated() {
     return created;
@@ -201,8 +192,6 @@ public class Group {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_IS_ACTIVE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getIsActive() {
     return isActive;
@@ -226,8 +215,6 @@ public class Group {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_MODIFIED)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getModified() {
     return modified;
@@ -251,8 +238,6 @@ public class Group {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_ORGANIZATION_GUID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getOrganizationGuid() {
     return organizationGuid;
@@ -276,8 +261,6 @@ public class Group {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_ROLE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getRole() {
     return role;
@@ -301,8 +284,6 @@ public class Group {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_GUID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getGuid() {
     return guid;

@@ -16,14 +16,18 @@ package com.bitly.model.V4;
 import java.util.Objects;
 import java.util.Arrays;
 import io.swagger.annotations.ApiModel;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.google.gson.annotations.SerializedName;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import java.io.IOException;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 
 /**
  * the unit of time queried for (minute, hour, day, week, month)
  */
+@JsonAdapter(TimeUnit.Adapter.class)
 public enum TimeUnit {
   
   MINUTE("minute"),
@@ -42,7 +46,6 @@ public enum TimeUnit {
     this.value = value;
   }
 
-  @JsonValue
   public String getValue() {
     return value;
   }
@@ -52,7 +55,6 @@ public enum TimeUnit {
     return String.valueOf(value);
   }
 
-  @JsonCreator
   public static TimeUnit fromValue(String value) {
     for (TimeUnit b : TimeUnit.values()) {
       if (b.value.equals(value)) {
@@ -60,6 +62,19 @@ public enum TimeUnit {
       }
     }
     throw new IllegalArgumentException("Unexpected value '" + value + "'");
+  }
+
+  public static class Adapter extends TypeAdapter<TimeUnit> {
+    @Override
+    public void write(final JsonWriter jsonWriter, final TimeUnit enumeration) throws IOException {
+      jsonWriter.value(enumeration.getValue());
+    }
+
+    @Override
+    public TimeUnit read(final JsonReader jsonReader) throws IOException {
+      String value = jsonReader.nextString();
+      return TimeUnit.fromValue(value);
+    }
   }
 }
 

@@ -1,0 +1,23 @@
+<Configuration status="DEBUG">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="v [%t] %-5p %c{1}:%L - %msg%n" />
+        </Console>
+
+        <RollingFile name="RollingFile" filename="log/bitly.log"
+                     filepattern="${logPath}/%d{yyyy-MM-dd HH:mm:ss.SSS}-fargo.log">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5p %c{1}:%L - %msg%n" />
+            <Policies>
+                <SizeBasedTriggeringPolicy size="100 MB" />
+            </Policies>
+            <DefaultRolloverStrategy max="20" />
+        </RollingFile>
+
+    </Appenders>
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="Console" />
+            <AppenderRef ref="RollingFile" />
+        </Root>
+    </Loggers>
+</Configuration>

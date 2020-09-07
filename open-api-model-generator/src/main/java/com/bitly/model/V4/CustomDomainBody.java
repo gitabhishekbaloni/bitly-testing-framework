@@ -17,90 +17,89 @@ import java.util.Objects;
 import java.util.Arrays;
 import com.bitly.model.V4.CustomDomainBodySslCert;
 import com.bitly.model.V4.MinimalDeeplinkApp;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * information about given custom domain
  */
 @ApiModel(description = "information about given custom domain")
-@JsonPropertyOrder({
-  CustomDomainBody.JSON_PROPERTY_DEEPLINK_APPS,
-  CustomDomainBody.JSON_PROPERTY_HSTS_ENABLED,
-  CustomDomainBody.JSON_PROPERTY_UPGRADE_INSECURE_REQUESTS,
-  CustomDomainBody.JSON_PROPERTY_CUSTOM_DOMAIN,
-  CustomDomainBody.JSON_PROPERTY_VALIDATION_ERROR,
-  CustomDomainBody.JSON_PROPERTY_CREATED,
-  CustomDomainBody.JSON_PROPERTY_IS_ACTIVE,
-  CustomDomainBody.JSON_PROPERTY_ROOT_REDIRECT,
-  CustomDomainBody.JSON_PROPERTY_SSL_CONFIGURATION_ERROR,
-  CustomDomainBody.JSON_PROPERTY_SSL_AUTOCONFIGURE_ERROR,
-  CustomDomainBody.JSON_PROPERTY_GROUP_GUIDS,
-  CustomDomainBody.JSON_PROPERTY_SSL_CERT,
-  CustomDomainBody.JSON_PROPERTY_WILDCARD_REDIRECT,
-  CustomDomainBody.JSON_PROPERTY_CONFIGURATION_LAST_CHECK_TS,
-  CustomDomainBody.JSON_PROPERTY_HTTPS_ENABLED,
-  CustomDomainBody.JSON_PROPERTY_VALIDATION_STATUS,
-  CustomDomainBody.JSON_PROPERTY_HTTPS_BITLINKS
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-07T02:24:01.569+01:00[Europe/London]")
 public class CustomDomainBody {
-  public static final String JSON_PROPERTY_DEEPLINK_APPS = "deeplink_apps";
+  public static final String SERIALIZED_NAME_DEEPLINK_APPS = "deeplink_apps";
+  @SerializedName(SERIALIZED_NAME_DEEPLINK_APPS)
   private List<MinimalDeeplinkApp> deeplinkApps = null;
 
-  public static final String JSON_PROPERTY_HSTS_ENABLED = "hsts_enabled";
+  public static final String SERIALIZED_NAME_HSTS_ENABLED = "hsts_enabled";
+  @SerializedName(SERIALIZED_NAME_HSTS_ENABLED)
   private Boolean hstsEnabled;
 
-  public static final String JSON_PROPERTY_UPGRADE_INSECURE_REQUESTS = "upgrade_insecure_requests";
+  public static final String SERIALIZED_NAME_UPGRADE_INSECURE_REQUESTS = "upgrade_insecure_requests";
+  @SerializedName(SERIALIZED_NAME_UPGRADE_INSECURE_REQUESTS)
   private Boolean upgradeInsecureRequests;
 
-  public static final String JSON_PROPERTY_CUSTOM_DOMAIN = "custom_domain";
+  public static final String SERIALIZED_NAME_CUSTOM_DOMAIN = "custom_domain";
+  @SerializedName(SERIALIZED_NAME_CUSTOM_DOMAIN)
   private String customDomain;
 
-  public static final String JSON_PROPERTY_VALIDATION_ERROR = "validation_error";
+  public static final String SERIALIZED_NAME_VALIDATION_ERROR = "validation_error";
+  @SerializedName(SERIALIZED_NAME_VALIDATION_ERROR)
   private String validationError;
 
-  public static final String JSON_PROPERTY_CREATED = "created";
+  public static final String SERIALIZED_NAME_CREATED = "created";
+  @SerializedName(SERIALIZED_NAME_CREATED)
   private Integer created;
 
-  public static final String JSON_PROPERTY_IS_ACTIVE = "is_active";
+  public static final String SERIALIZED_NAME_IS_ACTIVE = "is_active";
+  @SerializedName(SERIALIZED_NAME_IS_ACTIVE)
   private Boolean isActive;
 
-  public static final String JSON_PROPERTY_ROOT_REDIRECT = "root_redirect";
+  public static final String SERIALIZED_NAME_ROOT_REDIRECT = "root_redirect";
+  @SerializedName(SERIALIZED_NAME_ROOT_REDIRECT)
   private String rootRedirect;
 
-  public static final String JSON_PROPERTY_SSL_CONFIGURATION_ERROR = "ssl_configuration_error";
+  public static final String SERIALIZED_NAME_SSL_CONFIGURATION_ERROR = "ssl_configuration_error";
+  @SerializedName(SERIALIZED_NAME_SSL_CONFIGURATION_ERROR)
   private String sslConfigurationError;
 
-  public static final String JSON_PROPERTY_SSL_AUTOCONFIGURE_ERROR = "ssl_autoconfigure_error";
+  public static final String SERIALIZED_NAME_SSL_AUTOCONFIGURE_ERROR = "ssl_autoconfigure_error";
+  @SerializedName(SERIALIZED_NAME_SSL_AUTOCONFIGURE_ERROR)
   private Boolean sslAutoconfigureError;
 
-  public static final String JSON_PROPERTY_GROUP_GUIDS = "group_guids";
+  public static final String SERIALIZED_NAME_GROUP_GUIDS = "group_guids";
+  @SerializedName(SERIALIZED_NAME_GROUP_GUIDS)
   private List<String> groupGuids = null;
 
-  public static final String JSON_PROPERTY_SSL_CERT = "ssl_cert";
+  public static final String SERIALIZED_NAME_SSL_CERT = "ssl_cert";
+  @SerializedName(SERIALIZED_NAME_SSL_CERT)
   private CustomDomainBodySslCert sslCert;
 
-  public static final String JSON_PROPERTY_WILDCARD_REDIRECT = "wildcard_redirect";
+  public static final String SERIALIZED_NAME_WILDCARD_REDIRECT = "wildcard_redirect";
+  @SerializedName(SERIALIZED_NAME_WILDCARD_REDIRECT)
   private String wildcardRedirect;
 
-  public static final String JSON_PROPERTY_CONFIGURATION_LAST_CHECK_TS = "configuration_last_check_ts";
+  public static final String SERIALIZED_NAME_CONFIGURATION_LAST_CHECK_TS = "configuration_last_check_ts";
+  @SerializedName(SERIALIZED_NAME_CONFIGURATION_LAST_CHECK_TS)
   private String configurationLastCheckTs;
 
-  public static final String JSON_PROPERTY_HTTPS_ENABLED = "https_enabled";
+  public static final String SERIALIZED_NAME_HTTPS_ENABLED = "https_enabled";
+  @SerializedName(SERIALIZED_NAME_HTTPS_ENABLED)
   private Boolean httpsEnabled;
 
-  public static final String JSON_PROPERTY_VALIDATION_STATUS = "validation_status";
+  public static final String SERIALIZED_NAME_VALIDATION_STATUS = "validation_status";
+  @SerializedName(SERIALIZED_NAME_VALIDATION_STATUS)
   private String validationStatus;
 
-  public static final String JSON_PROPERTY_HTTPS_BITLINKS = "https_bitlinks";
+  public static final String SERIALIZED_NAME_HTTPS_BITLINKS = "https_bitlinks";
+  @SerializedName(SERIALIZED_NAME_HTTPS_BITLINKS)
   private Boolean httpsBitlinks;
 
 
@@ -124,8 +123,6 @@ public class CustomDomainBody {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_DEEPLINK_APPS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<MinimalDeeplinkApp> getDeeplinkApps() {
     return deeplinkApps;
@@ -149,8 +146,6 @@ public class CustomDomainBody {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_HSTS_ENABLED)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getHstsEnabled() {
     return hstsEnabled;
@@ -174,8 +169,6 @@ public class CustomDomainBody {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_UPGRADE_INSECURE_REQUESTS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getUpgradeInsecureRequests() {
     return upgradeInsecureRequests;
@@ -199,8 +192,6 @@ public class CustomDomainBody {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_CUSTOM_DOMAIN)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCustomDomain() {
     return customDomain;
@@ -224,8 +215,6 @@ public class CustomDomainBody {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_VALIDATION_ERROR)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getValidationError() {
     return validationError;
@@ -249,8 +238,6 @@ public class CustomDomainBody {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_CREATED)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getCreated() {
     return created;
@@ -274,8 +261,6 @@ public class CustomDomainBody {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_IS_ACTIVE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getIsActive() {
     return isActive;
@@ -299,8 +284,6 @@ public class CustomDomainBody {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_ROOT_REDIRECT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getRootRedirect() {
     return rootRedirect;
@@ -324,8 +307,6 @@ public class CustomDomainBody {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_SSL_CONFIGURATION_ERROR)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getSslConfigurationError() {
     return sslConfigurationError;
@@ -349,8 +330,6 @@ public class CustomDomainBody {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_SSL_AUTOCONFIGURE_ERROR)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getSslAutoconfigureError() {
     return sslAutoconfigureError;
@@ -382,8 +361,6 @@ public class CustomDomainBody {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_GROUP_GUIDS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<String> getGroupGuids() {
     return groupGuids;
@@ -407,8 +384,6 @@ public class CustomDomainBody {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_SSL_CERT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public CustomDomainBodySslCert getSslCert() {
     return sslCert;
@@ -432,8 +407,6 @@ public class CustomDomainBody {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_WILDCARD_REDIRECT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getWildcardRedirect() {
     return wildcardRedirect;
@@ -457,8 +430,6 @@ public class CustomDomainBody {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_CONFIGURATION_LAST_CHECK_TS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getConfigurationLastCheckTs() {
     return configurationLastCheckTs;
@@ -482,8 +453,6 @@ public class CustomDomainBody {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_HTTPS_ENABLED)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getHttpsEnabled() {
     return httpsEnabled;
@@ -507,8 +476,6 @@ public class CustomDomainBody {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_VALIDATION_STATUS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getValidationStatus() {
     return validationStatus;
@@ -532,8 +499,6 @@ public class CustomDomainBody {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_HTTPS_BITLINKS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getHttpsBitlinks() {
     return httpsBitlinks;

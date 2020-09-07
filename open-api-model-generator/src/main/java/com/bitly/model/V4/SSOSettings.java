@@ -15,61 +15,60 @@ package com.bitly.model.V4;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * SSOSettings
  */
-@JsonPropertyOrder({
-  SSOSettings.JSON_PROPERTY_SLO_ENDPOINT,
-  SSOSettings.JSON_PROPERTY_DEFAULT_GROUP_GUID,
-  SSOSettings.JSON_PROPERTY_IDP_URL,
-  SSOSettings.JSON_PROPERTY_CERTIFICATE,
-  SSOSettings.JSON_PROPERTY_ORGANIZATION_GUID,
-  SSOSettings.JSON_PROPERTY_SAML_ENDPOINT,
-  SSOSettings.JSON_PROPERTY_IDENTITY_PROVIDER,
-  SSOSettings.JSON_PROPERTY_DOMAINS,
-  SSOSettings.JSON_PROPERTY_ISSUER_URL,
-  SSOSettings.JSON_PROPERTY_URL_SLUG
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-06T23:21:35.150+01:00[Europe/London]")
 public class SSOSettings {
-  public static final String JSON_PROPERTY_SLO_ENDPOINT = "slo_endpoint";
+  public static final String SERIALIZED_NAME_SLO_ENDPOINT = "slo_endpoint";
+  @SerializedName(SERIALIZED_NAME_SLO_ENDPOINT)
   private String sloEndpoint;
 
-  public static final String JSON_PROPERTY_DEFAULT_GROUP_GUID = "default_group_guid";
+  public static final String SERIALIZED_NAME_DEFAULT_GROUP_GUID = "default_group_guid";
+  @SerializedName(SERIALIZED_NAME_DEFAULT_GROUP_GUID)
   private String defaultGroupGuid;
 
-  public static final String JSON_PROPERTY_IDP_URL = "idp_url";
+  public static final String SERIALIZED_NAME_IDP_URL = "idp_url";
+  @SerializedName(SERIALIZED_NAME_IDP_URL)
   private String idpUrl;
 
-  public static final String JSON_PROPERTY_CERTIFICATE = "certificate";
+  public static final String SERIALIZED_NAME_CERTIFICATE = "certificate";
+  @SerializedName(SERIALIZED_NAME_CERTIFICATE)
   private String certificate;
 
-  public static final String JSON_PROPERTY_ORGANIZATION_GUID = "organization_guid";
+  public static final String SERIALIZED_NAME_ORGANIZATION_GUID = "organization_guid";
+  @SerializedName(SERIALIZED_NAME_ORGANIZATION_GUID)
   private String organizationGuid;
 
-  public static final String JSON_PROPERTY_SAML_ENDPOINT = "saml_endpoint";
+  public static final String SERIALIZED_NAME_SAML_ENDPOINT = "saml_endpoint";
+  @SerializedName(SERIALIZED_NAME_SAML_ENDPOINT)
   private String samlEndpoint;
 
-  public static final String JSON_PROPERTY_IDENTITY_PROVIDER = "identity_provider";
+  public static final String SERIALIZED_NAME_IDENTITY_PROVIDER = "identity_provider";
+  @SerializedName(SERIALIZED_NAME_IDENTITY_PROVIDER)
   private String identityProvider;
 
-  public static final String JSON_PROPERTY_DOMAINS = "domains";
+  public static final String SERIALIZED_NAME_DOMAINS = "domains";
+  @SerializedName(SERIALIZED_NAME_DOMAINS)
   private List<String> domains = null;
 
-  public static final String JSON_PROPERTY_ISSUER_URL = "issuer_url";
+  public static final String SERIALIZED_NAME_ISSUER_URL = "issuer_url";
+  @SerializedName(SERIALIZED_NAME_ISSUER_URL)
   private String issuerUrl;
 
-  public static final String JSON_PROPERTY_URL_SLUG = "url_slug";
+  public static final String SERIALIZED_NAME_URL_SLUG = "url_slug";
+  @SerializedName(SERIALIZED_NAME_URL_SLUG)
   private String urlSlug;
 
 
@@ -85,8 +84,6 @@ public class SSOSettings {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_SLO_ENDPOINT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getSloEndpoint() {
     return sloEndpoint;
@@ -110,8 +107,6 @@ public class SSOSettings {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_DEFAULT_GROUP_GUID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getDefaultGroupGuid() {
     return defaultGroupGuid;
@@ -135,8 +130,6 @@ public class SSOSettings {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_IDP_URL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getIdpUrl() {
     return idpUrl;
@@ -160,8 +153,6 @@ public class SSOSettings {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_CERTIFICATE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCertificate() {
     return certificate;
@@ -185,8 +176,6 @@ public class SSOSettings {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_ORGANIZATION_GUID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getOrganizationGuid() {
     return organizationGuid;
@@ -210,8 +199,6 @@ public class SSOSettings {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_SAML_ENDPOINT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getSamlEndpoint() {
     return samlEndpoint;
@@ -235,8 +222,6 @@ public class SSOSettings {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_IDENTITY_PROVIDER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getIdentityProvider() {
     return identityProvider;
@@ -268,8 +253,6 @@ public class SSOSettings {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_DOMAINS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<String> getDomains() {
     return domains;
@@ -293,8 +276,6 @@ public class SSOSettings {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_ISSUER_URL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getIssuerUrl() {
     return issuerUrl;
@@ -318,8 +299,6 @@ public class SSOSettings {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_URL_SLUG)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getUrlSlug() {
     return urlSlug;

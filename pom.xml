@@ -11,5 +11,7 @@
     <modules>
         <module>open-api-model-generator</module>
         <module>automation-commons</module>
+        <module>rest-core</module>
+        <module>testing</module>
     </modules>
 </project>

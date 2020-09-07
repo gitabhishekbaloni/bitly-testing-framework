@@ -15,36 +15,35 @@ package com.bitly.model.V4;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
 import java.math.BigDecimal;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * Charges
  */
-@JsonPropertyOrder({
-  Charges.JSON_PROPERTY_CHARGE_AMOUNT,
-  Charges.JSON_PROPERTY_PROCESSING_TYPE,
-  Charges.JSON_PROPERTY_TAX_AMOUNT,
-  Charges.JSON_PROPERTY_CHARGE_NAME
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-07T02:24:01.569+01:00[Europe/London]")
 public class Charges {
-  public static final String JSON_PROPERTY_CHARGE_AMOUNT = "charge_amount";
+  public static final String SERIALIZED_NAME_CHARGE_AMOUNT = "charge_amount";
+  @SerializedName(SERIALIZED_NAME_CHARGE_AMOUNT)
   private BigDecimal chargeAmount;
 
-  public static final String JSON_PROPERTY_PROCESSING_TYPE = "processing_type";
+  public static final String SERIALIZED_NAME_PROCESSING_TYPE = "processing_type";
+  @SerializedName(SERIALIZED_NAME_PROCESSING_TYPE)
   private String processingType;
 
-  public static final String JSON_PROPERTY_TAX_AMOUNT = "tax_amount";
+  public static final String SERIALIZED_NAME_TAX_AMOUNT = "tax_amount";
+  @SerializedName(SERIALIZED_NAME_TAX_AMOUNT)
   private BigDecimal taxAmount;
 
-  public static final String JSON_PROPERTY_CHARGE_NAME = "charge_name";
+  public static final String SERIALIZED_NAME_CHARGE_NAME = "charge_name";
+  @SerializedName(SERIALIZED_NAME_CHARGE_NAME)
   private String chargeName;
 
 
@@ -60,8 +59,6 @@ public class Charges {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_CHARGE_AMOUNT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getChargeAmount() {
     return chargeAmount;
@@ -85,8 +82,6 @@ public class Charges {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_PROCESSING_TYPE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getProcessingType() {
     return processingType;
@@ -110,8 +105,6 @@ public class Charges {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_TAX_AMOUNT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getTaxAmount() {
     return taxAmount;
@@ -135,8 +128,6 @@ public class Charges {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_CHARGE_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getChargeName() {
     return chargeName;

@@ -15,75 +15,74 @@ package com.bitly.model.V4;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * DeeplinkApp
  */
-@JsonPropertyOrder({
-  DeeplinkApp.JSON_PROPERTY_THIRD_PARTY_APP_ID,
-  DeeplinkApp.JSON_PROPERTY_CREATED_TS,
-  DeeplinkApp.JSON_PROPERTY_SCHEME,
-  DeeplinkApp.JSON_PROPERTY_INSTALL_URL,
-  DeeplinkApp.JSON_PROPERTY_NAME,
-  DeeplinkApp.JSON_PROPERTY_LEGACY_APP_ID,
-  DeeplinkApp.JSON_PROPERTY_ICON_URL,
-  DeeplinkApp.JSON_PROPERTY_ORGANIZATION_GUID,
-  DeeplinkApp.JSON_PROPERTY_MODIFIED_TS,
-  DeeplinkApp.JSON_PROPERTY_GUID,
-  DeeplinkApp.JSON_PROPERTY_APPLE_APP_ENTITLEMENT_ID,
-  DeeplinkApp.JSON_PROPERTY_ANDROID_SHA256,
-  DeeplinkApp.JSON_PROPERTY_OS
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-07T02:24:01.569+01:00[Europe/London]")
 public class DeeplinkApp {
-  public static final String JSON_PROPERTY_THIRD_PARTY_APP_ID = "third_party_app_id";
+  public static final String SERIALIZED_NAME_THIRD_PARTY_APP_ID = "third_party_app_id";
+  @SerializedName(SERIALIZED_NAME_THIRD_PARTY_APP_ID)
   private String thirdPartyAppId;
 
-  public static final String JSON_PROPERTY_CREATED_TS = "created_ts";
+  public static final String SERIALIZED_NAME_CREATED_TS = "created_ts";
+  @SerializedName(SERIALIZED_NAME_CREATED_TS)
   private Integer createdTs;
 
-  public static final String JSON_PROPERTY_SCHEME = "scheme";
+  public static final String SERIALIZED_NAME_SCHEME = "scheme";
+  @SerializedName(SERIALIZED_NAME_SCHEME)
   private String scheme;
 
-  public static final String JSON_PROPERTY_INSTALL_URL = "install_url";
+  public static final String SERIALIZED_NAME_INSTALL_URL = "install_url";
+  @SerializedName(SERIALIZED_NAME_INSTALL_URL)
   private String installUrl;
 
-  public static final String JSON_PROPERTY_NAME = "name";
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
 
-  public static final String JSON_PROPERTY_LEGACY_APP_ID = "legacy_app_id";
+  public static final String SERIALIZED_NAME_LEGACY_APP_ID = "legacy_app_id";
+  @SerializedName(SERIALIZED_NAME_LEGACY_APP_ID)
   private String legacyAppId;
 
-  public static final String JSON_PROPERTY_ICON_URL = "icon_url";
+  public static final String SERIALIZED_NAME_ICON_URL = "icon_url";
+  @SerializedName(SERIALIZED_NAME_ICON_URL)
   private String iconUrl;
 
-  public static final String JSON_PROPERTY_ORGANIZATION_GUID = "organization_guid";
+  public static final String SERIALIZED_NAME_ORGANIZATION_GUID = "organization_guid";
+  @SerializedName(SERIALIZED_NAME_ORGANIZATION_GUID)
   private String organizationGuid;
 
-  public static final String JSON_PROPERTY_MODIFIED_TS = "modified_ts";
+  public static final String SERIALIZED_NAME_MODIFIED_TS = "modified_ts";
+  @SerializedName(SERIALIZED_NAME_MODIFIED_TS)
   private Integer modifiedTs;
 
-  public static final String JSON_PROPERTY_GUID = "guid";
+  public static final String SERIALIZED_NAME_GUID = "guid";
+  @SerializedName(SERIALIZED_NAME_GUID)
   private String guid;
 
-  public static final String JSON_PROPERTY_APPLE_APP_ENTITLEMENT_ID = "apple_app_entitlement_id";
+  public static final String SERIALIZED_NAME_APPLE_APP_ENTITLEMENT_ID = "apple_app_entitlement_id";
+  @SerializedName(SERIALIZED_NAME_APPLE_APP_ENTITLEMENT_ID)
   private String appleAppEntitlementId;
 
-  public static final String JSON_PROPERTY_ANDROID_SHA256 = "android_sha256";
+  public static final String SERIALIZED_NAME_ANDROID_SHA256 = "android_sha256";
+  @SerializedName(SERIALIZED_NAME_ANDROID_SHA256)
   private List<String> androidSha256 = null;
 
   /**
    * Gets or Sets os
    */
+  @JsonAdapter(OsEnum.Adapter.class)
   public enum OsEnum {
     IOS("ios"),
     
@@ -95,7 +94,6 @@ public class DeeplinkApp {
       this.value = value;
     }
 
-    @JsonValue
     public String getValue() {
       return value;
     }
@@ -105,7 +103,6 @@ public class DeeplinkApp {
       return String.valueOf(value);
     }
 
-    @JsonCreator
     public static OsEnum fromValue(String value) {
       for (OsEnum b : OsEnum.values()) {
         if (b.value.equals(value)) {
@@ -114,9 +111,23 @@ public class DeeplinkApp {
       }
       throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
+
+    public static class Adapter extends TypeAdapter<OsEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final OsEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public OsEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return OsEnum.fromValue(value);
+      }
+    }
   }
 
-  public static final String JSON_PROPERTY_OS = "os";
+  public static final String SERIALIZED_NAME_OS = "os";
+  @SerializedName(SERIALIZED_NAME_OS)
   private OsEnum os;
 
 
@@ -131,8 +142,6 @@ public class DeeplinkApp {
    * @return thirdPartyAppId
   **/
   @ApiModelProperty(required = true, value = "")
-  @JsonProperty(JSON_PROPERTY_THIRD_PARTY_APP_ID)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getThirdPartyAppId() {
     return thirdPartyAppId;
@@ -156,8 +165,6 @@ public class DeeplinkApp {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_CREATED_TS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getCreatedTs() {
     return createdTs;
@@ -181,8 +188,6 @@ public class DeeplinkApp {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_SCHEME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getScheme() {
     return scheme;
@@ -205,8 +210,6 @@ public class DeeplinkApp {
    * @return installUrl
   **/
   @ApiModelProperty(required = true, value = "")
-  @JsonProperty(JSON_PROPERTY_INSTALL_URL)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getInstallUrl() {
     return installUrl;
@@ -229,8 +232,6 @@ public class DeeplinkApp {
    * @return name
   **/
   @ApiModelProperty(required = true, value = "")
-  @JsonProperty(JSON_PROPERTY_NAME)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getName() {
     return name;
@@ -254,8 +255,6 @@ public class DeeplinkApp {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_LEGACY_APP_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getLegacyAppId() {
     return legacyAppId;
@@ -279,8 +278,6 @@ public class DeeplinkApp {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_ICON_URL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getIconUrl() {
     return iconUrl;
@@ -304,8 +301,6 @@ public class DeeplinkApp {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_ORGANIZATION_GUID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getOrganizationGuid() {
     return organizationGuid;
@@ -329,8 +324,6 @@ public class DeeplinkApp {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_MODIFIED_TS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getModifiedTs() {
     return modifiedTs;
@@ -354,8 +347,6 @@ public class DeeplinkApp {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_GUID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getGuid() {
     return guid;
@@ -379,8 +370,6 @@ public class DeeplinkApp {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_APPLE_APP_ENTITLEMENT_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getAppleAppEntitlementId() {
     return appleAppEntitlementId;
@@ -412,8 +401,6 @@ public class DeeplinkApp {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_ANDROID_SHA256)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<String> getAndroidSha256() {
     return androidSha256;
@@ -436,8 +423,6 @@ public class DeeplinkApp {
    * @return os
   **/
   @ApiModelProperty(required = true, value = "")
-  @JsonProperty(JSON_PROPERTY_OS)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public OsEnum getOs() {
     return os;

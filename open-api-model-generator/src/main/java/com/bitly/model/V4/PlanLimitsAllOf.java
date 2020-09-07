@@ -16,29 +16,28 @@ package com.bitly.model.V4;
 import java.util.Objects;
 import java.util.Arrays;
 import com.bitly.model.V4.PlanLimit;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * PlanLimitsAllOf
  */
-@JsonPropertyOrder({
-  PlanLimitsAllOf.JSON_PROPERTY_ORGANIZATION_GUID,
-  PlanLimitsAllOf.JSON_PROPERTY_PLAN_LIMITS
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-06T23:21:35.150+01:00[Europe/London]")
 public class PlanLimitsAllOf {
-  public static final String JSON_PROPERTY_ORGANIZATION_GUID = "organization_guid";
+  public static final String SERIALIZED_NAME_ORGANIZATION_GUID = "organization_guid";
+  @SerializedName(SERIALIZED_NAME_ORGANIZATION_GUID)
   private String organizationGuid;
 
-  public static final String JSON_PROPERTY_PLAN_LIMITS = "plan_limits";
+  public static final String SERIALIZED_NAME_PLAN_LIMITS = "plan_limits";
+  @SerializedName(SERIALIZED_NAME_PLAN_LIMITS)
   private List<PlanLimit> planLimits = null;
 
 
@@ -54,8 +53,6 @@ public class PlanLimitsAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_ORGANIZATION_GUID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getOrganizationGuid() {
     return organizationGuid;
@@ -87,8 +84,6 @@ public class PlanLimitsAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_PLAN_LIMITS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<PlanLimit> getPlanLimits() {
     return planLimits;

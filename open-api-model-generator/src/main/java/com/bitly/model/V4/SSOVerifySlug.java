@@ -15,27 +15,26 @@ package com.bitly.model.V4;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import java.io.IOException;
 
 /**
  * SSOVerifySlug
  */
-@JsonPropertyOrder({
-  SSOVerifySlug.JSON_PROPERTY_AVAILABLE,
-  SSOVerifySlug.JSON_PROPERTY_URL_SLUG
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-06T23:21:35.150+01:00[Europe/London]")
 public class SSOVerifySlug {
-  public static final String JSON_PROPERTY_AVAILABLE = "available";
+  public static final String SERIALIZED_NAME_AVAILABLE = "available";
+  @SerializedName(SERIALIZED_NAME_AVAILABLE)
   private Boolean available;
 
-  public static final String JSON_PROPERTY_URL_SLUG = "url_slug";
+  public static final String SERIALIZED_NAME_URL_SLUG = "url_slug";
+  @SerializedName(SERIALIZED_NAME_URL_SLUG)
   private String urlSlug;
 
 
@@ -51,8 +50,6 @@ public class SSOVerifySlug {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_AVAILABLE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getAvailable() {
     return available;
@@ -76,8 +73,6 @@ public class SSOVerifySlug {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_URL_SLUG)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getUrlSlug() {
     return urlSlug;

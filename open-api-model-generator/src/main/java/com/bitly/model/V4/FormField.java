@@ -16,43 +16,42 @@ package com.bitly.model.V4;
 import java.util.Objects;
 import java.util.Arrays;
 import com.bitly.model.V4.FormConfig;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import java.io.IOException;
 
 /**
  * FormField
  */
-@JsonPropertyOrder({
-  FormField.JSON_PROPERTY_FIELD_TYPE,
-  FormField.JSON_PROPERTY_NAME,
-  FormField.JSON_PROPERTY_REQUIRED,
-  FormField.JSON_PROPERTY_LABEL,
-  FormField.JSON_PROPERTY_CONFIG,
-  FormField.JSON_PROPERTY_RESPONSE
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-07T02:24:01.569+01:00[Europe/London]")
 public class FormField {
-  public static final String JSON_PROPERTY_FIELD_TYPE = "field_type";
+  public static final String SERIALIZED_NAME_FIELD_TYPE = "field_type";
+  @SerializedName(SERIALIZED_NAME_FIELD_TYPE)
   private String fieldType;
 
-  public static final String JSON_PROPERTY_NAME = "name";
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
 
-  public static final String JSON_PROPERTY_REQUIRED = "required";
+  public static final String SERIALIZED_NAME_REQUIRED = "required";
+  @SerializedName(SERIALIZED_NAME_REQUIRED)
   private Boolean required;
 
-  public static final String JSON_PROPERTY_LABEL = "label";
+  public static final String SERIALIZED_NAME_LABEL = "label";
+  @SerializedName(SERIALIZED_NAME_LABEL)
   private String label;
 
-  public static final String JSON_PROPERTY_CONFIG = "config";
+  public static final String SERIALIZED_NAME_CONFIG = "config";
+  @SerializedName(SERIALIZED_NAME_CONFIG)
   private FormConfig config;
 
-  public static final String JSON_PROPERTY_RESPONSE = "response";
+  public static final String SERIALIZED_NAME_RESPONSE = "response";
+  @SerializedName(SERIALIZED_NAME_RESPONSE)
   private String response;
 
 
@@ -68,8 +67,6 @@ public class FormField {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_FIELD_TYPE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getFieldType() {
     return fieldType;
@@ -93,8 +90,6 @@ public class FormField {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getName() {
     return name;
@@ -118,8 +113,6 @@ public class FormField {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_REQUIRED)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getRequired() {
     return required;
@@ -143,8 +136,6 @@ public class FormField {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_LABEL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getLabel() {
     return label;
@@ -168,8 +159,6 @@ public class FormField {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_CONFIG)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public FormConfig getConfig() {
     return config;
@@ -193,8 +182,6 @@ public class FormField {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_RESPONSE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getResponse() {
     return response;

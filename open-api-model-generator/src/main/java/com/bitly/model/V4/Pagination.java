@@ -15,39 +15,38 @@ package com.bitly.model.V4;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import java.io.IOException;
 
 /**
  * Pagination
  */
-@JsonPropertyOrder({
-  Pagination.JSON_PROPERTY_TOTAL,
-  Pagination.JSON_PROPERTY_SIZE,
-  Pagination.JSON_PROPERTY_PREV,
-  Pagination.JSON_PROPERTY_PAGE,
-  Pagination.JSON_PROPERTY_NEXT
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-07T02:24:01.569+01:00[Europe/London]")
 public class Pagination {
-  public static final String JSON_PROPERTY_TOTAL = "total";
+  public static final String SERIALIZED_NAME_TOTAL = "total";
+  @SerializedName(SERIALIZED_NAME_TOTAL)
   private Integer total;
 
-  public static final String JSON_PROPERTY_SIZE = "size";
+  public static final String SERIALIZED_NAME_SIZE = "size";
+  @SerializedName(SERIALIZED_NAME_SIZE)
   private Integer size;
 
-  public static final String JSON_PROPERTY_PREV = "prev";
+  public static final String SERIALIZED_NAME_PREV = "prev";
+  @SerializedName(SERIALIZED_NAME_PREV)
   private String prev;
 
-  public static final String JSON_PROPERTY_PAGE = "page";
+  public static final String SERIALIZED_NAME_PAGE = "page";
+  @SerializedName(SERIALIZED_NAME_PAGE)
   private Integer page;
 
-  public static final String JSON_PROPERTY_NEXT = "next";
+  public static final String SERIALIZED_NAME_NEXT = "next";
+  @SerializedName(SERIALIZED_NAME_NEXT)
   private String next;
 
 
@@ -63,8 +62,6 @@ public class Pagination {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_TOTAL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getTotal() {
     return total;
@@ -88,8 +85,6 @@ public class Pagination {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_SIZE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getSize() {
     return size;
@@ -113,8 +108,6 @@ public class Pagination {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_PREV)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getPrev() {
     return prev;
@@ -138,8 +131,6 @@ public class Pagination {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_PAGE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getPage() {
     return page;
@@ -163,8 +154,6 @@ public class Pagination {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_NEXT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getNext() {
     return next;

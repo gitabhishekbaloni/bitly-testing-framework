@@ -17,29 +17,28 @@ import java.util.Objects;
 import java.util.Arrays;
 import com.bitly.model.V4.Pagination;
 import com.bitly.model.V4.UserInternal;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * Users
  */
-@JsonPropertyOrder({
-  Users.JSON_PROPERTY_PAGINATION,
-  Users.JSON_PROPERTY_USERS
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-06T23:21:35.150+01:00[Europe/London]")
 public class Users {
-  public static final String JSON_PROPERTY_PAGINATION = "pagination";
+  public static final String SERIALIZED_NAME_PAGINATION = "pagination";
+  @SerializedName(SERIALIZED_NAME_PAGINATION)
   private Pagination pagination;
 
-  public static final String JSON_PROPERTY_USERS = "users";
+  public static final String SERIALIZED_NAME_USERS = "users";
+  @SerializedName(SERIALIZED_NAME_USERS)
   private List<UserInternal> users = null;
 
 
@@ -55,8 +54,6 @@ public class Users {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_PAGINATION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Pagination getPagination() {
     return pagination;
@@ -88,8 +85,6 @@ public class Users {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_USERS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<UserInternal> getUsers() {
     return users;

@@ -16,34 +16,30 @@ package com.bitly.model.V4;
 import java.util.Objects;
 import java.util.Arrays;
 import com.bitly.model.V4.ReferrersByDomain;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * ReferrersByDomains
  */
-@JsonPropertyOrder({
-  ReferrersByDomains.JSON_PROPERTY_UNITS,
-  ReferrersByDomains.JSON_PROPERTY_FACET,
-  ReferrersByDomains.JSON_PROPERTY_REFERRERS_BY_DOMAIN,
-  ReferrersByDomains.JSON_PROPERTY_UNIT_REFERENCE,
-  ReferrersByDomains.JSON_PROPERTY_UNIT
-})
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-03T23:35:21.555+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-06T23:21:35.150+01:00[Europe/London]")
 public class ReferrersByDomains {
-  public static final String JSON_PROPERTY_UNITS = "units";
+  public static final String SERIALIZED_NAME_UNITS = "units";
+  @SerializedName(SERIALIZED_NAME_UNITS)
   private Integer units;
 
   /**
    * Gets or Sets facet
    */
+  @JsonAdapter(FacetEnum.Adapter.class)
   public enum FacetEnum {
     REFERRERS_BY_DOMAINS("referrers_by_domains");
 
@@ -53,7 +49,6 @@ public class ReferrersByDomains {
       this.value = value;
     }
 
-    @JsonValue
     public String getValue() {
       return value;
     }
@@ -63,7 +58,6 @@ public class ReferrersByDomains {
       return String.valueOf(value);
     }
 
-    @JsonCreator
     public static FacetEnum fromValue(String value) {
       for (FacetEnum b : FacetEnum.values()) {
         if (b.value.equals(value)) {
@@ -72,18 +66,35 @@ public class ReferrersByDomains {
       }
       throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
+
+    public static class Adapter extends TypeAdapter<FacetEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final FacetEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public FacetEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return FacetEnum.fromValue(value);
+      }
+    }
   }
 
-  public static final String JSON_PROPERTY_FACET = "facet";
+  public static final String SERIALIZED_NAME_FACET = "facet";
+  @SerializedName(SERIALIZED_NAME_FACET)
   private FacetEnum facet;
 
-  public static final String JSON_PROPERTY_REFERRERS_BY_DOMAIN = "referrers_by_domain";
+  public static final String SERIALIZED_NAME_REFERRERS_BY_DOMAIN = "referrers_by_domain";
+  @SerializedName(SERIALIZED_NAME_REFERRERS_BY_DOMAIN)
   private List<ReferrersByDomain> referrersByDomain = null;
 
-  public static final String JSON_PROPERTY_UNIT_REFERENCE = "unit_reference";
+  public static final String SERIALIZED_NAME_UNIT_REFERENCE = "unit_reference";
+  @SerializedName(SERIALIZED_NAME_UNIT_REFERENCE)
   private String unitReference;
 
-  public static final String JSON_PROPERTY_UNIT = "unit";
+  public static final String SERIALIZED_NAME_UNIT = "unit";
+  @SerializedName(SERIALIZED_NAME_UNIT)
   private String unit;
 
 
@@ -99,8 +110,6 @@ public class ReferrersByDomains {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_UNITS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getUnits() {
     return units;
@@ -124,8 +133,6 @@ public class ReferrersByDomains {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_FACET)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public FacetEnum getFacet() {
     return facet;
@@ -157,8 +164,6 @@ public class ReferrersByDomains {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_REFERRERS_BY_DOMAIN)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<ReferrersByDomain> getReferrersByDomain() {
     return referrersByDomain;
@@ -182,8 +187,6 @@ public class ReferrersByDomains {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_UNIT_REFERENCE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getUnitReference() {
     return unitReference;
@@ -207,8 +210,6 @@ public class ReferrersByDomains {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_UNIT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getUnit() {
     return unit;
