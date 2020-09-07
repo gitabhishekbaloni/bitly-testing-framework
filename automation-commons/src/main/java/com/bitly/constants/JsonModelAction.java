@@ -1,5 +1,5 @@
 package com.bitly.constants;
 
 public enum JsonModelAction {
-    MODIFY
+    MODIFY,REMOVE
 }

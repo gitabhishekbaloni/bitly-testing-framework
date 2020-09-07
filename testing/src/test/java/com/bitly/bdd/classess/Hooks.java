@@ -16,7 +16,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.*;
+import static org.hamcrest.Matchers.equalTo;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {Application.class, Container.class, ContainerModel.class, ContainerUtilities.class})
@@ -33,10 +33,15 @@ public class Hooks {
     @Autowired
     public ScenarioContext scenarioContext;
 
+    private boolean hasNoAccessToken() {
+        return  (!scenarioContext.hasKey(Constants.ACCESS_TOKEN)) ||
+                scenarioContext.getContext(Constants.ACCESS_TOKEN).toString().trim().isEmpty();
+    }
+
     @Before
     public void beforeScenario() {
         LOG.info(Constants.RUN_BEFORE_SCENARIO);
-        if (!scenarioContext.hasKey(Constants.ACCESS_TOKEN)) {
+        if (hasNoAccessToken()) {
             //set access token if not available
             if(configuration.getIs_access_token_available()){
                 scenarioContext.setContext(Constants.ACCESS_TOKEN, configuration.getAccess_token());

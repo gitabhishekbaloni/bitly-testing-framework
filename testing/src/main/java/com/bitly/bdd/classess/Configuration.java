@@ -1,13 +1,8 @@
 package com.bitly.bdd.classess;
 
-import com.bitly.rest.BaseRestConfiguration;
-import com.bitly.rest.BasicRestConfigurationImpl;
-import com.bitly.utilities.ResponseTransformer;
 import lombok.Getter;
-import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.PropertySource;
 
 @org.springframework.context.annotation.Configuration

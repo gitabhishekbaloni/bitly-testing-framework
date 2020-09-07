@@ -25,10 +25,9 @@ public class JsonModificationActions {
                 case MODIFY:
                     modified = documentContext.set(jsonPath, val).json();
                     break;
-                    //can add remove based upon requirements
-//                case REMOVE:
-//                    modified = documentContext.delete(jsonPath).json();
-//                    break;
+                case REMOVE:
+                    modified = documentContext.delete(jsonPath).json();
+                    break;
             }
         } else {
             modified = documentContext.json();

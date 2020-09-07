@@ -2,6 +2,7 @@ package com.bitly.stepDefinitions;
 
 import com.bitly.bdd.classess.JsonModelCreationInput;
 import com.bitly.bdd.classess.ScenarioContext;
+import com.bitly.constants.Constants;
 import com.bitly.constants.JsonFieldType;
 import com.bitly.constants.JsonModelAction;
 import com.bitly.constants.ModelPackage;
@@ -13,7 +14,9 @@ import com.jayway.jsonpath.JsonPath;
 import io.cucumber.datatable.DataTable;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
 public class BitlyBaseSteps {
 
@@ -59,5 +62,12 @@ public class BitlyBaseSteps {
         Object node = getNode(json, jsonPath);
         return null != node ?node.toString(): "null";
     }
+
+    protected Map<String, String> removeNullOrEmpty(Map<String, String> map){
+        map.values().removeAll(Collections.singleton(null));
+        map.values().removeAll(Collections.singleton(Constants.EMPTY_STRING));
+        return map;
+    }
+
 
 }

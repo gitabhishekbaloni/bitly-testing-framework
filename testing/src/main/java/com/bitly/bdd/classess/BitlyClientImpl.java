@@ -41,6 +41,13 @@ public class BitlyClientImpl extends BasicRestConfigurationImpl implements Bitly
         return sendPost(new StringBuilder().append(conf1.getUrl_version()).append(conf1.getApiPaths().getCreate_bitlinks()).toString(), payload, headers);
     }
 
+    public ExtractedResponse createBitlyLinks(Object payload, String authorisedToken, String userDefinedPath) {
+        Map<String, String> headers = new HashMap<>();
+        headers.put(Constants.HEADER_AUTHORIZATION, new StringBuilder().append(Constants.BEARER).append(authorisedToken).toString());
+        return sendPost(new StringBuilder().append(conf1.getUrl_version()).append(userDefinedPath).toString(), payload, headers);
+    }
+
+
     public ExtractedResponse getGroups(String authorisedToken) {
         Map<String, String> headers = new HashMap<>();
         headers.put(Constants.HEADER_AUTHORIZATION, new StringBuilder().append(Constants.BEARER).append(authorisedToken).toString());

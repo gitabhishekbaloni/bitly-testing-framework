@@ -104,10 +104,11 @@ public abstract class BasicRestConfigurationImpl implements BaseRestConfiguratio
     protected ExtractedResponse sendPost(String url, Object payload, Map<String, String> headers) {
         Response response = null;
         headers.put("Accept", "application/json");
-        try {
+        headers.put("Content-Type","application/json");
+       try {
 
-            response = given().
-                    spec(setUpRequestSpecifications(headers)).contentType("application/json").config(RestAssured.config().encoderConfig(RestAssured.config().getEncoderConfig().appendDefaultContentCharsetToContentTypeIfUndefined(false)))
+            response = given()
+                    .spec(setUpRequestSpecifications(headers)).config(RestAssured.config().encoderConfig(RestAssured.config().getEncoderConfig().appendDefaultContentCharsetToContentTypeIfUndefined(false)))
                     .body(payload)
                     .when().log().all()
                     .post(url)

@@ -1,7 +1,5 @@
 package com.bitly.bdd.classess;
 
-import com.bitly.constants.JsonFieldType;
-import com.bitly.constants.JsonModelAction;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -23,6 +21,7 @@ public class SortInput {
     @Setter
     private String size;
 
-    public SortInput(){}
+    public SortInput() {
+    }
 
 }

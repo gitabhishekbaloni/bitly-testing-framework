@@ -11,4 +11,5 @@ public class Constants {
     public static final String ACCESS_TOKEN_NOT_SET = "Access token is not set before hitting api's";
     public static final String GROUP_ID = "group_guid" ;
     public static final String SORT = "sort" ;
+    public static final String EMPTY_STRING = "" ;
 }

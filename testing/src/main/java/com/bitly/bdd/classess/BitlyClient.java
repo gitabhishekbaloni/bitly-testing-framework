@@ -6,13 +6,11 @@ import java.util.Map;
 
 public interface BitlyClient {
 
-//    ExtractedResponse postSomething(Object postObject);
-
- //   ExtractedResponse getSomething(Object getObject);
-
     ExtractedResponse generateAccessToken();
 
     ExtractedResponse createBitlyLinks(Object payload, String authorisedToken);
+
+    ExtractedResponse createBitlyLinks(Object payload, String authorisedToken, String userDefinedPath);
 
     ExtractedResponse getGroups(String authorisedToken);
 
