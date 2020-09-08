@@ -30,7 +30,7 @@ set true/false flag under configuration
 
 NOTE: As for dependency management we are using spring boot framework all properties are made available in
 ~\bitly-testing-framework\testing\src\test\resources\application.properties
-
+ 
 b) Running with tags or feature file
 
 `mvn test -Dcucumber.options="--tags '@positive'"`
@@ -47,6 +47,17 @@ Note: In the new run/debug configuration created , the glue named `cucumber.api.
 b) Test can also be run from runner ~\testing\src\com\bitly\bdd\runner\CucumberRunner.java
 
 Note: Please define your tags for test runs
+
+3) We can add and modify any model values using. This will create object instance as per our requirement.
+modelFmily: Is the version of models from Open Api specifications
+modelClassName: Is the model class name
+
+check this for reference: features/bitlinks/positive.feature 
+    Given I have model data
+      | alias        | modelFamily          | modelClassName             | jsonModelAction | jsonPath   | value               | jsonFieldTYpe |
+      | bitlyPayload | <modelFamilyVersion> | <modelClassNameForVersion> | MODIFY          | $.domain   | <domain_value>      | STRING        |
+      | bitlyPayload | <modelFamilyVersion> | <modelClassNameForVersion> | MODIFY          | $.long_url | <long_required_url> | STRING        |
+ 
 
 ###Reports Tests:
 
