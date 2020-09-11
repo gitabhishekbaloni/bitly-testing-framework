@@ -53,6 +53,7 @@ modelFmily: Is the version of models from Open Api specifications
 modelClassName: Is the model class name
 
 check this for reference: features/bitlinks/positive.feature 
+
     Given I have model data
       | alias        | modelFamily          | modelClassName             | jsonModelAction | jsonPath   | value               | jsonFieldTYpe |
       | bitlyPayload | <modelFamilyVersion> | <modelClassNameForVersion> | MODIFY          | $.domain   | <domain_value>      | STRING        |

@@ -4,8 +4,6 @@ import com.bitly.http.ExtractedResponse;
 import com.bitly.utilities.ResponseTransformer;
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
-import io.restassured.filter.Filter;
-import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 
 import io.restassured.specification.RequestSpecification;
@@ -29,6 +27,11 @@ public abstract class BasicRestConfigurationImpl implements BaseRestConfiguratio
     @Getter
     @Setter
     private String url;
+
+    @Override
+    public String baseUrl() {
+       return url;
+    }
 
     protected BasicRestConfigurationImpl(ResponseTransformer transformer, String url) {
         this.transformer = transformer;

@@ -72,10 +72,6 @@ public class BitlyClientImpl extends BasicRestConfigurationImpl implements Bitly
         return sendGet(new StringBuilder().append(conf1.getUrl_version()).append(conf1.getApiPaths().getGet_sorted_path()).toString(), headers, pathParam,queryParams);
     }
 
-    public ExtractedResponse getSomething(Object getObject) {
-        return null;
-    }
-
     @Override
     public String baseUrl() {
         return this.getUrl();
